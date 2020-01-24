@@ -1,0 +1,52 @@
+@import '../../variable.scss';
+
+.header {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 5.5vw;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    padding: 0 5vw;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.navigation {
+    a {
+        position: relative;
+        z-index: 1;
+        // when visible
+        display: block;
+    }
+
+    li {
+        display: inline-block;
+        padding-right: 1.5vw;
+    }
+}
+
+.floatRight {
+    float: right;
+
+    a {
+        padding-right: 1.5vw;
+        color: $primary_color;
+    }
+}
+
+a {
+    &:hover {
+        color: $primary_color;
+    }
+}
