@@ -7,6 +7,11 @@ import landingPageStyle from './landingPage.module.scss';
 import logoCleansheet from '../../assets/logo_cs.png';
 import landingPageMainImage from '../../assets/landingpage_main_image.svg';
 
+// services image
+import cleaningServices from '../../assets/cleaning_services.svg';
+import laundryWashing from '../../assets/laundry_washing.svg';
+import environmentCleaning from '../../assets/env_cleaning.svg';
+
 export default function LandingPage() {
     const orderAction = () => {
         console.log("Directly into Product");
@@ -55,8 +60,46 @@ export default function LandingPage() {
                 <section id="services">
                     <div className={`${landingPageStyle.serviceSection}`}>
                         <h1>Layanan Kami</h1>
-                        <div className={`${landingPageStyle.gridContainer}`}>
-
+                        <div className={`
+                            ${landingPageStyle.servicesContainer} 
+                            ${landingPageStyle.gridContainer}
+                        `}>
+                            <div>
+                                <img 
+                                    alt="Layanan Kebersihan"
+                                    src={cleaningServices}    
+                                />
+                                <h4>Layanan Kebersihan</h4>
+                                <div className={`
+                                    ${landingPageStyle.servicesCaption} 
+                                `}>
+                                    <p>Cleansheet dapat membersihkan rumah dan kosan apapun sebelum atau sehabis acara sampai pindahan.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img 
+                                    alt="Layanan Cuci Barang"
+                                    src={laundryWashing}    
+                                />
+                                <h4>Layanan Cuci Barang</h4>
+                                <div className={`
+                                    ${landingPageStyle.servicesCaption} 
+                                `}>
+                                    <p>Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, helm sampai kendaraan.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img 
+                                    alt="Layanan Penanganan Lingkungan"
+                                    src={environmentCleaning}    
+                                />
+                                <h4>Layanan Penanganan Lingkungan</h4>
+                                <div className={`
+                                    ${landingPageStyle.servicesCaption} 
+                                `}>
+                                    <p>Cleansheet dapat mengatasi permasalahan lingkungan seperti sampah dan lain sebagainya.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

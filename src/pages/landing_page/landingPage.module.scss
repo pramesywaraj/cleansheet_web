@@ -36,9 +36,19 @@ main {
 
 .gridContainer {
     display: grid;
+    align-content: center;
+    grid-template-columns: auto auto auto;
 }
 
 // Service Section
 .serviceSection {
     text-align: center;
+
+    .servicesCaption {
+        width: 30vw;
+    }
+}
+
+.servicesContainer {
+    margin: 10vh 0;
 }
