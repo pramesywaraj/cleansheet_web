@@ -1,0 +1,44 @@
+@import "../../variable.scss";
+
+main {
+    padding-top: 5vw;
+
+    section {
+        padding: 0 5vw;
+    }
+}
+
+.fullPageHeight {
+    height: 100vh;
+}
+
+.flexboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.captionLayout {
+    width: 20vw;
+}
+
+.mainCaption {
+    font-size: 1.2em;
+}
+
+.rightAlign {
+    margin-left: auto;
+}
+
+.mainDecorationImage {
+    width: 100%;
+    height: auto;
+}
+
+.gridContainer {
+    display: grid;
+}
+
+// Service Section
+.serviceSection {
+    text-align: center;
+}
