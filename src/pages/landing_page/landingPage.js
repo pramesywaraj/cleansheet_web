@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from '../../components/header/header';
 import PrimaryButton from '../../components/button/primaryButton';
+import OutlinedButton from '../../components/button/outlinedButton';
 import landingPageStyle from './landingPage.module.scss';
 
 import logoCleansheet from '../../assets/logo_cs.png';
@@ -13,8 +14,12 @@ import laundryWashing from '../../assets/laundry_washing.svg';
 import environmentCleaning from '../../assets/env_cleaning.svg';
 
 export default function LandingPage() {
-    const orderAction = () => {
+    const goToProductPage = () => {
         console.log("Directly into Product");
+    }
+
+    const goToServicePage = () => {
+        console.log("Directly into Service Page");
     }
 
     return (
@@ -43,7 +48,7 @@ export default function LandingPage() {
                             </div>
                             <div>
                                 <PrimaryButton 
-                                    clickAction={orderAction} 
+                                    clickAction={goToProductPage} 
                                     label="Pesan" 
                                 />
                             </div>
@@ -100,6 +105,12 @@ export default function LandingPage() {
                                     <p>Cleansheet dapat mengatasi permasalahan lingkungan seperti sampah dan lain sebagainya.</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className={`${landingPageStyle.servicesButtonMargin5}`}>
+                            <OutlinedButton 
+                                clickAction={goToServicePage} 
+                                label="Selengkapnya"
+                            />
                         </div>
                     </div>
                 </section>
