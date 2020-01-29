@@ -12,6 +12,10 @@ main {
     text-align: center;
 }
 
+.sectionMargin {
+    margin: 15vh 0;
+}
+
 .fullPageHeight {
     height: 100vh;
 }
@@ -46,15 +50,9 @@ main {
 
 // Service Section
 .serviceSection {
-    margin: 10vh 0 ;
-
     .servicesCaption {
         width: 30vw;
     }
-}
-
-.servicesContainer {
-    margin: 10vh 0;
 }
 
 .servicesButtonMargin5 {
