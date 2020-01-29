@@ -8,6 +8,10 @@ main {
     }
 }
 
+.textAlignCenter {
+    text-align: center;
+}
+
 .fullPageHeight {
     height: 100vh;
 }
@@ -42,7 +46,7 @@ main {
 
 // Service Section
 .serviceSection {
-    text-align: center;
+    margin: 10vh 0 ;
 
     .servicesCaption {
         width: 30vw;
@@ -56,3 +60,7 @@ main {
 .servicesButtonMargin5 {
     margin: 5vh 0;
 }
+
+// Product Section
+
+// Client Section

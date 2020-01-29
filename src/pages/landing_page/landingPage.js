@@ -65,7 +65,10 @@ const ServiceSection = () => {
 
     return (
         <section id="services">
-            <div className={`${landingPageStyle.serviceSection}`}>
+            <div className={`
+                ${landingPageStyle.serviceSection} 
+                ${landingPageStyle.textAlignCenter}
+            `}>
                 <h1>Layanan Kami</h1>
                 <div className={`
                     ${landingPageStyle.servicesContainer} 
@@ -119,6 +122,28 @@ const ServiceSection = () => {
     )
 }
 
+const ProductSection = () => {
+    return (
+        <section id="products">
+            <div className={`${landingPageStyle.textAlignCenter}`}>
+                <h1>Produk Kami</h1>
+            </div>
+        </section>
+    )
+}
+
+const ClientSection = () => {
+    
+    return (
+        <section id="clients">
+            <div className={`${landingPageStyle.textAlignCenter}`}>
+
+            </div>
+        </section>
+    )
+    
+}
+
 export default function LandingPage() {
 
     return (
@@ -127,6 +152,7 @@ export default function LandingPage() {
             <main role="main">
                 <HeaderSection />
                 <ServiceSection />
+                <ProductSection />
             </main>
         </>
     )
