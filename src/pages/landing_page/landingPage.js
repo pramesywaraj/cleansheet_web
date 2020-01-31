@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../../components/header/header';
 import PrimaryButton from '../../components/button/primaryButton';
 import OutlinedButton from '../../components/button/outlinedButton';
+import CardBase from '../../components/cards/cardBase';
+
 import landingPageStyle from './landingPage.module.scss';
 
 import logoCleansheet from '../../assets/logo_cs.png';
@@ -138,6 +140,24 @@ const ProductSection = () => {
                 ${landingPageStyle.textAlignCenter}
             `}>
                 <h1>Produk Kami</h1>
+                <p>Dapatkan produk unggulan kami dalam bidang kebersihan.</p>
+                <div className={`${landingPageStyle.productGrid}`}>
+                    <CardBase>
+                        <h1>Hahah</h1>
+                    </CardBase>
+                    <CardBase>
+                        <h1>Hahah</h1>
+                    </CardBase>
+                    <CardBase>
+                        <h1>Hahah</h1>
+                    </CardBase>
+                    <CardBase>
+                        <h1>Hahah</h1>
+                    </CardBase>
+                    <CardBase>
+                        <h1>Hahah</h1>
+                    </CardBase>
+                </div>
             </div>
         </section>
     )
@@ -148,7 +168,6 @@ const ClientSection = () => {
     return (
         <section id="clients">
             <div className={`${landingPageStyle.textAlignCenter}`}>
-
             </div>
         </section>
     )
@@ -164,6 +183,7 @@ export default function LandingPage() {
                 <HeaderSection />
                 <ServiceSection />
                 <ProductSection />
+                <ClientSection />
             </main>
         </>
     )
