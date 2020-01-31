@@ -5,5 +5,30 @@
     width: auto;
     height: auto;
     border-radius: 5px;
-    padding: 5%;
+    padding: 8%;
+}
+
+// Product Card styling
+.bold {
+    font-weight: bold;
+}
+
+.productImageContainer {
+    width: 15vw;
+    height: auto;
+    text-align: center;
+}
+
+.productImage {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.productDetail {
+    text-align: start;
+}
+
+.buyButton {
+    float: right;
 }

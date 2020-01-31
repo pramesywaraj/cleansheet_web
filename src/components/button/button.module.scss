@@ -5,7 +5,53 @@
     cursor: pointer;
     background: $primary_button_color 0% 0% no-repeat padding-box;
     color: $white;
-    padding: 10px 30px;
+    padding: 1.5vh 2vw;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+    border: none;
+    border-radius: 20px;
+    opacity: 1;
+
+    // -webkit-transition-duration: 0.4s; /* Safari */
+    // transition-duration: 0.4s;
+
+    &:hover {
+        color: $primary_button_color;
+        background-color: $white;
+        border: 2px solid $primary_button_color;
+    }
+}
+
+// Outlined button styling
+.outlinedButton {
+    cursor: pointer;
+    background: $white 0% 0% no-repeat padding-box;
+    color: $primary_color;
+    padding: 2vh 4vw;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+    border: 2px solid $primary_button_color;
+    border-radius: 20px;
+    opacity: 1;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+    &:hover {
+        color: $white;
+        background-color: $primary_button_color;
+    }
+}
+
+// Small button styling
+.smallButton {
+    cursor: pointer;
+    background: $primary_button_color 0% 0% no-repeat padding-box;
+    font-size: .5em;
+    color: $white;
+    padding: 1.5vh 1.8vw;
     text-decoration: none;
     display: inline-block;
     box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
@@ -20,27 +66,5 @@
         color: $primary_button_color;
         background-color: $white;
         border: 2px solid $primary_button_color;
-    }
-}
-
-// Outlined button styling
-.outlinedButton {
-    cursor: pointer;
-    background: $white 0% 0% no-repeat padding-box;
-    color: $primary_color;
-    padding: 10px 30px;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
-    border: 2px solid $primary_button_color;
-    border-radius: 20px;
-    opacity: 1;
-
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-
-    &:hover {
-        color: $white;
-        background-color: $primary_button_color;
     }
 }

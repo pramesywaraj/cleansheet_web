@@ -61,9 +61,10 @@ main {
 
 // Product Section
 .productGrid {
+    margin: 8vh 0;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 2vw;
+    justify-items: center;
 }
 
 // Client Section

@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../../components/header/header';
 import PrimaryButton from '../../components/button/primaryButton';
 import OutlinedButton from '../../components/button/outlinedButton';
-import CardBase from '../../components/cards/cardBase';
+import ProductCard from '../../components/cards/productCard';
 
 import landingPageStyle from './landingPage.module.scss';
 
@@ -14,6 +14,7 @@ import landingPageMainImage from '../../assets/landingpage_main_image.svg';
 import cleaningServices from '../../assets/cleaning_services.svg';
 import laundryWashing from '../../assets/laundry_washing.svg';
 import environmentCleaning from '../../assets/env_cleaning.svg';
+
 
 const HeaderSection = () => {
     const goToProductPage = () => {
@@ -131,6 +132,8 @@ const ServiceSection = () => {
 }
 
 const ProductSection = () => {
+    
+
     return (
         <section 
             className={`
@@ -142,21 +145,26 @@ const ProductSection = () => {
                 <h1>Produk Kami</h1>
                 <p>Dapatkan produk unggulan kami dalam bidang kebersihan.</p>
                 <div className={`${landingPageStyle.productGrid}`}>
-                    <CardBase>
-                        <h1>Hahah</h1>
-                    </CardBase>
-                    <CardBase>
-                        <h1>Hahah</h1>
-                    </CardBase>
-                    <CardBase>
-                        <h1>Hahah</h1>
-                    </CardBase>
-                    <CardBase>
-                        <h1>Hahah</h1>
-                    </CardBase>
-                    <CardBase>
-                        <h1>Hahah</h1>
-                    </CardBase>
+                    <ProductCard
+                        imgSrc={``}
+                        productName='Sapu Kebersihan'
+                        price='15.000'
+                    />
+                    <ProductCard
+                        imgSrc={``}
+                        productName='Sapu Kebersihan'
+                        price='15.000'
+                    />
+                    <ProductCard
+                        imgSrc={``}
+                        productName='Sapu Kebersihan'
+                        price='15.000'
+                    />
+                    <ProductCard
+                        imgSrc={``}
+                        productName='Sapu Kebersihan'
+                        price='15.000'
+                    />
                 </div>
             </div>
         </section>
