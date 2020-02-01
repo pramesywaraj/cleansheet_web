@@ -48,15 +48,15 @@ main {
     grid-template-columns: auto auto auto;
 }
 
+.buttonMargin5 {
+    margin: 5vh 0;
+}
+
 // Service Section
 .serviceSection {
     .servicesCaption {
         width: 30vw;
     }
-}
-
-.servicesButtonMargin5 {
-    margin: 5vh 0;
 }
 
 // Product Section
@@ -68,3 +68,24 @@ main {
 }
 
 // Client Section
+.clientSection {
+
+}
+
+.clientGrid {
+    margin: 8vh 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.clientImageContainer {
+    width: auto;
+    height: 15vh;
+    object-fit: contain;
+
+    img {
+        max-height: 100%;
+    }
+}

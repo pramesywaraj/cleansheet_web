@@ -120,7 +120,7 @@ const ServiceSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`${landingPageStyle.servicesButtonMargin5}`}>
+                <div className={`${landingPageStyle.buttonMargin5}`}>
                     <OutlinedButton 
                         clickAction={goToServicePage} 
                         label="Selengkapnya"
@@ -132,7 +132,9 @@ const ServiceSection = () => {
 }
 
 const ProductSection = () => {
-    
+    const goToProductPage = () => {
+        console.log('Go to product page');
+    }
 
     return (
         <section 
@@ -166,6 +168,12 @@ const ProductSection = () => {
                         price='15.000'
                     />
                 </div>
+                <div className={`${landingPageStyle.buttonMargin5}`}>
+                    <OutlinedButton 
+                        clickAction={goToProductPage} 
+                        label="Selengkapnya"
+                    />
+                </div>
             </div>
         </section>
     )
@@ -176,6 +184,33 @@ const ClientSection = () => {
     return (
         <section id="clients">
             <div className={`${landingPageStyle.textAlignCenter}`}>
+                <h1>Klien Kami</h1>
+                <div className={`${landingPageStyle.clientGrid}`}>
+                    <div className={`${landingPageStyle.clientImageContainer}`}>
+                        <img 
+                            src={require('../../assets/logo-bogor.png')} 
+                            alt="Client"
+                        />
+                    </div>
+                    <div className={`${landingPageStyle.clientImageContainer}`}>
+                        <img 
+                            src={require('../../assets/ipb-university.png')} 
+                            alt="Client"
+                        />
+                    </div>
+                    <div className={`${landingPageStyle.clientImageContainer}`}>
+                        <img 
+                            src={require('../../assets/logo-bogor.png')} 
+                            alt="Client"
+                        />
+                    </div>
+                    <div className={`${landingPageStyle.clientImageContainer}`}>
+                        <img 
+                            src={require('../../assets/ipb-university.png')} 
+                            alt="Client"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     )
