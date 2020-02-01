@@ -3,8 +3,6 @@
 // Primary button styling
 .primaryButton {
     cursor: pointer;
-    background: $primary_button_color 0% 0% no-repeat padding-box;
-    color: $white;
     padding: 1.5vh 2vw;
     text-decoration: none;
     display: inline-block;
@@ -16,13 +14,28 @@
     -webkit-transition-duration: 0.3s; /* Safari */
     transition-duration: 0.3s;
 
+    &:focus {
+        outline: 0;
+    }
+}
+
+.backgroundPrimary {
+    background: $primary_button_color 0% 0% no-repeat padding-box;
+    color: $white;
+
     &:hover {
         color: $white;
         background-color: rgb(7, 149, 206);
     }
+}
 
-    &:focus {
-        outline: 0;
+.backgroundWhite {
+    background: $white 0% 0% no-repeat padding-box;
+    color: $primary_button_color;
+
+    &:hover {
+        color: $primary_button_color;
+        background-color: rgb(223, 223, 223);
     }
 }
 

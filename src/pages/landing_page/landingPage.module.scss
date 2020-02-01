@@ -1,19 +1,17 @@
 @import "../../variable.scss";
 
 main {
+    padding-right: 5vw;
+    padding-left: 5vw;
     padding-top: 5vw;
-
-    section {
-        padding: 0 5vw;
-    }
 }
 
 .textAlignCenter {
     text-align: center;
 }
 
-.sectionMargin {
-    margin: 15vh 0;
+.sectionGap {
+    padding: 15vh 0;
 }
 
 .fullPageHeight {
@@ -87,5 +85,43 @@ main {
 
     img {
         max-height: 100%;
+    }
+}
+
+// Join Cleansheet (Worker)
+.joinWorkerContainer {
+    position:absolute;
+    left:0;
+    right:0;
+
+    background-color: $primary-color;
+
+    .joinWorkerContent {
+        padding: 5vh 5vw;
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.joinWorkerImageContainer {
+    width: 40vw;
+    height: auto;
+
+    padding-right: 5vw;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.joinWorkerTextContainer {
+    text-align: center;
+    flex-grow: 2;
+
+    h1, h3 {
+        color: $white;
     }
 }

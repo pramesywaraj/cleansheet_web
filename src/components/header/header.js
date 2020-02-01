@@ -23,7 +23,11 @@ export default function Header() {
 
             <div className={headerStyle.floatRight}>
                 <NavLink to='/'>Masuk</NavLink>
-                <PrimaryButton clickAction={accountRegist} label="Daftar" />
+                <PrimaryButton 
+                    type="primary"
+                    clickAction={accountRegist} 
+                    label="Daftar" 
+                />
             </div>
         </header>
     )

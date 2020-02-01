@@ -44,6 +44,7 @@ const HeaderSection = () => {
                     </div>
                     <div>
                         <PrimaryButton 
+                            type='primary'
                             clickAction={goToProductPage} 
                             label="Pesan" 
                         />
@@ -70,7 +71,7 @@ const ServiceSection = () => {
         <section 
             id="services"
             className={`
-                ${landingPageStyle.sectionMargin}
+                ${landingPageStyle.sectionGap}
             `}
 
         >
@@ -139,7 +140,7 @@ const ProductSection = () => {
     return (
         <section 
             className={`
-                ${landingPageStyle.sectionMargin}
+                ${landingPageStyle.sectionGap}
         `}>
             <div className={`
                 ${landingPageStyle.textAlignCenter}
@@ -182,7 +183,9 @@ const ProductSection = () => {
 const ClientSection = () => {
     
     return (
-        <section id="clients">
+        <section 
+            id="clients"
+        >
             <div className={`${landingPageStyle.textAlignCenter}`}>
                 <h1>Klien Kami</h1>
                 <div className={`${landingPageStyle.clientGrid}`}>
@@ -217,6 +220,38 @@ const ClientSection = () => {
     
 }
 
+const JoinCleansheetWorkerSection = () => {
+    const goToJoinCleansheetWorker = () => {
+        console.log('Go');
+    }
+    
+    return (
+        <section id="joinCleansheetWorker">
+            <div className={`${landingPageStyle.joinWorkerContainer}`}>
+                <div className={`${landingPageStyle.joinWorkerContent}`}>
+                    <div className={`${landingPageStyle.joinWorkerImageContainer}`}>
+                        <img 
+                            src={require('../../assets/cleansheet-owner.png')}
+                            alt="Cleansheet Owner"
+                        />
+                    </div>
+                    <div className={`${landingPageStyle.joinWorkerTextContainer}`}>
+                        <h1>Gabung CleanSheet</h1>
+                        <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
+                        <div className={`${landingPageStyle.buttonMargin5}`}>
+                            <PrimaryButton 
+                                type='white'
+                                clickAction={goToJoinCleansheetWorker} 
+                                label="Gabung Sekarang"
+                            />
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    )
+}
+
 export default function LandingPage() {
 
     return (
@@ -227,6 +262,7 @@ export default function LandingPage() {
                 <ServiceSection />
                 <ProductSection />
                 <ClientSection />
+                <JoinCleansheetWorkerSection />
             </main>
         </>
     )
