@@ -252,6 +252,20 @@ const JoinCleansheetWorkerSection = () => {
     )
 }
 
+const JoinCleansheetPartner = () => {
+    const goToJoinCleansheetPartner = () => {
+        console.log('Go');
+    }
+    
+    return (
+        <section id="joinPartner">
+            <div className={`${landingPageStyle.joinPartnerContainer}`}>
+                <h1>Gabung Mitra</h1>
+            </div>
+        </section>
+    )
+}
+
 export default function LandingPage() {
 
     return (
@@ -263,6 +277,7 @@ export default function LandingPage() {
                 <ProductSection />
                 <ClientSection />
                 <JoinCleansheetWorkerSection />
+                <JoinCleansheetPartner />
             </main>
         </>
     )

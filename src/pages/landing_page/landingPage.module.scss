@@ -4,6 +4,7 @@ main {
     padding-right: 5vw;
     padding-left: 5vw;
     padding-top: 5vw;
+    overflow-x: hidden;
 }
 
 .textAlignCenter {
@@ -66,9 +67,6 @@ main {
 }
 
 // Client Section
-.clientSection {
-
-}
 
 .clientGrid {
     margin: 8vh 0;
@@ -90,9 +88,10 @@ main {
 
 // Join Cleansheet (Worker)
 .joinWorkerContainer {
-    position:absolute;
-    left:0;
-    right:0;
+    // left: 0;
+
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 
     background-color: $primary-color;
 
@@ -124,4 +123,9 @@ main {
     h1, h3 {
         color: $white;
     }
+}
+
+// Join Cleansheet Partner
+.joinPartnerContainer {
+    height: 20vh;
 }
