@@ -1,0 +1,27 @@
+@import '../../variable.scss';
+
+.footer {
+    width: 100vw;
+    height: auto;
+    
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    
+    background-color: $footer_base_color;
+}
+
+.gridContainer {
+    display: grid;
+    align-content: center;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.footerContent {
+    padding: 5vh 5vw;
+    text-align: left;
+
+    img {
+        width: 10vw;
+        height: auto;
+    }
+}

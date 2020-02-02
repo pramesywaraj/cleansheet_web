@@ -4,6 +4,7 @@ import Header from '../../components/header/header';
 import PrimaryButton from '../../components/button/primaryButton';
 import OutlinedButton from '../../components/button/outlinedButton';
 import ProductCard from '../../components/cards/productCard';
+import Footer from '../../components/footer/footer';
 
 import landingPageStyle from './landingPage.module.scss';
 
@@ -76,49 +77,35 @@ const ServiceSection = () => {
 
         >
             <div className={`
-                ${landingPageStyle.serviceSection} 
                 ${landingPageStyle.textAlignCenter}
             `}>
                 <h1>Layanan Kami</h1>
                 <div className={`
-                    ${landingPageStyle.servicesContainer} 
                     ${landingPageStyle.gridContainer}
                 `}>
-                    <div>
+                    <div className={`${landingPageStyle.serviceDesc}`}>
                         <img 
                             alt="Layanan Kebersihan"
                             src={cleaningServices}    
                         />
                         <h4>Layanan Kebersihan</h4>
-                        <div className={`
-                            ${landingPageStyle.servicesCaption} 
-                        `}>
-                            <p>Cleansheet dapat membersihkan rumah dan kosan apapun sebelum atau sehabis acara sampai pindahan.</p>
-                        </div>
+                        <p>Cleansheet dapat membersihkan rumah dan kosan apapun sebelum atau sehabis acara sampai pindahan.</p>
                     </div>
-                    <div>
+                    <div className={`${landingPageStyle.serviceDesc}`}>
                         <img 
                             alt="Layanan Cuci Barang"
                             src={laundryWashing}    
                         />
                         <h4>Layanan Cuci Barang</h4>
-                        <div className={`
-                            ${landingPageStyle.servicesCaption} 
-                        `}>
-                            <p>Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, helm sampai kendaraan.</p>
-                        </div>
+                        <p>Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, helm sampai kendaraan.</p>
                     </div>
-                    <div>
+                    <div className={`${landingPageStyle.serviceDesc}`}>
                         <img 
                             alt="Layanan Penanganan Lingkungan"
                             src={environmentCleaning}    
                         />
                         <h4>Layanan Penanganan Lingkungan</h4>
-                        <div className={`
-                            ${landingPageStyle.servicesCaption} 
-                        `}>
-                            <p>Cleansheet dapat mengatasi permasalahan lingkungan seperti sampah dan lain sebagainya.</p>
-                        </div>
+                        <p>Cleansheet dapat mengatasi permasalahan lingkungan seperti sampah dan lain sebagainya.</p>
                     </div>
                 </div>
                 <div className={`${landingPageStyle.buttonMargin5}`}>
@@ -258,9 +245,24 @@ const JoinCleansheetPartner = () => {
     }
     
     return (
-        <section id="joinPartner">
+        <section 
+            id="joinPartner"
+            className={`
+                ${landingPageStyle.sectionGap}
+            `}
+        >
             <div className={`${landingPageStyle.joinPartnerContainer}`}>
-                <h1>Gabung Mitra</h1>
+                <div className={`${landingPageStyle.joinPartnerContent}`}>
+                    <h1>Gabung Mitra</h1>
+                    <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
+                    <div className={`${landingPageStyle.buttonMargin5}`}>
+                        <PrimaryButton 
+                            type='primary'
+                            clickAction={goToJoinCleansheetPartner} 
+                            label="Gabung Sekarang"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     )
@@ -278,6 +280,7 @@ export default function LandingPage() {
                 <ClientSection />
                 <JoinCleansheetWorkerSection />
                 <JoinCleansheetPartner />
+                <Footer />
             </main>
         </>
     )

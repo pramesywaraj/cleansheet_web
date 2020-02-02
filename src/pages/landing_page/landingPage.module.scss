@@ -12,7 +12,7 @@ main {
 }
 
 .sectionGap {
-    padding: 15vh 0;
+    padding: 10vh 0;
 }
 
 .fullPageHeight {
@@ -52,9 +52,9 @@ main {
 }
 
 // Service Section
-.serviceSection {
-    .servicesCaption {
-        width: 30vw;
+.serviceDesc {
+    h4, p {
+        padding-top: 5vh;
     }
 }
 
@@ -118,7 +118,6 @@ main {
 
 .joinWorkerTextContainer {
     text-align: center;
-    flex-grow: 2;
 
     h1, h3 {
         color: $white;
@@ -127,5 +126,10 @@ main {
 
 // Join Cleansheet Partner
 .joinPartnerContainer {
-    height: 20vh;
+    height: 50vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
