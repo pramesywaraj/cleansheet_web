@@ -91,3 +91,36 @@
         outline: 0;
     }
 }
+
+// Whatsapp Button
+.whatsappButton {
+    cursor: pointer;
+    background: $whatsapp_button 0% 0% no-repeat padding-box;
+    color: $white;
+    padding: 2%;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+    border-radius: 5px;
+    border: none;   
+    opacity: 1;
+    text-align: center;
+
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+
+    &:hover {
+        color: $white;
+        background-color: $whatsapp_button_hover;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.whatsappIcon {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 8%;
+}
