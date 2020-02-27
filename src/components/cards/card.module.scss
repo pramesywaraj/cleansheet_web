@@ -1,34 +1,41 @@
 // Card base
 .cardBases {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
-    padding: 8% 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  padding: 8% 15%;
 }
 
 // Product Card styling
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .productImageContainer {
-    width: 13vw;
-    height: auto;
-    text-align: center;
+  width: 13vw;
+  height: auto;
+  text-align: center;
 }
 
 .productImage {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .productDetail {
-    text-align: start;
+  text-align: start;
 }
 
 .buyButton {
-    float: right;
+  float: right;
+}
+
+// Login Card Section
+.card-layout {
+  padding: 1%;
+}
+.card-container-input {
 }

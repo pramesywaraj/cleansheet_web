@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './global.module.scss';
 
@@ -16,12 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/login" component={LoginPage} />
         </Switch>
       </Router>
     </div>

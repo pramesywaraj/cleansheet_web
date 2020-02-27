@@ -1,0 +1,44 @@
+////////////////// Header //////////////////////
+.topLogoContainer {
+  width: 100%;
+}
+
+.cleansheetLogo {
+  width: 8%;
+  height: 8%;
+}
+
+////////////////// Content //////////////////////
+.loginContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+
+  margin: 2vh 0;
+}
+
+.loginWrapper {
+  padding: 2%;
+}
+
+// Image Content
+.imageContainer {
+  display: flex;
+  width: 100%;
+  height: auto;
+  border: 5px solid black;
+}
+
+.image {
+  width: 65%;
+  height: auto;
+}
+
+// Form
+.form-container-flex {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}

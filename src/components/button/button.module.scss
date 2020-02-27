@@ -2,125 +2,125 @@
 
 // Primary button styling
 .primaryButton {
-    cursor: pointer;
-    padding: 1.5vh 2vw;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
-    border: none;
-    border-radius: 20px;
-    opacity: 1;
+  cursor: pointer;
+  padding: 1.5vh 2vw;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+  border: none;
+  border-radius: 20px;
+  opacity: 1;
 
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
 
-    &:focus {
-        outline: 0;
-    }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .backgroundPrimary {
-    background: $primary_button_color 0% 0% no-repeat padding-box;
-    color: $white;
+  background: $primary_button_color 0% 0% no-repeat padding-box;
+  color: $white;
 
-    &:hover {
-        color: $white;
-        background-color: rgb(7, 149, 206);
-    }
+  &:hover {
+    color: $white;
+    background-color: rgb(7, 149, 206);
+  }
 }
 
 .backgroundWhite {
-    background: $white 0% 0% no-repeat padding-box;
-    color: $primary_button_color;
+  background: $white 0% 0% no-repeat padding-box;
+  color: $primary_button_color;
 
-    &:hover {
-        color: $primary_button_color;
-        background-color: rgb(223, 223, 223);
-    }
+  &:hover {
+    color: $primary_button_color;
+    background-color: rgb(223, 223, 223);
+  }
 }
 
 // Outlined button styling
 .outlinedButton {
-    cursor: pointer;
-    background: $white 0% 0% no-repeat padding-box;
-    color: $primary_color;
-    padding: 2vh 4vw;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
-    border: 2px solid $primary_button_color;
-    border-radius: 20px;
-    opacity: 1;
+  cursor: pointer;
+  background: $white 0% 0% no-repeat padding-box;
+  color: $primary_color;
+  padding: 2vh 4vw;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+  border: 2px solid $primary_button_color;
+  border-radius: 20px;
+  opacity: 1;
 
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
 
-    &:hover {
-        color: $white;
-        background-color: $primary_button_color;
-    }
+  &:hover {
+    color: $white;
+    background-color: $primary_button_color;
+  }
 
-    &:focus {
-        outline: 0;
-    }
+  &:focus {
+    outline: 0;
+  }
 }
 
 // Small button styling
 .smallButton {
-    cursor: pointer;
-    background: $primary_button_color 0% 0% no-repeat padding-box;
-    font-size: .5em;
+  cursor: pointer;
+  background: $primary_button_color 0% 0% no-repeat padding-box;
+  font-size: 0.5em;
+  color: $white;
+  padding: 1.5vh 1.8vw;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+  border: none;
+  border-radius: 20px;
+  opacity: 1;
+
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+
+  &:hover {
     color: $white;
-    padding: 1.5vh 1.8vw;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
-    border: none;
-    border-radius: 20px;
-    opacity: 1;
+    background-color: rgb(7, 149, 206);
+  }
 
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
-
-    &:hover {
-        color: $white;
-        background-color: rgb(7, 149, 206);
-    }
-
-    &:focus {
-        outline: 0;
-    }
+  &:focus {
+    outline: 0;
+  }
 }
 
 // Whatsapp Button
 .whatsappButton {
-    cursor: pointer;
-    background: $whatsapp_button 0% 0% no-repeat padding-box;
+  cursor: pointer;
+  background: $whatsapp_button 0% 0% no-repeat padding-box;
+  color: $white;
+  padding: 2%;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
+  border-radius: 5px;
+  border: none;
+  opacity: 1;
+  text-align: center;
+
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+
+  &:hover {
     color: $white;
-    padding: 2%;
-    text-decoration: none;
-    display: block;
-    box-shadow: 0px 0px 12px rgba(32, 32, 32, 0.302);
-    border-radius: 5px;
-    border: none;   
-    opacity: 1;
-    text-align: center;
+    background-color: $whatsapp_button_hover;
+  }
 
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
-
-    &:hover {
-        color: $white;
-        background-color: $whatsapp_button_hover;
-    }
-
-    &:focus {
-        outline: 0;
-    }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .whatsappIcon {
-    display: inline-block;
-    vertical-align: middle;
-    padding-right: 8%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 8%;
 }
