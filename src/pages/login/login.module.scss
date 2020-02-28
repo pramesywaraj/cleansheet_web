@@ -5,40 +5,49 @@
 
 .cleansheetLogo {
   width: 8%;
-  height: 8%;
+  height: auto;
 }
 
 ////////////////// Content //////////////////////
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2%;
+  height: 100vh;
+}
 .loginContainer {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  max-height: 100vh;
   align-items: center;
-
-  margin: 2vh 0;
-}
-
-.loginWrapper {
-  padding: 2%;
+  justify-content: center;
+  // border: 5px solid black;
+  margin: auto 0;
 }
 
 // Image Content
 .imageContainer {
   display: flex;
-  width: 100%;
-  height: auto;
-  border: 5px solid black;
-}
+  flex: 2;
+  flex-direction: column;
+  align-content: flex-start;
+  width: auto;
+  text-align: center;
+  // border: 5px solid black;
 
-.image {
-  width: 65%;
-  height: auto;
+  .image {
+    width: 90%;
+    height: auto;
+    padding: 2vh 0;
+  }
 }
 
 // Form
 .form-container-flex {
   display: flex;
-  flex-direction: column;
-
+  flex: 1;
   justify-content: center;
+
+  // border: 5px solid black;
 }

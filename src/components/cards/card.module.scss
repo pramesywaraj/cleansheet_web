@@ -5,7 +5,7 @@
   width: auto;
   height: auto;
   border-radius: 5px;
-  padding: 8% 15%;
+  padding: 8%;
 }
 
 // Product Card styling
@@ -38,4 +38,6 @@
   padding: 1%;
 }
 .card-container-input {
+  display: flex;
+  flex-direction: column;
 }

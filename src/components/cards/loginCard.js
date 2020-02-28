@@ -17,7 +17,8 @@ export default function LoginCard() {
     <CardBase>
       <div className={`${cardStyle['card-layout']}`}>
         <div className={`${cardStyle['card-container-input']}`}>
-          <TextInput label="Email" placeholder="" value={email} />
+          <TextInput label="Email" placeholder="Email" value={email} width={22} />
+          <TextInput label="Password" placeholder="Password" value={password} width={22} />
         </div>
         <div className={`${cardStyle.buyButton}`}>
           <SmallButton label="Beli" clickAction={login} />
