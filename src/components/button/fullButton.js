@@ -2,7 +2,7 @@ import React from 'react';
 
 import buttonStyle from './button.module.scss';
 
-export default function PrimaryButton({ clickAction, label, type }) {
+export default function FullButton({ clickAction, label, type }) {
   const buttonColor =
     type === 'primary' ? buttonStyle.backgroundPrimary : buttonStyle.backgroundWhite;
 
@@ -12,7 +12,7 @@ export default function PrimaryButton({ clickAction, label, type }) {
       onClick={clickAction}
       className={`
         ${buttonStyle.button}
-        ${buttonStyle.primaryButton}
+        ${buttonStyle.fullWidthButton}
         ${buttonColor}
         `}
     >

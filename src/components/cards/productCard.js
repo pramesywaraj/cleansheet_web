@@ -13,18 +13,20 @@ export default function ProductCard({ imgSrc, productName, price }) {
 
   return (
     <CardBase>
-      <div className={`${cardStyle.productImageContainer}`}>
-        <img className={`${cardStyle.productImage}`} src={ProductImagePath} alt="Products" />
-      </div>
-      <div className={`${cardStyle.productDetail}`}>
-        <p className={`${cardStyle.bold}`}>{productName}</p>
-        <p>
-          Harga: Rp.
-          {price}
-        </p>
-      </div>
-      <div className={`${cardStyle.buyButton}`}>
-        <SmallButton label="Beli" clickAction={buyClickAction} />
+      <div className={`${cardStyle['product-layout']}`}>
+        <div className={`${cardStyle.productImageContainer}`}>
+          <img className={`${cardStyle.productImage}`} src={ProductImagePath} alt="Products" />
+        </div>
+        <div className={`${cardStyle.productDetail}`}>
+          <p className={`${cardStyle.bold}`}>{productName}</p>
+          <small>
+            Harga: Rp.
+            {price}
+          </small>
+        </div>
+        <div className={`${cardStyle.buyButton}`}>
+          <SmallButton label="Beli" clickAction={buyClickAction} />
+        </div>
       </div>
     </CardBase>
   );

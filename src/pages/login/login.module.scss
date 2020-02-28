@@ -4,7 +4,7 @@
 }
 
 .cleansheetLogo {
-  width: 8%;
+  width: 7%;
   height: auto;
 }
 
@@ -13,8 +13,8 @@
   display: flex;
   flex-direction: column;
 
-  padding: 2%;
-  height: 100vh;
+  margin: 3%;
+  height: 100%;
 }
 .loginContainer {
   display: flex;
@@ -29,17 +29,23 @@
 // Image Content
 .imageContainer {
   display: flex;
-  flex: 2;
+  flex: 1;
   flex-direction: column;
-  align-content: flex-start;
   width: auto;
+  margin-right: right;
   text-align: center;
+  align-items: center;
   // border: 5px solid black;
 
   .image {
-    width: 90%;
+    width: 100%;
     height: auto;
-    padding: 2vh 0;
+    max-width: 46vw;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin: 20px 0;
   }
 }
 
@@ -48,6 +54,5 @@
   display: flex;
   flex: 1;
   justify-content: center;
-
   // border: 5px solid black;
 }
