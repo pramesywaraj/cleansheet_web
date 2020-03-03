@@ -12,7 +12,7 @@ export default function LoginPage() {
     password: '',
   });
   return (
-    <div className={LoginStyle.loginWrapper}>
+    <main className={LoginStyle.loginWrapper}>
       <header className={LoginStyle.topLogoContainer}>
         <img alt="Cleansheet Logo" src={logoCleansheet} className={LoginStyle.cleansheetLogo} />
       </header>
@@ -29,6 +29,6 @@ export default function LoginPage() {
           <LoginCard />
         </div>
       </section>
-    </div>
+    </main>
   );
 }

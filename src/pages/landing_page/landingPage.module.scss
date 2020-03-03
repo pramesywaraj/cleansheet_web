@@ -1,136 +1,131 @@
-@import "../../variable.scss";
-
-main {
-    padding-right: 5vw;
-    padding-left: 5vw;
-    padding-top: 5vw;
-    overflow-x: hidden;
-}
+@import '../../variable.scss';
 
 .textAlignCenter {
-    text-align: center;
+  text-align: center;
 }
 
 .sectionGap {
-    padding: 10vh 0;
+  padding: 10vh 0;
 }
 
 .fullPageHeight {
-    height: 100vh;
+  height: 100vh;
 }
 
 .flexboxContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .captionLayout {
-    width: 20vw;
-    margin: 5% 0; 
+  width: 20vw;
+  margin: 5% 0;
 }
 
 .mainCaption {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .rightAlign {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .mainDecorationImage {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .gridContainer {
-    display: grid;
-    align-content: center;
-    grid-template-columns: auto auto auto;
+  display: grid;
+  align-content: center;
+  grid-template-columns: auto auto auto;
 }
 
 .buttonMargin5 {
-    margin: 5vh 0;
+  margin: 5vh 0;
 }
 
 // Service Section
 .serviceDesc {
-    h4, p {
-        padding-top: 5vh;
-    }
+  h4,
+  p {
+    padding-top: 5vh;
+  }
 }
 
 // Product Section
 .productGrid {
-    margin: 8vh 0;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-items: center;
+  margin: 8vh 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
 }
 
 // Client Section
 
 .clientGrid {
-    margin: 8vh 0;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-items: center;
-    align-items: center;
+  margin: 8vh 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
+  align-items: center;
 }
 
 .clientImageContainer {
-    width: auto;
-    height: 15vh;
-    object-fit: contain;
+  width: auto;
+  height: 15vh;
+  object-fit: contain;
 
-    img {
-        max-height: 100%;
-    }
+  img {
+    max-height: 100%;
+  }
 }
 
 // Join Cleansheet (Worker)
 .joinWorkerContainer {
-    // left: 0;
+  // left: 0;
 
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 
-    background-color: $primary-color;
+  background-color: $primary-color;
 
-    .joinWorkerContent {
-        padding: 5vh 5vw;
-        display: flex;
-        flex-direction: row;
+  .joinWorkerContent {
+    padding: 5vh 5vw;
+    display: flex;
+    flex-direction: row;
 
-        align-items: center;
-        justify-content: center;
-    }
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .joinWorkerImageContainer {
-    width: 40vw;
-    height: auto;
+  width: 40vw;
+  height: auto;
 
-    padding-right: 5vw;
+  padding-right: 5vw;
 
-    img {
-        max-width: 100%;
-    }
+  img {
+    max-width: 100%;
+  }
 }
 
 .joinWorkerTextContainer {
-    text-align: center;
+  text-align: center;
 
-    h1, h3 {
-        color: $white;
-    }
+  h1,
+  h3 {
+    color: $white;
+  }
 }
 
 // Join Cleansheet Partner
 .joinPartnerContainer {
-    height: 50vh;
-    display: flex;
+  height: 50vh;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

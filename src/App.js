@@ -7,12 +7,16 @@ import './global.module.scss';
 import LandingPage from './pages/landing_page/landingPage';
 import LoginPage from './pages/login/login';
 
+import Layout from './components/layout/layout';
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={LandingPage} />
+          <Layout>
+            <Route exact path="/" component={LandingPage} />
+          </Layout>
           <Route path="/login" component={LoginPage} />
         </Switch>
       </Router>

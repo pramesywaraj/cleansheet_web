@@ -1,10 +1,8 @@
 import React from 'react';
 
-import Header from '../../components/header/header';
 import PrimaryButton from '../../components/button/primaryButton';
 import OutlinedButton from '../../components/button/outlinedButton';
 import ProductCard from '../../components/cards/productCard';
-import Footer from '../../components/footer/footer';
 
 import landingPageStyle from './landingPage.module.scss';
 
@@ -227,16 +225,12 @@ const JoinCleansheetPartner = () => {
 export default function LandingPage() {
   return (
     <>
-      <Header />
-      <main role="main">
-        <HeaderSection />
-        <ServiceSection />
-        <ProductSection />
-        <ClientSection />
-        <JoinCleansheetWorkerSection />
-        <JoinCleansheetPartner />
-        <Footer />
-      </main>
+      <HeaderSection />
+      <ServiceSection />
+      <ProductSection />
+      <ClientSection />
+      <JoinCleansheetWorkerSection />
+      <JoinCleansheetPartner />
     </>
   );
 }
