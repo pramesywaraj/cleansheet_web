@@ -1,42 +1,43 @@
 import React from 'react';
 
-import footerStyle from './footer.module.scss';
+import FooterStyle from './footer.module.scss';
+import WhatsappButton from '../Buttons/WhatsappButton';
 
-import WhatsappButton from '../button/whatsappButton';
+import LogoCSAbu from '../../assets/logo_cs_abu.png';
 
 export default function Footer() {
   return (
-    <footer className={`${footerStyle.footer}`}>
+    <footer className={`${FooterStyle.footer}`}>
       <div
         className={`
-          ${footerStyle.footerContent} 
-          ${footerStyle.gridContainer}
+          ${FooterStyle.footerContent} 
+          ${FooterStyle.gridContainer}
         `}
       >
         <div>
-          <img src={require('../../assets/logo_cs_abu.png')} alt="Logo CleanSheet Abu" />
+          <img src={LogoCSAbu} alt="Logo CleanSheet Abu" />
         </div>
-        <div className={`${footerStyle.footerElement}`}>
+        <div className={`${FooterStyle.footerElement}`}>
           <h3>Alamat</h3>
           <div>
             <p>Taman Dramaga Permai Jalan Rasamala Blok I.11 No.7 Ciampea, Bogor</p>
           </div>
         </div>
-        <div className={`${footerStyle.footerElement}`}>
+        <div className={`${FooterStyle.footerElement}`}>
           <h3>Sosial Media</h3>
           <div>
             <p>Instagram : @cleansheet</p>
             <p>Line : cleansheet</p>
           </div>
         </div>
-        <div className={`${footerStyle.footerElement}`}>
+        <div className={`${FooterStyle.footerElement}`}>
           <h3>Jam Kerja</h3>
           <div>
             <p>Setiap Hari</p>
             <p>24 jam</p>
           </div>
         </div>
-        <div className={`${footerStyle.footerElement}`}>
+        <div className={`${FooterStyle.footerElement}`}>
           <h3>Kontak</h3>
           <div>
             <WhatsappButton />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import headerStyle from './header.module.scss';
-import PrimaryButton from '../button/primaryButton';
+import HeaderStyle from './header.module.scss';
+import PrimaryButton from '../Buttons/PrimaryButton';
 
 export default function Header() {
   const accountRegist = () => {
@@ -10,8 +10,8 @@ export default function Header() {
   };
 
   return (
-    <header className={headerStyle.header}>
-      <nav className={headerStyle.navigation}>
+    <header className={HeaderStyle.header}>
+      <nav className={HeaderStyle.navigation}>
         <ul>
           <li>
             <NavLink to="/">Beranda</NavLink>
@@ -28,7 +28,7 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div className={headerStyle.floatRight}>
+      <div className={HeaderStyle.floatRight}>
         <NavLink to="/login">Masuk</NavLink>
         <PrimaryButton type="primary" clickAction={accountRegist} label="Daftar" />
       </div>

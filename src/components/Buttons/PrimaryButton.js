@@ -1,18 +1,18 @@
 import React from 'react';
 
-import buttonStyle from './button.module.scss';
+import ButtonStyle from './button.module.scss';
 
 export default function PrimaryButton({ clickAction, label, type }) {
   const buttonColor =
-    type === 'primary' ? buttonStyle.backgroundPrimary : buttonStyle.backgroundWhite;
+    type === 'primary' ? ButtonStyle.backgroundPrimary : ButtonStyle.backgroundWhite;
 
   return (
     <button
       type="button"
       onClick={clickAction}
       className={`
-        ${buttonStyle.button}
-        ${buttonStyle.primaryButton}
+        ${ButtonStyle.button}
+        ${ButtonStyle.primaryButton}
         ${buttonColor}
         `}
     >

@@ -4,19 +4,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './global.module.scss';
 
 // The pages
-import LandingPage from './pages/landing_page/landingPage';
-import LoginPage from './pages/login/login';
+import LandingPage from './pages/LandingPage/LandingPage';
+import LoginPage from './pages/Login/Login';
 
-import Layout from './components/layout/layout';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Layout>
-            <Route exact path="/" component={LandingPage} />
-          </Layout>
+          <Route exact path="/">
+            <Layout>
+              <LandingPage />
+            </Layout>
+          </Route>
           <Route path="/login" component={LoginPage} />
         </Switch>
       </Router>

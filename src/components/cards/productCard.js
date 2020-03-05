@@ -1,8 +1,8 @@
 import React from 'react';
-import CardBase from './cardBase';
-import SmallButton from '../button/smallButton';
+import CardBase from './CardBase';
+import SmallButton from '../Buttons/SmallButton';
 
-import cardStyle from './card.module.scss';
+import CardStyle from './card.module.scss';
 
 import ProductImagePath from '../../assets/product_pictures/prod1.png';
 
@@ -13,18 +13,18 @@ export default function ProductCard({ imgSrc, productName, price }) {
 
   return (
     <CardBase>
-      <div className={`${cardStyle['product-layout']}`}>
-        <div className={`${cardStyle.productImageContainer}`}>
-          <img className={`${cardStyle.productImage}`} src={ProductImagePath} alt="Products" />
+      <div className={`${CardStyle['product-layout']}`}>
+        <div className={`${CardStyle.productImageContainer}`}>
+          <img className={`${CardStyle.productImage}`} src={ProductImagePath} alt="Products" />
         </div>
-        <div className={`${cardStyle.productDetail}`}>
-          <p className={`${cardStyle.bold}`}>{productName}</p>
+        <div className={`${CardStyle.productDetail}`}>
+          <p className={`${CardStyle.bold}`}>{productName}</p>
           <small>
             Harga: Rp.
             {price}
           </small>
         </div>
-        <div className={`${cardStyle.buyButton}`}>
+        <div className={`${CardStyle.buyButton}`}>
           <SmallButton label="Beli" clickAction={buyClickAction} />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import cardStyle from './card.module.scss';
+import CardStyle from './card.module.scss';
 
 export default function CardBase({ children }) {
-  return <div className={`${cardStyle.cardBases}`}>{children}</div>;
+  return <div className={`${CardStyle.cardBases}`}>{children}</div>;
 }

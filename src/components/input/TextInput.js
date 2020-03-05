@@ -6,7 +6,7 @@ export default function TextInput({ label, placeholder, name, value }) {
     <div className={`${InputStyle['text-input-container']}`}>
       <label htmlFor={name}>{label}</label>
       <input
-        type="text"
+        type={name === 'password' ? 'password' : 'text'}
         name={name}
         placeholder={placeholder}
         value={value}

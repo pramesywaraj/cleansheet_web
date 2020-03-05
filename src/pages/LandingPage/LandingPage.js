@@ -1,8 +1,8 @@
 import React from 'react';
 
-import PrimaryButton from '../../components/button/primaryButton';
-import OutlinedButton from '../../components/button/outlinedButton';
-import ProductCard from '../../components/cards/productCard';
+import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import OutlinedButton from '../../components/Buttons/OutlinedButton';
+import ProductCard from '../../components/Cards/ProductCard';
 
 import landingPageStyle from './landingPage.module.scss';
 
