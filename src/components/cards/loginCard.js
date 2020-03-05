@@ -29,7 +29,7 @@ export default function LoginCard() {
         </div>
         <div className={`${CardStyle['login-register-text']}`}>
           <p>
-            Belum punya akun? <Link to="/">Daftar</Link>
+            Belum punya akun? <Link to="/register">Daftar</Link>
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 ////////////////// Header //////////////////////
 .topLogoContainer {
   width: auto;
-  padding: 2%;
+  padding: 1.5%;
 }
 
 .cleansheetLogo {
@@ -56,5 +56,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
+  height: 100%;
   // border: 5px solid black;
 }

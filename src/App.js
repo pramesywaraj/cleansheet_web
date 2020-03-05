@@ -20,6 +20,7 @@ function App() {
             </Layout>
           </Route>
           <Route path="/login" component={LoginPage} />
+          <Route path="/register" component={LoginPage} />
         </Switch>
       </Router>
     </div>
