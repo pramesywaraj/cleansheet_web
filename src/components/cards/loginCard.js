@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 import CardBase from './CardBase';
 import FullButton from '../Buttons/FullButton';
 import TextInput from '../Input/TextInput';
+import useInput from '../../hooks/useInput';
 
 import CardStyle from './card.module.scss';
 
 export default function LoginCard() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, bindEmail, resetEmail] = useInput('');
+  const [password, bindPassword, resetPassword] = useInput('');
 
   const login = () => {
     console.log('login pressed');
@@ -21,11 +22,13 @@ export default function LoginCard() {
     <CardBase>
       <div className={`${CardStyle['card-layout']}`}>
         <div className={`${CardStyle['card-container-input']}`}>
-          <TextInput label="Email" placeholder="Email" value={email} />
-          <TextInput label="Password" placeholder="Password" value={password} />
-        </div>
-        <div className={`${CardStyle['login-button']}`}>
-          <FullButton label="Masuk" clickAction={login} type="primary" />
+          <form>
+            <TextInput label="Email" placeholder="Email" value={email} />
+            <TextInput label="Password" placeholder="Password" value={password} />
+            <div className={`${CardStyle['login-button']}`}>
+              <FullButton label="Masuk" type="primary" />
+            </div>
+          </form>
         </div>
         <div className={`${CardStyle['login-register-text']}`}>
           <p>

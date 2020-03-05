@@ -8,7 +8,7 @@ export default function FullButton({ clickAction, label, type }) {
 
   return (
     <button
-      type="button"
+      type="submit"
       onClick={clickAction}
       className={`
         ${ButtonStyle.button}
