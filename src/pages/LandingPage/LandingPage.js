@@ -4,15 +4,15 @@ import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import OutlinedButton from '../../components/Buttons/OutlinedButton';
 import ProductCard from '../../components/Cards/ProductCard';
 
-import landingPageStyle from './landingPage.module.scss';
+import LandingPageStyle from './landingPage.module.scss';
 
-import logoCleansheet from '../../assets/logo_cs.png';
-import landingPageMainImage from '../../assets/landingpage_main_image.svg';
+import LogoCleansheet from '../../assets/logo_cs.png';
+import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
 
 // services image
-import cleaningServices from '../../assets/cleaning_services.svg';
-import laundryWashing from '../../assets/laundry_washing.svg';
-import environmentCleaning from '../../assets/env_cleaning.svg';
+import CleaningServicesImage from '../../assets/cleaning_services.svg';
+import LaundryServicesImage from '../../assets/laundry_washing.svg';
+import EnvironmentCleaningImage from '../../assets/env_cleaning.svg';
 
 const HeaderSection = () => {
   const goToProductPage = () => {
@@ -23,16 +23,16 @@ const HeaderSection = () => {
     <section id="mainHeader">
       <div
         className={`
-          ${landingPageStyle.flexboxContainer} 
-          ${landingPageStyle.fullPageHeight}
+          ${LandingPageStyle.flexboxContainer} 
+          ${LandingPageStyle.fullPageHeight}
         `}
       >
         <div>
-          <img alt="Cleansheet Logo" src={logoCleansheet} />
+          <img alt="Cleansheet Logo" src={LogoCleansheet} />
           <div
             className={`
-              ${landingPageStyle.captionLayout} 
-              ${landingPageStyle.mainCaption}
+              ${LandingPageStyle.captionLayout} 
+              ${LandingPageStyle.mainCaption}
             `}
           >
             <p>Start up kebersihan modern berbasis Sociotechnopreneur</p>
@@ -41,11 +41,11 @@ const HeaderSection = () => {
             <PrimaryButton type="primary" clickAction={goToProductPage} label="Pesan" />
           </div>
         </div>
-        <div className={`${landingPageStyle.rightAlign}`}>
+        <div className={`${LandingPageStyle.rightAlign}`}>
           <img
-            className={`${landingPageStyle.mainDecorationImage}`}
+            className={`${LandingPageStyle.mainDecorationImage}`}
             alt="Cleansheet decoration 1"
-            src={landingPageMainImage}
+            src={LandingPageMainImage}
           />
         </div>
       </div>
@@ -62,45 +62,45 @@ const ServiceSection = () => {
     <section
       id="services"
       className={`
-        ${landingPageStyle.sectionGap}
+        ${LandingPageStyle.sectionGap}
       `}
     >
       <div
         className={`
-          ${landingPageStyle.textAlignCenter}
+          ${LandingPageStyle.textAlignCenter}
         `}
       >
         <h1>Layanan Kami</h1>
         <div
           className={`
-            ${landingPageStyle.gridContainer}
+            ${LandingPageStyle.gridContainer}
           `}
         >
-          <div className={`${landingPageStyle.serviceDesc}`}>
-            <img alt="Layanan Kebersihan" src={cleaningServices} />
+          <div className={`${LandingPageStyle.serviceDesc}`}>
+            <img alt="Layanan Kebersihan" src={CleaningServicesImage} />
             <h4>Layanan Kebersihan</h4>
             <p>
               Cleansheet dapat membersihkan rumah dan kosan apapun sebelum atau sehabis acara sampai
               pindahan.
             </p>
           </div>
-          <div className={`${landingPageStyle.serviceDesc}`}>
-            <img alt="Layanan Cuci Barang" src={laundryWashing} />
+          <div className={`${LandingPageStyle.serviceDesc}`}>
+            <img alt="Layanan Cuci Barang" src={LaundryServicesImage} />
             <h4>Layanan Cuci Barang</h4>
             <p>
               Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, helm sampai
               kendaraan.
             </p>
           </div>
-          <div className={`${landingPageStyle.serviceDesc}`}>
-            <img alt="Layanan Penanganan Lingkungan" src={environmentCleaning} />
+          <div className={`${LandingPageStyle.serviceDesc}`}>
+            <img alt="Layanan Penanganan Lingkungan" src={EnvironmentCleaningImage} />
             <h4>Layanan Penanganan Lingkungan</h4>
             <p>
               Cleansheet dapat mengatasi permasalahan lingkungan seperti sampah dan lain sebagainya.
             </p>
           </div>
         </div>
-        <div className={`${landingPageStyle.buttonMargin5}`}>
+        <div className={`${LandingPageStyle.buttonMargin5}`}>
           <OutlinedButton clickAction={goToServicePage} label="Selengkapnya" />
         </div>
       </div>
@@ -116,23 +116,23 @@ const ProductSection = () => {
   return (
     <section
       className={`
-                ${landingPageStyle.sectionGap}
+                ${LandingPageStyle.sectionGap}
         `}
     >
       <div
         className={`
-                ${landingPageStyle.textAlignCenter}
+                ${LandingPageStyle.textAlignCenter}
             `}
       >
         <h1>Produk Kami</h1>
         <p>Dapatkan produk unggulan kami dalam bidang kebersihan.</p>
-        <div className={`${landingPageStyle.productGrid}`}>
+        <div className={`${LandingPageStyle.productGrid}`}>
           <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
           <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
           <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
           <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
         </div>
-        <div className={`${landingPageStyle.buttonMargin5}`}>
+        <div className={`${LandingPageStyle.buttonMargin5}`}>
           <OutlinedButton clickAction={goToProductPage} label="Selengkapnya" />
         </div>
       </div>
@@ -143,19 +143,19 @@ const ProductSection = () => {
 const ClientSection = () => {
   return (
     <section id="clients">
-      <div className={`${landingPageStyle.textAlignCenter}`}>
+      <div className={`${LandingPageStyle.textAlignCenter}`}>
         <h1>Klien Kami</h1>
-        <div className={`${landingPageStyle.clientGrid}`}>
-          <div className={`${landingPageStyle.clientImageContainer}`}>
+        <div className={`${LandingPageStyle.clientGrid}`}>
+          <div className={`${LandingPageStyle.clientImageContainer}`}>
             <img src={require('../../assets/logo-bogor.png')} alt="Client" />
           </div>
-          <div className={`${landingPageStyle.clientImageContainer}`}>
+          <div className={`${LandingPageStyle.clientImageContainer}`}>
             <img src={require('../../assets/ipb-university.png')} alt="Client" />
           </div>
-          <div className={`${landingPageStyle.clientImageContainer}`}>
+          <div className={`${LandingPageStyle.clientImageContainer}`}>
             <img src={require('../../assets/logo-bogor.png')} alt="Client" />
           </div>
-          <div className={`${landingPageStyle.clientImageContainer}`}>
+          <div className={`${LandingPageStyle.clientImageContainer}`}>
             <img src={require('../../assets/ipb-university.png')} alt="Client" />
           </div>
         </div>
@@ -171,15 +171,15 @@ const JoinCleansheetWorkerSection = () => {
 
   return (
     <section id="joinCleansheetWorker">
-      <div className={`${landingPageStyle.joinWorkerContainer}`}>
-        <div className={`${landingPageStyle.joinWorkerContent}`}>
-          <div className={`${landingPageStyle.joinWorkerImageContainer}`}>
+      <div className={`${LandingPageStyle.joinWorkerContainer}`}>
+        <div className={`${LandingPageStyle.joinWorkerContent}`}>
+          <div className={`${LandingPageStyle.joinWorkerImageContainer}`}>
             <img src={require('../../assets/cleansheet-owner.png')} alt="Cleansheet Owner" />
           </div>
-          <div className={`${landingPageStyle.joinWorkerTextContainer}`}>
+          <div className={`${LandingPageStyle.joinWorkerTextContainer}`}>
             <h1>Gabung CleanSheet</h1>
             <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
-            <div className={`${landingPageStyle.buttonMargin5}`}>
+            <div className={`${LandingPageStyle.buttonMargin5}`}>
               <PrimaryButton
                 type="white"
                 clickAction={goToJoinCleansheetWorker}
@@ -202,14 +202,14 @@ const JoinCleansheetPartner = () => {
     <section
       id="joinPartner"
       className={`
-        ${landingPageStyle.sectionGap}
+        ${LandingPageStyle.sectionGap}
       `}
     >
-      <div className={`${landingPageStyle.joinPartnerContainer}`}>
-        <div className={`${landingPageStyle.joinPartnerContent}`}>
+      <div className={`${LandingPageStyle.joinPartnerContainer}`}>
+        <div className={`${LandingPageStyle.joinPartnerContent}`}>
           <h1>Gabung Mitra</h1>
           <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
-          <div className={`${landingPageStyle.buttonMargin5}`}>
+          <div className={`${LandingPageStyle.buttonMargin5}`}>
             <PrimaryButton
               type="primary"
               clickAction={goToJoinCleansheetPartner}
