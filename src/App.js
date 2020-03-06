@@ -5,7 +5,7 @@ import './global.module.scss';
 
 // The pages
 import LandingPage from './pages/LandingPage/LandingPage';
-import LoginPage from './pages/Login/Login';
+import AuthPage from './pages/Auth/AuthPage';
 
 import Layout from './components/Layout/Layout';
 
@@ -19,8 +19,13 @@ function App() {
               <LandingPage />
             </Layout>
           </Route>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={LoginPage} />
+          <Route path="/layanan">
+            <Layout>
+              <LandingPage />
+            </Layout>
+          </Route>
+          <Route path="/login" component={AuthPage} />
+          <Route path="/register" component={AuthPage} />
         </Switch>
       </Router>
     </div>

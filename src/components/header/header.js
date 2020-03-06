@@ -1,14 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import HeaderStyle from './header.module.scss';
 import PrimaryButton from '../Buttons/PrimaryButton';
 
 export default function Header() {
-  const accountRegist = () => {
-    console.log('This button has been clicked');
-  };
-
   return (
     <header className={HeaderStyle.header}>
       <nav className={HeaderStyle.navigation}>
@@ -30,7 +26,9 @@ export default function Header() {
 
       <div className={HeaderStyle.floatRight}>
         <NavLink to="/login">Masuk</NavLink>
-        <PrimaryButton type="primary" clickAction={accountRegist} label="Daftar" />
+        <Link to="/register">
+          <PrimaryButton type="primary" label="Daftar" />
+        </Link>
       </div>
     </header>
   );

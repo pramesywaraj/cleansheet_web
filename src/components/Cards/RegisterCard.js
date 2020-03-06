@@ -4,20 +4,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import CardBase from './CardBase';
-import FullButton from '../Buttons/FullButton';
+import FullSubmitButton from '../Buttons/FullSubmitButton';
 import TextInput from '../Input/TextInput';
 import useInput from '../../hooks/useInput';
 
 import CardStyle from './card.module.scss';
 
-export default function RegisterCard({}) {
+export default function RegisterCard({ onRegister }) {
   const [name, bindName, resetName] = useInput('');
   const [city, bindCity, resetCity] = useInput('');
   const [email, bindEmail, resetEmail] = useInput('');
   const [password, bindPassword, resetPassword] = useInput('');
 
-  const onSubmitHandler = () => {
-    alert(`Hello ${name}, you live in ${city}`);
+  const onSubmitHandler = e => {
+    const registerObj = {
+      name,
+      city,
+      email,
+      password,
+    };
+
+    e.preventDefault();
+    onRegister(registerObj);
+    Promise.all([resetName, resetCity, resetEmail, resetPassword]);
   };
 
   return (
@@ -35,7 +44,7 @@ export default function RegisterCard({}) {
               dataBind={bindPassword}
             />
             <div className={`${CardStyle['login-button']}`}>
-              <FullButton label="Daftar" type="primary" />
+              <FullSubmitButton label="Daftar" type="primary" />
             </div>
           </form>
         </div>
