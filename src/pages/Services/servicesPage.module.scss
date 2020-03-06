@@ -1,7 +1,8 @@
 .services-wrapper {
   border: 2px solid;
   display: flex;
+  flex-direction: column;
   margin-top: 3%;
   height: 100vh;
-  justify-content: center;
+  align-items: center;
 }

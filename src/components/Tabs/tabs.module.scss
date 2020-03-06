@@ -1,0 +1,15 @@
+.tabs-container {
+  border: 1px solid;
+  border-radius: 20px;
+  width: 50%;
+
+  margin: 5%;
+}
+
+.tabs-content {
+  display: flex;
+  flex-direction: row;
+  padding: 2%;
+  width: 100%;
+  justify-content: space-evenly;
+}
