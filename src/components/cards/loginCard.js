@@ -14,14 +14,14 @@ export default function LoginCard({ onLogin }) {
   const [email, bindEmail, resetEmail] = useInput('');
   const [password, bindPassword, resetPassword] = useInput('');
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = async e => {
     const loginObj = {
       email,
       password,
     };
     e.preventDefault();
-    onLogin(loginObj);
-    Promise.all([resetEmail, resetPassword]);
+    await onLogin(loginObj);
+    Promise.all([resetEmail(), resetPassword()]);
   };
 
   return (

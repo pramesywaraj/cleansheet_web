@@ -10,22 +10,32 @@ export default function Header() {
       <nav className={HeaderStyle.navigation}>
         <ul>
           <li>
-            <NavLink to="/">Beranda</NavLink>
+            <NavLink exact activeClassName={HeaderStyle['header-active-route']} to="/">
+              Beranda
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Layanan</NavLink>
+            <NavLink activeClassName={HeaderStyle['header-active-route']} to="layanan">
+              Layanan
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Produk</NavLink>
+            <NavLink activeClassName={HeaderStyle['header-active-route']} to="produk">
+              Produk
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Tentang Kami</NavLink>
+            <NavLink activeClassName={HeaderStyle['header-active-route']} to="tentang">
+              Tentang Kami
+            </NavLink>
           </li>
         </ul>
       </nav>
 
       <div className={HeaderStyle.floatRight}>
-        <NavLink to="/login">Masuk</NavLink>
+        <NavLink exact to="/login">
+          Masuk
+        </NavLink>
         <Link to="/register">
           <PrimaryButton type="primary" label="Daftar" />
         </Link>

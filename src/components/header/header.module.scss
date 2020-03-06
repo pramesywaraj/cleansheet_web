@@ -1,55 +1,60 @@
 @import '../../variable.scss';
 
 .header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 5.5vw;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    padding: 0 5vw;
-    background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5.5vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5vw;
+  background-color: rgba(255, 255, 255, 0.8);
 
-    z-index: 1;
+  z-index: 1;
 
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .navigation {
-    a {
-        position: relative;
-        z-index: 1;
-        // when visible
-        display: block;
-    }
+  a {
+    position: relative;
+    z-index: 1;
+    // when visible
+    display: block;
+  }
 
-    li {
-        display: inline-block;
-        padding-right: 1.5vw;
-    }
+  li {
+    display: inline-block;
+    padding-right: 1.5vw;
+  }
 }
 
 .floatRight {
-    float: right;
+  float: right;
 
-    a {
-        padding-right: 1.5vw;
-        color: $primary_color;
-    }
+  a {
+    padding-right: 1.5vw;
+    color: $primary_color;
+  }
 }
 
 a {
-    &:hover {
-        color: $primary_color;
-    }
+  &:hover {
+    color: $primary_color;
+  }
+}
+
+.header-active-route {
+  color: $primary_color;
+  border-bottom: 1.5px solid $primary_color;
 }

@@ -16,7 +16,7 @@ export default function RegisterCard({ onRegister }) {
   const [email, bindEmail, resetEmail] = useInput('');
   const [password, bindPassword, resetPassword] = useInput('');
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = async e => {
     const registerObj = {
       name,
       city,
@@ -25,8 +25,8 @@ export default function RegisterCard({ onRegister }) {
     };
 
     e.preventDefault();
-    onRegister(registerObj);
-    Promise.all([resetName, resetCity, resetEmail, resetPassword]);
+    await onRegister(registerObj);
+    Promise.all([resetName(), resetCity(), resetEmail(), resetPassword()]);
   };
 
   return (
