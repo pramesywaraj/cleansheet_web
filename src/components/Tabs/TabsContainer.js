@@ -6,23 +6,19 @@ import Tab from './Tab';
 import useTabs from '../../hooks/useTabs';
 
 export default function TabsContainer() {
-  // const [tabs, onChangeTab] = useTabs([
-  //   { id: 'cleaning', name: 'Kebersihan', isActive: true },
-  //   { id: 'washing', name: 'Cuci Barang', isActive: false },
-  //   { id: 'environtment', name: 'Penanganan Lingkungan', isActive: false },
-  // ]);
+  const [tabs, activeTab, onChangeTab] = useTabs(0);
 
   return (
     <div className={TabsStyle['tabs-container']}>
       <div className={TabsStyle['tabs-content']}>
-        {/* {tabs.map(tab => (
+        {tabs.map(tab => (
           <Tab
-            key={tab.id}
+            key={`${tab.id}-tab`}
             label={tab.name}
-            isActive={tab.isActive}
+            selected={tab.id === activeTab}
             onSelect={() => onChangeTab(tab.id)}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   );
