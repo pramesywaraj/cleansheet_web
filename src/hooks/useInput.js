@@ -1,18 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import inputValidation from './inputValidation';
 
-export default function useInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
+export default function useInput(initialValue, callback) {
+  const [inputState, setInputState] = useState(initialValue);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const resetValue = () => {
-    setValue(initialValue);
+    setInputState(initialValue);
   };
 
-  const bindValue = {
-    value,
-    onChange: e => {
-      setValue(e.target.value);
-    },
+  const changeValue = e => {
+    const { name, value } = e.target;
+    setInputState({
+      ...inputState,
+      [name]: value,
+    });
   };
 
-  return [value, bindValue, resetValue];
+  const handleSubmit = e => {
+    e.preventDefault();
+    setErrors(inputValidation(inputState));
+    // setIsSubmitting(true);
+  };
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      callback();
+    }
+  }, [errors]);
+
+  return [inputState, changeValue, resetValue, handleSubmit, errors];
 }

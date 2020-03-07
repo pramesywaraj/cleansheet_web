@@ -11,30 +11,35 @@ import useInput from '../../hooks/useInput';
 import CardStyle from './card.module.scss';
 
 export default function LoginCard({ onLogin }) {
-  const [email, bindEmail, resetEmail] = useInput('');
-  const [password, bindPassword, resetPassword] = useInput('');
+  const [loginObj, changeValue, resetValue, handleSubmit, errors] = useInput({
+    email: '',
+    password: '',
+  });
 
-  const onSubmitHandler = async e => {
-    const loginObj = {
-      email,
-      password,
-    };
-    e.preventDefault();
-    await onLogin(loginObj);
-    Promise.all([resetEmail(), resetPassword()]);
+  const onSubmitHandler = async () => {
+    console.log('Login', loginObj);
   };
 
   return (
     <CardBase>
       <div className={`${CardStyle['card-layout']}`}>
         <div className={`${CardStyle['card-container-input']}`}>
-          <form onSubmit={onSubmitHandler}>
-            <TextInput name="email" label="Email" placeholder="Email" dataBind={bindEmail} />
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              name="email"
+              label="Email"
+              placeholder="Email"
+              value={loginObj.email}
+              error={errors.email}
+              onChange={changeValue}
+            />
             <TextInput
               name="password"
               label="Password"
               placeholder="Password"
-              dataBind={bindPassword}
+              value={loginObj.password}
+              onChange={changeValue}
+              error={errors.password}
             />
             <div className={`${CardStyle['login-button']}`}>
               <FullSubmitButton label="Masuk" type="primary" />
