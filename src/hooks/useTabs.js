@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 export default function useTabs(selected) {
   const [activeTab, setActiveTab] = useState(selected);

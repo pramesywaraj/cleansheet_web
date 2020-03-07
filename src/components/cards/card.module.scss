@@ -45,7 +45,25 @@
   margin-top: 10%;
 }
 
-// Login Card Section
+////////////////////////// Service card
+.card-service-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-service-image_container {
+  width: 13vw;
+  height: auto;
+  text-align: center;
+}
+
+.service-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/////////////////////////// Login Card Section
 .card-layout {
   width: 20vw;
 }

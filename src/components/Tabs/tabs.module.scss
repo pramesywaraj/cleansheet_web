@@ -33,6 +33,10 @@
   background-color: inherit;
   border-radius: 39px;
   cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .tab-active {
