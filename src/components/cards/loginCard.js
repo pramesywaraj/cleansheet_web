@@ -11,14 +11,19 @@ import useInput from '../../hooks/useInput';
 import CardStyle from './card.module.scss';
 
 export default function LoginCard({ onLogin }) {
-  const [loginObj, changeValue, resetValue, handleSubmit, errors] = useInput({
-    email: '',
-    password: '',
-  });
+  const [loginObj, changeValue, resetValue, handleSubmit, errors] = useInput(
+    {
+      email: '',
+      password: '',
+    },
+    onSubmit,
+  );
 
-  const onSubmitHandler = async () => {
-    console.log('Login', loginObj);
-  };
+  function onSubmit() {
+    console.log(loginObj);
+    console.log('submitted');
+    resetValue();
+  }
 
   return (
     <CardBase>

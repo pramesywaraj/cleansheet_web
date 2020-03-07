@@ -11,37 +11,58 @@ import useInput from '../../hooks/useInput';
 import CardStyle from './card.module.scss';
 
 export default function RegisterCard({ onRegister }) {
-  const [name, bindName, resetName] = useInput('');
-  const [city, bindCity, resetCity] = useInput('');
-  const [email, bindEmail, resetEmail] = useInput('');
-  const [password, bindPassword, resetPassword] = useInput('');
+  const [registerObj, changeValue, resetValue, handleSubmit, errors] = useInput(
+    {
+      name: '',
+      city: '',
+      email: '',
+      password: '',
+    },
+    onSubmit,
+  );
 
-  const onSubmitHandler = async e => {
-    const registerObj = {
-      name,
-      city,
-      email,
-      password,
-    };
-
-    e.preventDefault();
-    await onRegister(registerObj);
-    Promise.all([resetName(), resetCity(), resetEmail(), resetPassword()]);
-  };
+  function onSubmit() {
+    console.log(registerObj);
+    console.log('submitted');
+    resetValue();
+  }
 
   return (
     <CardBase>
       <div className={`${CardStyle['card-layout']}`}>
         <div className={`${CardStyle['card-container-input']}`}>
-          <form onSubmit={onSubmitHandler}>
-            <TextInput name="name" label="Nama" placeholder="Nama" dataBind={bindName} />
-            <TextInput name="city" label="Kota" placeholder="Kota" dataBind={bindCity} />
-            <TextInput name="email" label="Email" placeholder="Email" dataBind={bindEmail} />
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              name="name"
+              label="Nama"
+              placeholder="Nama"
+              value={registerObj.name}
+              onChange={changeValue}
+              error={errors.name}
+            />
+            <TextInput
+              name="city"
+              label="Kota"
+              placeholder="Kota"
+              value={registerObj.city}
+              onChange={changeValue}
+              error={errors.city}
+            />
+            <TextInput
+              name="email"
+              label="Email"
+              placeholder="Email"
+              value={registerObj.email}
+              error={errors.email}
+              onChange={changeValue}
+            />
             <TextInput
               name="password"
               label="Password"
               placeholder="Password"
-              dataBind={bindPassword}
+              value={registerObj.password}
+              error={errors.password}
+              onChange={changeValue}
             />
             <div className={`${CardStyle['login-button']}`}>
               <FullSubmitButton label="Daftar" type="primary" />

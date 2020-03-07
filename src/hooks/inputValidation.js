@@ -14,5 +14,17 @@ export default function validateLogin(values) {
     }
   }
 
+  if ('name' in values) {
+    if (!values.name) {
+      errors.name = 'Nama belum terisi';
+    }
+  }
+
+  if ('city' in values) {
+    if (!values.city) {
+      errors.city = 'Kota belum terisi';
+    }
+  }
+
   return errors;
 }

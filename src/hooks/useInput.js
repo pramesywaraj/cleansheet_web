@@ -21,7 +21,7 @@ export default function useInput(initialValue, callback) {
   const handleSubmit = e => {
     e.preventDefault();
     setErrors(inputValidation(inputState));
-    // setIsSubmitting(true);
+    setIsSubmitting(true);
   };
 
   useEffect(() => {
