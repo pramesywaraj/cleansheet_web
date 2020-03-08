@@ -22,6 +22,7 @@ export default function ServicesPage() {
         <ServiceCard />
         <ServiceCard />
         <ServiceCard />
+        <ServiceCard />
       </div>
     </div>
   );
