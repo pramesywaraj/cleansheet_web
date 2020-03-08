@@ -49,18 +49,32 @@
 .card-service-layout {
   display: flex;
   flex-direction: column;
+  width: 15vw;
+
+  align-items: flex-start;
 }
 
 .card-service-image_container {
-  width: 13vw;
-  height: auto;
-  text-align: center;
+  flex: 2;
+  width: 100%;
+  height: 50%;
 }
 
 .service-image {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.service-detail {
+  flex: 1;
+  margin: 5% 0;
+  small {
+    color: #5c5c5c;
+  }
+}
+
+.service-button {
 }
 
 /////////////////////////// Login Card Section

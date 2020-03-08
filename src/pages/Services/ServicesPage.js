@@ -19,6 +19,9 @@ export default function ServicesPage() {
       <TabsContainer changeActivePanel={changeActivePanel} />
       <div className={ServicesPageStyle['services-container']}>
         <ServiceCard />
+        <ServiceCard />
+        <ServiceCard />
+        <ServiceCard />
       </div>
     </div>
   );
