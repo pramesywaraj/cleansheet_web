@@ -7,7 +7,7 @@
 
 .services-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 20%);
   grid-gap: 2vw;
   justify-content: center;
   align-items: center;
