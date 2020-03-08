@@ -69,12 +69,25 @@
 .service-detail {
   flex: 1;
   margin: 5% 0;
-  small {
-    color: #5c5c5c;
+  width: 100%;
+
+  .service-detail-estimation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    p {
+      display: block;
+      font-size: 0.6em;
+      color: #5c5c5c;
+    }
   }
 }
 
 .service-button {
+  width: 100%;
 }
 
 /////////////////////////// Login Card Section

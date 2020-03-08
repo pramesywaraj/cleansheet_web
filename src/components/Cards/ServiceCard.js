@@ -17,14 +17,19 @@ export default function ServiceCard({ imgSrc, productName, price }) {
         </div>
         <div className={`${CardStyle['service-detail']}`}>
           <p>Nama layanan</p>
-          <p>Antar jemput</p>
-          <small>
-            Harga: Rp.
-            {price}
-          </small>
+          <div className={`${CardStyle['service-detail-estimation']}`}>
+            <div>
+              <p>Harga:</p>
+              <p>Rp. 15.000/Kg</p>
+            </div>
+            <div>
+              <p>Estimasi:</p>
+              <p>1-2 Hari</p>
+            </div>
+          </div>
         </div>
         <div className={`${CardStyle['service-button']}`}>
-          <SmallButton label="Pesan" clickAction={buyClickAction} />
+          <SmallButton full label="Pesan" clickAction={buyClickAction} />
         </div>
       </div>
     </CardBase>
