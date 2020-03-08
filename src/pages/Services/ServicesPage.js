@@ -44,7 +44,6 @@ export default function ServicesPage() {
   const changeActivePanel = id => {
     if (activePanel === id) return;
     setActivePanel(id);
-    console.log(activePanel);
   };
 
   return (
