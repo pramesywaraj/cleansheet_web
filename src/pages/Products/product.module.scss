@@ -1,15 +1,15 @@
-.services-wrapper {
+.products-wrapper {
   display: flex;
   flex-direction: column;
   margin-top: 3%;
   align-items: center;
 }
 
-.services-title {
-  margin-bottom: 1vh;
+.products-title {
+  margin-bottom: 8vh;
 }
 
-.services-container {
+.products-container {
   display: grid;
   grid-template-columns: repeat(4, 20%);
   grid-gap: 2vw;

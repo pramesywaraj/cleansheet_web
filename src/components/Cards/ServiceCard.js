@@ -16,7 +16,7 @@ export default function ServiceCard({ imgSrc, productName, price }) {
           <img className={`${CardStyle['service-image']}`} src={ProductImagePath} alt="Services" />
         </div>
         <div className={`${CardStyle['service-detail']}`}>
-          <p>Nama layanan</p>
+          <p className={`${CardStyle.bold}`}>Nama layanan</p>
           <div className={`${CardStyle['service-detail-estimation']}`}>
             <div>
               <p>Harga:</p>
@@ -28,7 +28,7 @@ export default function ServiceCard({ imgSrc, productName, price }) {
             </div>
           </div>
         </div>
-        <div className={`${CardStyle['service-button']}`}>
+        <div className={`${CardStyle['full-width-button']}`}>
           <SmallButton full label="Pesan" clickAction={buyClickAction} />
         </div>
       </div>

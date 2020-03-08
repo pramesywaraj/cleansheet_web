@@ -57,8 +57,11 @@
 .productGrid {
   margin: 8vh 0;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-items: center;
+  grid-template-columns: repeat(4, 20%);
+  grid-gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 // Client Section

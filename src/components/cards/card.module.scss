@@ -19,6 +19,9 @@
 .product-layout {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  width: 100%;
 }
 
 .productImageContainer {
@@ -86,7 +89,7 @@
   }
 }
 
-.service-button {
+.full-width-button {
   width: 100%;
 }
 

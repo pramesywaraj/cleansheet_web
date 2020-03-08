@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // The pages
 import LandingPage from './pages/LandingPage/LandingPage';
 import ServicesPage from './pages/Services/ServicesPage';
+import ProductPage from './pages/Products/ProductPage';
 import AuthPage from './pages/Auth/AuthPage';
 
 import Layout from './components/Layout/Layout';
@@ -20,6 +21,11 @@ function Routes() {
         <Route path="/layanan">
           <Layout>
             <ServicesPage />
+          </Layout>
+        </Route>
+        <Route path="/produk">
+          <Layout>
+            <ProductPage />
           </Layout>
         </Route>
         <Route path="/login" component={AuthPage} />

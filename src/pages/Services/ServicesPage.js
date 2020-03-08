@@ -48,6 +48,9 @@ export default function ServicesPage() {
 
   return (
     <div className={ServicesPageStyle['services-wrapper']}>
+      <div className={ServicesPageStyle['services-title']}>
+        <h1>Layanan Kebersihan</h1>
+      </div>
       <TabsContainer changeActivePanel={changeActivePanel} />
       {activePanel === 0 && <Cleaning />}
       {activePanel === 1 && <Washing />}

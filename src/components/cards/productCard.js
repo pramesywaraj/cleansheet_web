@@ -24,8 +24,8 @@ export default function ProductCard({ imgSrc, productName, price }) {
             {price}
           </small>
         </div>
-        <div className={`${CardStyle.buyButton}`}>
-          <SmallButton label="Beli" clickAction={buyClickAction} />
+        <div className={`${CardStyle['full-width-button']}`}>
+          <SmallButton full label="Beli" clickAction={buyClickAction} />
         </div>
       </div>
     </CardBase>
