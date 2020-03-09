@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 
 import HeaderStyle from './header.module.scss';

@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useLoading from '../../hooks/useLoading';
 import { useStore } from '../../context/store';
-
 import AuthStyle from './auth.module.scss';
 import LogoCleansheet from '../../assets/logo_cs.png';
-import LoginCard from '../../components/Cards/LoginCard';
-import RegisterCard from '../../components/Cards/RegisterCard';
 import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
+
+import Loading from '../../components/Loading/Loading';
+
+const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
+const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
 
 export default function AuthPage({ location, history }) {
   const [isRegister, setIsRegister] = useState(false);
@@ -53,23 +55,25 @@ export default function AuthPage({ location, history }) {
           <img alt="Cleansheet Logo" src={LogoCleansheet} className={AuthStyle.cleansheetLogo} />
         </Link>
       </header>
-      <section className={AuthStyle.loginContainer}>
-        <div className={AuthStyle.imageContainer}>
-          <img
-            className={`${AuthStyle.image}`}
-            alt="Cleansheet decoration 1"
-            src={LandingPageMainImage}
-          />
-          <p>Apapun bersih-bersihnya, Cleansheet jagonya. Haha</p>
-        </div>
-        <div className={`${AuthStyle['form-container-flex']}`}>
-          {isRegister ? (
-            <RegisterCard onRegister={onRegister} />
-          ) : (
-            <LoginCard onLogin={onLogin} isLoading={loading} />
-          )}
-        </div>
-      </section>
+      <Suspense fallback={<Loading />}>
+        <section className={AuthStyle.loginContainer}>
+          <div className={AuthStyle.imageContainer}>
+            <img
+              className={`${AuthStyle.image}`}
+              alt="Cleansheet decoration 1"
+              src={LandingPageMainImage}
+            />
+            <p>Apapun bersih-bersihnya, Cleansheet jagonya. Haha</p>
+          </div>
+          <div className={`${AuthStyle['form-container-flex']}`}>
+            {isRegister ? (
+              <RegisterCard onRegister={onRegister} />
+            ) : (
+              <LoginCard onLogin={onLogin} isLoading={loading} />
+            )}
+          </div>
+        </section>
+      </Suspense>
     </div>
   );
 }
