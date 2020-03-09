@@ -24,11 +24,11 @@ export default function Header() {
               Produk
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink activeClassName={HeaderStyle['header-active-route']} to="tentang">
               Tentang Kami
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
