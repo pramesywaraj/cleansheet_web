@@ -1,5 +1,6 @@
 export const AuthInitialState = {
   user: {},
+  isLoggedIn: false,
 };
 
 export const AuthReducer = (state, action) => {
@@ -8,6 +9,7 @@ export const AuthReducer = (state, action) => {
       return {
         ...state,
         user: action.data,
+        isLoggedIn: true,
       };
     }
 
@@ -15,6 +17,7 @@ export const AuthReducer = (state, action) => {
       return {
         ...state,
         user: {},
+        isLoggedIn: false,
       };
     }
 

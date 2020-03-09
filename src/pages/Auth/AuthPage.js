@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import useLoading from '../../hooks/useLoading';
+import { useStore } from '../../context/store';
 
 import AuthStyle from './auth.module.scss';
 import LogoCleansheet from '../../assets/logo_cs.png';
@@ -8,9 +10,10 @@ import LoginCard from '../../components/Cards/LoginCard';
 import RegisterCard from '../../components/Cards/RegisterCard';
 import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
 
-export default function AuthPage({ location }) {
+export default function AuthPage({ location, history }) {
   const [isRegister, setIsRegister] = useState(false);
   const [loading, showLoading, hideLoading] = useLoading();
+  const { state, dispatch } = useStore();
   const { pathname } = location;
 
   useEffect(() => {
@@ -21,15 +24,22 @@ export default function AuthPage({ location }) {
     }
   }, [pathname]);
 
-  const onLogin = data => {
-    console.log(data);
+  const onLogin = async payload => {
     showLoading();
+    try {
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_ENDPOINT}/auth/login`,
+        payload,
+      );
 
-    setTimeout(() => {
+      dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
       hideLoading();
-
-      return 'haha';
-    }, 3000);
+      history.push('/');
+    } catch (err) {
+      console.log(err);
+      alert('Terjadi Kesalahan. Silahkan ulangi kembali.');
+      hideLoading();
+    }
   };
 
   const onRegister = data => {
@@ -50,7 +60,7 @@ export default function AuthPage({ location }) {
             alt="Cleansheet decoration 1"
             src={LandingPageMainImage}
           />
-          <p>Apapun bersih-bersihnya, Cleansheet jagonya.</p>
+          <p>Apapun bersih-bersihnya, Cleansheet jagonya. Haha</p>
         </div>
         <div className={`${AuthStyle['form-container-flex']}`}>
           {isRegister ? (
