@@ -36,6 +36,7 @@ export default function RegisterCard({ onRegister }) {
               name="name"
               label="Nama"
               placeholder="Nama"
+              type="text"
               value={registerObj.name}
               onChange={changeValue}
               error={errors.name}
@@ -44,6 +45,7 @@ export default function RegisterCard({ onRegister }) {
               name="city"
               label="Kota"
               placeholder="Kota"
+              type="text"
               value={registerObj.city}
               onChange={changeValue}
               error={errors.city}
@@ -52,6 +54,7 @@ export default function RegisterCard({ onRegister }) {
               name="email"
               label="Email"
               placeholder="Email"
+              type="text"
               value={registerObj.email}
               error={errors.email}
               onChange={changeValue}
@@ -60,6 +63,7 @@ export default function RegisterCard({ onRegister }) {
               name="password"
               label="Password"
               placeholder="Password"
+              type="password"
               value={registerObj.password}
               error={errors.password}
               onChange={changeValue}

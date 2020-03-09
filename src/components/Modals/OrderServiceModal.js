@@ -1,20 +1,47 @@
 import React from 'react';
-import { FaTimes } from 'react-icons/fa';
+import ModalBase from './ModalBase';
 import ModalStyle from './modal.module.scss';
+import useInput from '../../hooks/useInput';
 
-export default function OrderServiceModal({ children, show, close }) {
+import TextInput from '../Input/TextInput';
+
+export default function OrderServiceModal({ show, close }) {
+  const [serviceObj, changeValue, resetValue, handleSubmit, errors] = useInput(
+    {
+      name: '',
+      phone: '',
+      pickup_date: '',
+      pickup_time: '',
+      notes: '',
+      pickup_address: '',
+    },
+    onSubmit,
+  );
+
+  function onSubmit() {
+    console.log(serviceObj);
+    console.log('submitted');
+    resetValue();
+  }
+
   return (
-    <div
-      className={`${ModalStyle['modal-wrapper']} ${
-        show ? ModalStyle['modal-display'] : ModalStyle['modal-hide']
-      }`}
-    >
-      <section className={ModalStyle['modal-register']}>
-        <div className={ModalStyle['modal-close']}>
-          <FaTimes onClick={close} className={ModalStyle['modal-close-button']} />
+    <ModalBase show={show} close={close}>
+      <div className={ModalStyle['modal-service-content']}>
+        <h2>Hahahah</h2>
+        <div className={ModalStyle['modal-service-form']}>
+          <form onSubmit={onSubmit}>
+            <TextInput
+              name="name"
+              type="text"
+              label="Nama Lengkap"
+              placeholder="Nama lengkap pemesan"
+              value={serviceObj.name}
+              error={errors.name}
+              onChange={changeValue}
+            />
+          </form>
         </div>
-        {children}
-      </section>
-    </div>
+      </div>
+    </ModalBase>
   );
 }

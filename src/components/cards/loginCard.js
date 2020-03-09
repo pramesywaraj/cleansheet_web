@@ -33,6 +33,7 @@ export default function LoginCard({ onLogin }) {
             <TextInput
               name="email"
               label="Email"
+              type="text"
               placeholder="Email"
               value={loginObj.email}
               error={errors.email}
@@ -41,6 +42,7 @@ export default function LoginCard({ onLogin }) {
             <TextInput
               name="password"
               label="Password"
+              type="password"
               placeholder="Password"
               value={loginObj.password}
               onChange={changeValue}

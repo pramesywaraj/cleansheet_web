@@ -8,9 +8,11 @@
   z-index: 2;
 }
 
-.modal-register {
+.modal-container {
   position: fixed;
   background: white;
+  border-radius: 25px;
+  padding: 1.5%;
   width: auto;
   height: auto;
   top: 50%;
@@ -34,4 +36,17 @@
 
 .modal-hide {
   display: none;
+}
+
+// Service modal
+.modal-service-content {
+  display: flex;
+  flex-direction: column;
+
+  width: 60vw;
+  height: auto;
+}
+
+.modal-service-form {
+  margin: 5vh 0;
 }
