@@ -5,10 +5,7 @@ import SmallButton from '../Buttons/SmallButton';
 
 import ProductImagePath from '../../assets/product_pictures/prod1.png';
 
-export default function ServiceCard({ imgSrc, productName, price }) {
-  const buyClickAction = () => {
-    console.log('take a service');
-  };
+export default function ServiceCard({ imgSrc, productName, price, onClick }) {
   return (
     <CardBase>
       <div className={`${CardStyle['card-service-layout']}`}>
@@ -29,7 +26,7 @@ export default function ServiceCard({ imgSrc, productName, price }) {
           </div>
         </div>
         <div className={`${CardStyle['full-width-button']}`}>
-          <SmallButton full label="Pesan" clickAction={buyClickAction} />
+          <SmallButton full label="Pesan" clickAction={onClick} />
         </div>
       </div>
     </CardBase>

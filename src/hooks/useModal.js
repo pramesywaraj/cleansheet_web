@@ -3,13 +3,13 @@ import { useState } from 'react';
 export default function useModal() {
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
+  const openModalHandler = () => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
+  const closeModalHandler = () => {
     setShowModal(false);
   };
 
-  return { showModal, openModal, closeModal };
+  return { showModal, openModalHandler, closeModalHandler };
 }
