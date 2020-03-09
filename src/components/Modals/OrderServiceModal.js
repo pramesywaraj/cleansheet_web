@@ -25,8 +25,13 @@ export default function OrderServiceModal({ show, close }) {
     resetValue();
   }
 
+  function onCloseModal() {
+    resetValue();
+    close();
+  }
+
   return (
-    <ModalBase show={show} close={close}>
+    <ModalBase show={show} close={onCloseModal}>
       <div className={ModalStyle['modal-service-content']}>
         <h2>Data Pemesanan Layanan</h2>
         <div className={ModalStyle['modal-service-form']}>

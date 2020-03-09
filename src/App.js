@@ -1,17 +1,16 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import './global.module.scss';
-
 import Routes from './routes';
 
-export const AuthContext = createContext();
+import { StoreProvider } from './context/store';
 
 function App() {
   return (
-    <AuthContext.Provider>
+    <StoreProvider>
       <div className="App">
         <Routes />
       </div>
-    </AuthContext.Provider>
+    </StoreProvider>
   );
 }
 

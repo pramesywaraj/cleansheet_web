@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import useLoading from '../../hooks/useLoading';
 
 import AuthStyle from './auth.module.scss';
 import LogoCleansheet from '../../assets/logo_cs.png';
-
 import LoginCard from '../../components/Cards/LoginCard';
 import RegisterCard from '../../components/Cards/RegisterCard';
 import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
 
-export default function LoginPage({ location }) {
+export default function AuthPage({ location }) {
   const [isRegister, setIsRegister] = useState(false);
+  const [loading, showLoading, hideLoading] = useLoading();
   const { pathname } = location;
 
   useEffect(() => {
@@ -22,6 +23,13 @@ export default function LoginPage({ location }) {
 
   const onLogin = data => {
     console.log(data);
+    showLoading();
+
+    setTimeout(() => {
+      hideLoading();
+
+      return 'haha';
+    }, 3000);
   };
 
   const onRegister = data => {
@@ -45,7 +53,11 @@ export default function LoginPage({ location }) {
           <p>Apapun bersih-bersihnya, Cleansheet jagonya.</p>
         </div>
         <div className={`${AuthStyle['form-container-flex']}`}>
-          {isRegister ? <RegisterCard onRegister={onRegister} /> : <LoginCard onLogin={onLogin} />}
+          {isRegister ? (
+            <RegisterCard onRegister={onRegister} />
+          ) : (
+            <LoginCard onLogin={onLogin} isLoading={loading} />
+          )}
         </div>
       </section>
     </div>

@@ -7,10 +7,10 @@ import CardBase from './CardBase';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 import TextInput from '../Input/TextInput';
 import useInput from '../../hooks/useInput';
-
+import ButtonLoading from '../Loading/ButtonLoading';
 import CardStyle from './card.module.scss';
 
-export default function LoginCard({ onLogin }) {
+export default function LoginCard({ onLogin, isLoading }) {
   const [loginObj, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       email: '',
@@ -20,8 +20,7 @@ export default function LoginCard({ onLogin }) {
   );
 
   function onSubmit() {
-    console.log(loginObj);
-    console.log('submitted');
+    onLogin(loginObj);
     resetValue();
   }
 
@@ -49,7 +48,7 @@ export default function LoginCard({ onLogin }) {
               error={errors.password}
             />
             <div className={`${CardStyle['login-button']}`}>
-              <FullSubmitButton label="Masuk" type="primary" />
+              <FullSubmitButton label={isLoading ? <ButtonLoading /> : 'Masuk'} type="primary" />
             </div>
           </form>
         </div>

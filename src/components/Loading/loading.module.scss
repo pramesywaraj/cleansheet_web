@@ -22,6 +22,17 @@
   animation: loading-bounce 2s infinite ease-in-out;
 }
 
+.loading-button-container {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  margin: 0 auto;
+}
+
+.color-white {
+  background-color: $white;
+}
+
 @-webkit-keyframes loading-bounce {
   0%,
   100% {
