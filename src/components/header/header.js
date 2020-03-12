@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+import { FaShoppingBasket } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 
 import HeaderStyle from './header.module.scss';
@@ -39,6 +39,9 @@ export default function Header() {
       <div className={HeaderStyle.floatRight}>
         {isLoggedIn ? (
           <>
+            <Link to="/">
+              <FaShoppingBasket fontSize="1em" />
+            </Link>
             <NavLink exact to="/">
               Hai,
               {user.name}

@@ -35,11 +35,11 @@ export default function AuthPage({ location, history }) {
       );
 
       dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
-      hideLoading();
       history.push('/');
     } catch (err) {
       console.log(err);
-      alert('Terjadi Kesalahan. Silahkan ulangi kembali.');
+      window.alert('Terjadi Kesalahan. Silahkan ulangi kembali.');
+    } finally {
       hideLoading();
     }
   };
