@@ -48,7 +48,7 @@ export default function ServicesPage() {
   const changeActivePanel = id => {
     if (activePanel === id) return;
     setActivePanel(id);
-    openSnackbar('success', 'Test aja slur');
+    openSnackbar('info', 'Test aja slur');
   };
 
   return (

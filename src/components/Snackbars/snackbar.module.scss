@@ -5,8 +5,8 @@
   background-color: green;
   color: #fff;
   text-align: center;
-  border-radius: 10px;
-  padding: 3vh 2vw;
+  border-radius: 9px;
+  padding: 2vh 1vw;
   position: fixed;
   z-index: 3;
   bottom: 5%;
@@ -22,6 +22,18 @@
  However, delay the fade out process for 2.5 seconds */
   -webkit-animation: enter 0.5s, fadeout 0.5s 3s;
   animation: enter 0.5s, fadeout 0.5s 3s;
+}
+
+.snackbar-success {
+  background-color: rgba(7, 209, 0, 1);
+}
+
+.snackbar-fail {
+  background-color: rgba(219, 0, 0, 1);
+}
+
+.snackbar-info {
+  background-color: rgba(0, 164, 219, 1);
 }
 
 /* Animations to fade the snackbar in and out */
