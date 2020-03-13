@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useModal from '../../hooks/useModal';
-import useSnackbar from '../../hooks/useSnackbar';
+// import useSnackbar from '../../hooks/useSnackbar';
 import ServicesPageStyle from './servicesPage.module.scss';
 import TabsContainer from '../../components/Tabs/TabsContainer';
 import Loading from '../../components/Loading/Loading';
@@ -43,12 +43,11 @@ const EnvirontmentClean = () => {
 export default function ServicesPage() {
   const [activePanel, setActivePanel] = useState(0);
   const { showModal, openModalHandler, closeModalHandler } = useModal();
-  const [openSnackbar] = useSnackbar();
+  // const [openSnackbar] = useSnackbar();
 
   const changeActivePanel = id => {
     if (activePanel === id) return;
     setActivePanel(id);
-    openSnackbar('fail', 'Telah terjadi kesalahan, silahkan ulangi kembali.');
   };
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import useModal from '../../hooks/useModal';
 
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import OutlinedButton from '../../components/Buttons/OutlinedButton';
@@ -13,6 +14,8 @@ import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
 import CleaningServicesImage from '../../assets/cleaning_services.svg';
 import LaundryServicesImage from '../../assets/laundry_washing.svg';
 import EnvironmentCleaningImage from '../../assets/env_cleaning.svg';
+
+import JoinCLeansheetModal from '../../components/Modals/JoinCleansheetModal';
 
 const HeaderSection = () => {
   const goToProductPage = () => {
@@ -165,9 +168,7 @@ const ClientSection = () => {
 };
 
 const JoinCleansheetWorkerSection = () => {
-  const goToJoinCleansheetWorker = () => {
-    console.log('Go');
-  };
+  const { showModal, openModalHandler, closeModalHandler } = useModal();
 
   return (
     <section id="joinCleansheetWorker">
@@ -180,15 +181,12 @@ const JoinCleansheetWorkerSection = () => {
             <h1>Gabung CleanSheet</h1>
             <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
             <div className={`${LandingPageStyle.buttonMargin5}`}>
-              <PrimaryButton
-                type="white"
-                clickAction={goToJoinCleansheetWorker}
-                label="Gabung Sekarang"
-              />
+              <PrimaryButton type="white" clickAction={openModalHandler} label="Gabung Sekarang" />
             </div>
           </div>
         </div>
       </div>
+      <JoinCLeansheetModal show={showModal} close={closeModalHandler} />
     </section>
   );
 };

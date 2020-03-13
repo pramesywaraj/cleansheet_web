@@ -6,21 +6,23 @@ import useInput from '../../hooks/useInput';
 import TextInput from '../Input/TextInput';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
-export default function OrderServiceModal({ show, close }) {
-  const [serviceObj, changeValue, resetValue, handleSubmit, errors] = useInput(
+export default function JoinCleansheetModal({ show, close }) {
+  const [joinObject, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
       phone: '',
-      pickup_date: '',
-      pickup_time: '',
-      notes: '',
-      pickup_address: '',
+      nim: '',
+      year: '',
+      major: '',
+      bidikmisi: true,
+      address: '',
+      join_reason: '',
     },
     onSubmit,
   );
 
   function onSubmit() {
-    console.log(serviceObj);
+    console.log(joinObject);
     console.log('submitted');
     resetValue();
   }
@@ -33,7 +35,7 @@ export default function OrderServiceModal({ show, close }) {
   return (
     <ModalBase show={show} close={onCloseModal}>
       <div className={ModalStyle['modal-content']}>
-        <h2>Data Pemesanan Layanan</h2>
+        <h2>Bergabung Bersama Cleansheet</h2>
         <div className={ModalStyle['modal-form']}>
           <form onSubmit={handleSubmit}>
             <TextInput
@@ -41,7 +43,7 @@ export default function OrderServiceModal({ show, close }) {
               type="text"
               label="Nama Lengkap"
               placeholder="Nama lengkap pemesan"
-              value={serviceObj.name}
+              value={joinObject.name}
               error={errors.name}
               onChange={changeValue}
             />
@@ -50,44 +52,26 @@ export default function OrderServiceModal({ show, close }) {
               type="tel"
               label="Nomor Telepon"
               placeholder="Nomor telepon pemesan"
-              value={serviceObj.phone}
+              value={joinObject.phone}
               error={errors.phone}
               onChange={changeValue}
             />
             <TextInput
-              name="pickup_date"
-              type="date"
-              label="Tanggal Jemput"
-              placeholder="Tentukan tanggal penjemputan tim kami"
-              value={serviceObj.pickup_date}
-              error={errors.pickup_date}
-              onChange={changeValue}
-            />
-            <TextInput
-              name="pickup_time"
-              type="time"
-              label="Waktu Jemput"
-              placeholder="Tentukan waktu penjemputan pada tanggal yang telah ditentukan"
-              value={serviceObj.pickup_time}
-              error={errors.pickup_time}
-              onChange={changeValue}
-            />
-            <TextInput
-              name="notes"
-              type="text"
-              label="Keterangan"
-              placeholder="Tulisakan keterangan (contoh: pakaian dengan berat 3-5 kg)"
-              value={serviceObj.notes}
-              error={errors.notes}
-              onChange={changeValue}
-            />
-            <TextInput
-              name="pickup_address"
+              name="address"
               type="text"
               label="Alamat"
               placeholder="Tuliskan alamat lengkap Anda"
-              value={serviceObj.pickup_address}
-              error={errors.pickup_address}
+              value={joinObject.address}
+              error={errors.address}
+              onChange={changeValue}
+            />
+            <TextInput
+              name="join_reason"
+              type="text"
+              label="Alasan Bergabung"
+              placeholder="Tuliskan alasan Anda mengapa Anda ingin bergabung"
+              value={joinObject.join_reason}
+              error={errors.join_reason}
               onChange={changeValue}
             />
             <div className={`${ModalStyle['modal-button']}`}>
