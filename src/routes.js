@@ -9,7 +9,12 @@ import AuthPage from './pages/Auth/AuthPage';
 
 import Layout from './components/Layout/Layout';
 
+import { useStore } from './context/store';
+import Snackbar from './components/Snackbars/Snackbar';
+
 function Routes() {
+  const { state } = useStore();
+  const { snackbarOpen, snackbarMessage, snackbarType } = state;
   return (
     <Router>
       <Switch>
@@ -31,6 +36,7 @@ function Routes() {
         <Route path="/login" component={AuthPage} />
         <Route path="/register" component={AuthPage} />
       </Switch>
+      <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
     </Router>
   );
 }

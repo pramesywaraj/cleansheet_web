@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { AuthReducer, AuthInitialState } from './authReducer';
+import { reducers, initialState } from './reducers';
 
 const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AuthReducer, AuthInitialState);
+  const [state, dispatch] = useReducer(reducers, initialState);
 
   return <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>;
 };
