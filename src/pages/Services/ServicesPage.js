@@ -48,13 +48,12 @@ export default function ServicesPage() {
   const changeActivePanel = id => {
     if (activePanel === id) return;
     setActivePanel(id);
-    openSnackbar('info', 'Test aja slur');
+    openSnackbar('fail', 'Telah terjadi kesalahan, silahkan ulangi kembali.');
   };
 
   return (
     <div className={ServicesPageStyle['services-wrapper']}>
       <OrderServiceModal show={showModal} close={closeModalHandler} />
-      {/* <Snackbar isShow={showSnackbar} message={message} /> */}
       <div className={ServicesPageStyle['services-title']}>
         <h1>Layanan Kebersihan</h1>
       </div>

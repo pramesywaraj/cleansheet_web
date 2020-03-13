@@ -1,6 +1,10 @@
 .snackbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   visibility: hidden;
-  min-width: 20vw;
+  min-width: 15vw;
+  max-width: 70vw;
   // margin-left: -125px;
   background-color: green;
   color: #fff;
@@ -9,7 +13,7 @@
   padding: 2vh 1vw;
   position: fixed;
   z-index: 3;
-  bottom: 5%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 5%);
   font-size: 1rem;
@@ -36,47 +40,51 @@
   background-color: rgba(0, 164, 219, 1);
 }
 
+.snackbar-icon {
+  margin-right: 1.5vw;
+}
+
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes enter {
   from {
-    bottom: 0;
+    top: 0;
     opacity: 0;
   }
   to {
-    bottom: 5%;
+    top: 5%;
     opacity: 1;
   }
 }
 
 @keyframes enter {
   from {
-    bottom: 0;
+    top: 0;
     opacity: 0;
   }
   to {
-    bottom: 5%;
+    top: 5%;
     opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeout {
   from {
-    bottom: 5%;
+    top: 5%;
     opacity: 1;
   }
   to {
-    bottom: 0;
+    top: 0;
     opacity: 0;
   }
 }
 
 @keyframes fadeout {
   from {
-    bottom: 5%;
+    top: 5%;
     opacity: 1;
   }
   to {
-    bottom: 0;
+    top: 0;
     opacity: 0;
   }
 }
