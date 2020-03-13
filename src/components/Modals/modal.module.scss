@@ -78,3 +78,20 @@
 
   float: right;
 }
+
+.modal-input-row {
+  display: flex;
+  flex-direction: row;
+
+  div {
+    flex: 1;
+  }
+}
+
+.modal-input-marginRight {
+  margin-right: 1vw;
+}
+
+.modal-input-marginLeft {
+  margin-left: 1vw;
+}

@@ -47,15 +47,55 @@ export default function JoinCleansheetModal({ show, close }) {
               error={errors.name}
               onChange={changeValue}
             />
-            <TextInput
-              name="phone"
-              type="tel"
-              label="Nomor Telepon"
-              placeholder="Nomor telepon pemesan"
-              value={joinObject.phone}
-              error={errors.phone}
-              onChange={changeValue}
-            />
+            <div className={ModalStyle['modal-input-row']}>
+              <div className={ModalStyle['modal-input-marginRight']}>
+                <TextInput
+                  name="phone"
+                  type="tel"
+                  label="Nomor Telepon"
+                  placeholder="Nomor telepon pemesan"
+                  value={joinObject.phone}
+                  error={errors.phone}
+                  onChange={changeValue}
+                />
+              </div>
+              <div className={ModalStyle['modal-input-marginLeft']}>
+                <TextInput
+                  name="nim"
+                  type="text"
+                  label="NIM"
+                  placeholder="contoh: G64150000"
+                  value={joinObject.nim}
+                  error={errors.nim}
+                  onChange={changeValue}
+                />
+              </div>
+            </div>
+            <div className={ModalStyle['modal-input-row']}>
+              <div className={ModalStyle['modal-input-marginRight']}>
+                <TextInput
+                  name="year"
+                  type="number"
+                  label="Tahun Angkatan"
+                  placeholder="contoh: 2015"
+                  value={joinObject.year}
+                  error={errors.year}
+                  onChange={changeValue}
+                />
+              </div>
+              <div className={ModalStyle['modal-input-marginLeft']}>
+                <TextInput
+                  name="major"
+                  type="text"
+                  label="Jurusan"
+                  placeholder="contoh: Ilmu Komputer"
+                  value={joinObject.major}
+                  error={errors.major}
+                  onChange={changeValue}
+                />
+              </div>
+            </div>
+
             <TextInput
               name="address"
               type="text"
