@@ -4,6 +4,7 @@ import ModalStyle from './modal.module.scss';
 import useInput from '../../hooks/useInput';
 
 import TextInput from '../Input/TextInput';
+import TextArea from '../Input/TextArea';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
 export default function JoinCleansheetModal({ show, close }) {
@@ -35,7 +36,8 @@ export default function JoinCleansheetModal({ show, close }) {
   return (
     <ModalBase show={show} close={onCloseModal}>
       <div className={ModalStyle['modal-content']}>
-        <h2>Bergabung Bersama Cleansheet</h2>
+        <h1 style={{ marginBottom: '1vh' }}>Bergabung Bersama Cleansheet</h1>
+        <h3>Yuk isi data berikut untuk keperluan rekrutmen staf Cleansheet</h3>
         <div className={ModalStyle['modal-form']}>
           <form onSubmit={handleSubmit}>
             <TextInput
@@ -105,9 +107,8 @@ export default function JoinCleansheetModal({ show, close }) {
               error={errors.address}
               onChange={changeValue}
             />
-            <TextInput
+            <TextArea
               name="join_reason"
-              type="text"
               label="Alasan Bergabung"
               placeholder="Tuliskan alasan Anda mengapa Anda ingin bergabung"
               value={joinObject.join_reason}
