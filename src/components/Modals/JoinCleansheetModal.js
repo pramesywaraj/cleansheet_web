@@ -45,7 +45,7 @@ export default function JoinCleansheetModal({ show, close }) {
               name="name"
               type="text"
               label="Nama Lengkap"
-              placeholder="Nama lengkap pemesan"
+              placeholder="Nama lengkap pendaftar"
               value={joinObject.name}
               error={errors.name}
               onChange={changeValue}
@@ -55,8 +55,8 @@ export default function JoinCleansheetModal({ show, close }) {
                 <TextInput
                   name="phone"
                   type="tel"
-                  label="Nomor Telepon"
-                  placeholder="Nomor telepon pemesan"
+                  label="Nomor Telepon (WA)"
+                  placeholder="Nomor telepon pendaftar yang terhubung dengan WA"
                   value={joinObject.phone}
                   error={errors.phone}
                   onChange={changeValue}

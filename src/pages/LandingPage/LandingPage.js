@@ -16,6 +16,7 @@ import LaundryServicesImage from '../../assets/laundry_washing.svg';
 import EnvironmentCleaningImage from '../../assets/env_cleaning.svg';
 
 import JoinCLeansheetModal from '../../components/Modals/JoinCleansheetModal';
+import JoinPartnerModal from '../../components/Modals/JoinPartnerModal';
 
 const HeaderSection = () => {
   const goToProductPage = () => {
@@ -192,9 +193,7 @@ const JoinCleansheetWorkerSection = () => {
 };
 
 const JoinCleansheetPartner = () => {
-  const goToJoinCleansheetPartner = () => {
-    console.log('Go');
-  };
+  const { showModal, openModalHandler, closeModalHandler } = useModal();
 
   return (
     <section
@@ -208,14 +207,11 @@ const JoinCleansheetPartner = () => {
           <h1>Gabung Mitra</h1>
           <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
           <div className={`${LandingPageStyle.buttonMargin5}`}>
-            <PrimaryButton
-              type="primary"
-              clickAction={goToJoinCleansheetPartner}
-              label="Gabung Sekarang"
-            />
+            <PrimaryButton type="primary" clickAction={openModalHandler} label="Gabung Sekarang" />
           </div>
         </div>
       </div>
+      <JoinPartnerModal show={showModal} close={closeModalHandler} />
     </section>
   );
 };
