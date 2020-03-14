@@ -37,9 +37,16 @@
 
 // cleansheet custom radio input
 .radio-input-container {
-  margin: 1vh 0;
+  margin: 3vh 0;
+}
+
+.radio-content {
+  margin: 0.8vh 0;
   display: flex;
   flex-direction: row;
+  div {
+    padding-right: 2vw;
+  }
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
