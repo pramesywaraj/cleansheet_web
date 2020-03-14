@@ -5,6 +5,7 @@ import useInput from '../../hooks/useInput';
 
 import TextInput from '../Input/TextInput';
 import TextArea from '../Input/TextArea';
+import RadioInput from '../Input/RadioInput';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
 export default function JoinCleansheetModal({ show, close }) {
@@ -15,7 +16,7 @@ export default function JoinCleansheetModal({ show, close }) {
       nim: '',
       year: '',
       major: '',
-      bidikmisi: true,
+      bidikmisi: undefined,
       address: '',
       join_reason: '',
     },
@@ -96,6 +97,15 @@ export default function JoinCleansheetModal({ show, close }) {
                   onChange={changeValue}
                 />
               </div>
+            </div>
+            <div className={ModalStyle['modal-input-row']}>
+              <RadioInput
+                name="bidikmisi"
+                label="Ya"
+                value
+                error={errors.bidikmisi}
+                onChange={changeValue}
+              />
             </div>
 
             <TextInput

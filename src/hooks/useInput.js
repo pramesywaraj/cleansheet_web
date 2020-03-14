@@ -12,6 +12,7 @@ export default function useInput(initialValue, callback) {
 
   const changeValue = e => {
     const { name, value } = e.target;
+    console.log(name, value);
     setInputState({
       ...inputState,
       [name]: value,
