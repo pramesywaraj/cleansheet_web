@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 // The pages
@@ -13,6 +13,18 @@ import Layout from './components/Layout/Layout';
 
 import { useStore } from './context/store';
 import Snackbar from './components/Snackbars/Snackbar';
+
+function PrivateRoutes({ component: Component, ...rest }) {
+  const { state } = useStore();
+  const { isLoggedIn } = state;
+
+  return (
+    <Route
+      {...rest}
+      render={props => (isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />)}
+    />
+  );
+}
 
 function Routes() {
   const firstLoad = useRef(true);
@@ -48,11 +60,15 @@ function Routes() {
             <ProductPage />
           </Layout>
         </Route>
-        <Route path="/keranjang">
-          <Layout>
-            <CartPage />
-          </Layout>
-        </Route>
+        <PrivateRoutes
+          path="/keranjang"
+          component={
+            <Layout>
+              <CartPage />
+            </Layout>
+          }
+        />
+
         <Route path="/login" component={AuthPage} />
         <Route path="/register" component={AuthPage} />
       </Switch>
