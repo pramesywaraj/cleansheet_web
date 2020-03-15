@@ -15,9 +15,11 @@ export default function Header() {
   const history = useHistory();
 
   const loggingOut = () => {
-    dispatch({ type: 'LOGOUT_SUCCESS' });
-    openSnackbar('Info', 'Anda berhasil keluar dari aplikasi.');
-    history.push('/login');
+    setTimeout(() => {
+      dispatch({ type: 'LOGOUT_SUCCESS' });
+      openSnackbar('info', 'Anda berhasil keluar dari aplikasi.');
+      history.push('/login');
+    }, 1000);
   };
 
   return (
@@ -50,13 +52,10 @@ export default function Header() {
       <div className={HeaderStyle.floatRight}>
         {isLoggedIn ? (
           <>
-            <Link to="/">
-              <FaShoppingBasket fontSize="1em" />
-            </Link>
-            <NavLink exact to="/">
-              Hai,
-              {user.name}
+            <NavLink className={HeaderStyle['header-cart-nav']} to="/keranjang">
+              <FaShoppingBasket fontSize="1.5em" />
             </NavLink>
+            <NavLink exact to="/">{`Hai, ${user.name}`}</NavLink>
             <PrimaryButton type="primary" label="Keluar" clickAction={loggingOut} />
           </>
         ) : (

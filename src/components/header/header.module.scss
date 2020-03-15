@@ -42,10 +42,22 @@
 
 .floatRight {
   float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   a {
     padding-right: 1.5vw;
     color: $primary_color;
+
+    &:hover {
+      color: rgb(0, 150, 209);
+    }
+  }
+
+  .header-cart-nav {
+    width: auto;
+    height: auto;
   }
 }
 

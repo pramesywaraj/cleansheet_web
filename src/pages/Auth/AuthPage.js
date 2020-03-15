@@ -20,6 +20,8 @@ export default function AuthPage({ location, history }) {
   const { dispatch } = useStore();
   const { pathname } = location;
 
+  const signal = axios.CancelToken.source();
+
   useEffect(() => {
     if (pathname === '/register') {
       setIsRegister(true);
@@ -28,12 +30,19 @@ export default function AuthPage({ location, history }) {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    return () => {
+      signal.cancel();
+    };
+  }, []);
+
   const onLogin = async payload => {
     showLoading();
     try {
       const { data } = await axios.post(
         `${process.env.REACT_APP_API_ENDPOINT}/auth/login`,
         payload,
+        { cancelToken: signal.token },
       );
 
       if (data.errors) {

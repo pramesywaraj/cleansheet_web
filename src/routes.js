@@ -14,14 +14,20 @@ import Layout from './components/Layout/Layout';
 import { useStore } from './context/store';
 import Snackbar from './components/Snackbars/Snackbar';
 
-function PrivateRoutes({ component: Component, ...rest }) {
+function PrivateRoutes({ component: Component }) {
   const { state } = useStore();
   const { isLoggedIn } = state;
 
   return (
     <Route
-      {...rest}
-      render={props => (isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />)}
+      render={props =>
+        isLoggedIn ? (
+          <Layout>
+            <Component {...props} />
+          </Layout>
+        ) : (
+          <Redirect to={{ pathname: '/login' }} />
+        )}
     />
   );
 }
@@ -60,14 +66,7 @@ function Routes() {
             <ProductPage />
           </Layout>
         </Route>
-        <PrivateRoutes
-          path="/keranjang"
-          component={
-            <Layout>
-              <CartPage />
-            </Layout>
-          }
-        />
+        <PrivateRoutes path="/keranjang" component={CartPage} />
 
         <Route path="/login" component={AuthPage} />
         <Route path="/register" component={AuthPage} />
