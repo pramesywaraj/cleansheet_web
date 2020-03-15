@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 export const initialState = {
   user: {},
   isLoggedIn: false,
@@ -10,6 +12,7 @@ export const reducers = (state, action) => {
   switch (action.type) {
     // reducer for auth
     case 'LOGIN_SUCCESS': {
+      Cookies.set('@userData', action.data, { expires: 1 });
       return {
         ...state,
         user: action.data,
@@ -18,10 +21,19 @@ export const reducers = (state, action) => {
     }
 
     case 'LOGOUT_SUCCESS': {
+      Cookies.remove();
       return {
         ...state,
         user: {},
         isLoggedIn: false,
+      };
+    }
+
+    case 'USER_LOGGED_IN': {
+      return {
+        ...state,
+        user: action.data,
+        isLoggedIn: true,
       };
     }
     // Reducers for snackbar
