@@ -21,7 +21,7 @@ export const reducers = (state, action) => {
     }
 
     case 'LOGOUT_SUCCESS': {
-      Cookies.remove();
+      Cookies.remove('@userData');
       return {
         ...state,
         user: {},

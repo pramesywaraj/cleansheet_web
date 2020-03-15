@@ -1,14 +1,25 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import { FaShoppingBasket } from 'react-icons/fa';
 import { useStore } from '../../context/store';
+import useSnackbar from '../../hooks/useSnackbar';
 
 import HeaderStyle from './header.module.scss';
 import PrimaryButton from '../Buttons/PrimaryButton';
 
 export default function Header() {
-  const { state } = useStore();
+  const [openSnackbar] = useSnackbar();
+  const { state, dispatch } = useStore();
   const { user, isLoggedIn } = state;
+
+  const history = useHistory();
+
+  const loggingOut = () => {
+    dispatch({ type: 'LOGOUT_SUCCESS' });
+    openSnackbar('Info', 'Anda berhasil keluar dari aplikasi.');
+    history.push('/login');
+  };
+
   return (
     <header className={HeaderStyle.header}>
       <nav className={HeaderStyle.navigation}>
@@ -46,7 +57,7 @@ export default function Header() {
               Hai,
               {user.name}
             </NavLink>
-            <PrimaryButton type="primary" label="Keluar" />
+            <PrimaryButton type="primary" label="Keluar" clickAction={loggingOut} />
           </>
         ) : (
           <>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useLoading from '../../hooks/useLoading';
+import useSnackbar from '../../hooks/useSnackbar';
 import { useStore } from '../../context/store';
 import AuthStyle from './auth.module.scss';
 import LogoCleansheet from '../../assets/logo_cs.png';
@@ -15,7 +16,8 @@ const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCar
 export default function AuthPage({ location, history }) {
   const [isRegister, setIsRegister] = useState(false);
   const [loading, showLoading, hideLoading] = useLoading();
-  const { state, dispatch } = useStore();
+  const [openSnackbar] = useSnackbar();
+  const { dispatch } = useStore();
   const { pathname } = location;
 
   useEffect(() => {
@@ -34,11 +36,22 @@ export default function AuthPage({ location, history }) {
         payload,
       );
 
+      if (data.errors) {
+        throw data.errors;
+      }
+
       dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
+      openSnackbar('success', 'Anda berhasil masuk.');
       history.push('/');
     } catch (err) {
-      console.log(err);
-      window.alert('Terjadi Kesalahan. Silahkan ulangi kembali.');
+      if ('message' in err) {
+        openSnackbar('fail', err.message);
+      } else {
+        openSnackbar(
+          'fail',
+          'Terjadi kesalahan ketika memasuki aplikasi. Silahkan cek koneksi internet Anda dan coba kembali.',
+        );
+      }
     } finally {
       hideLoading();
     }
