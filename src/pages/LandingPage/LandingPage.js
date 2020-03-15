@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import useModal from '../../hooks/useModal';
 
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
@@ -19,8 +20,9 @@ import JoinCLeansheetModal from '../../components/Modals/JoinCleansheetModal';
 import JoinPartnerModal from '../../components/Modals/JoinPartnerModal';
 
 const HeaderSection = () => {
+  const history = useHistory();
   const goToProductPage = () => {
-    console.log('Directly into Product');
+    history.push('/produk');
   };
 
   return (
@@ -58,8 +60,9 @@ const HeaderSection = () => {
 };
 
 const ServiceSection = () => {
+  const history = useHistory();
   const goToServicePage = () => {
-    console.log('Directly into Service Page');
+    history.push('/layanan');
   };
 
   return (
@@ -113,8 +116,9 @@ const ServiceSection = () => {
 };
 
 const ProductSection = () => {
+  const history = useHistory();
   const goToProductPage = () => {
-    console.log('Go to product page');
+    history.push('/produk');
   };
 
   return (
