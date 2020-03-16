@@ -3,8 +3,15 @@ import React from 'react';
 import CartCard from '../../components/Cards/CartCard';
 import TextInput from '../../components/Input/TextInput';
 import TextArea from '../../components/Input/TextArea';
+import FullSubmitButton from '../../components/Buttons/FullSubmitButton';
 
-export default function SendingForm({ handleSubmit, deliveryPayload, changeFormValue, errors }) {
+export default function SendingForm({
+  handleSubmit,
+  deliveryPayload,
+  changeFormValue,
+  errors,
+  isLoading,
+}) {
   return (
     <CartCard label="Data Pengiriman">
       <form onSubmit={handleSubmit}>
@@ -70,6 +77,8 @@ export default function SendingForm({ handleSubmit, deliveryPayload, changeFormV
           error={errors.notes}
           onChange={changeFormValue}
         />
+
+        <FullSubmitButton type="primary" isLoading={isLoading} label="Pesan" />
       </form>
     </CartCard>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import useInput from '../../hooks/useInput';
+import useLoading from '../../hooks/useLoading';
 import CartStyle from './cart.module.scss';
 
 import SendingForm from './SendingForm';
@@ -18,9 +19,16 @@ export default function CartPage() {
     },
     checkout,
   );
+  const [loading, showLoading, hideLoading] = useLoading();
 
   function checkout() {
     console.log('Checkout');
+    showLoading();
+
+    setTimeout(() => {
+      hideLoading();
+      resetValue();
+    }, 1000);
   }
 
   return (
@@ -34,6 +42,7 @@ export default function CartPage() {
           deliveryPayload={deliveryPayload}
           changeFormValue={changeValue}
           errors={errors}
+          isLoading={loading}
         />
       </div>
     </div>
