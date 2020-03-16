@@ -1,22 +1,25 @@
 import React from 'react';
 
 import ButtonStyle from './button.module.scss';
+import ButtonLoading from '../Loading/ButtonLoading';
 
-export default function FullButton({ clickAction, label, type }) {
+export default function FullButton({ clickAction, label, type, isLoading }) {
   const buttonColor =
     type === 'primary' ? ButtonStyle.backgroundPrimary : ButtonStyle.backgroundWhite;
 
   return (
-    <button
-      type="submit"
-      onClick={clickAction}
-      className={`
+    <div className={`${ButtonStyle['submit-button']}`}>
+      <button
+        type="submit"
+        onClick={clickAction}
+        className={`
         ${ButtonStyle.button}
         ${ButtonStyle.fullWidthButton}
         ${buttonColor}
         `}
-    >
-      {label}
-    </button>
+      >
+        {isLoading ? <ButtonLoading /> : label}
+      </button>
+    </div>
   );
 }

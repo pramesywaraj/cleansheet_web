@@ -7,7 +7,6 @@ import CardBase from './CardBase';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 import TextInput from '../Input/TextInput';
 import useInput from '../../hooks/useInput';
-import ButtonLoading from '../Loading/ButtonLoading';
 import CardStyle from './card.module.scss';
 
 export default function LoginCard({ onLogin, isLoading }) {
@@ -47,9 +46,7 @@ export default function LoginCard({ onLogin, isLoading }) {
               onChange={changeValue}
               error={errors.password}
             />
-            <div className={`${CardStyle['login-button']}`}>
-              <FullSubmitButton label={isLoading ? <ButtonLoading /> : 'Masuk'} type="primary" />
-            </div>
+            <FullSubmitButton label="Masuk" type="primary" isLoading={isLoading} />
           </form>
         </div>
         <div className={`${CardStyle['login-register-text']}`}>
