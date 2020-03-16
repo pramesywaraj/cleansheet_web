@@ -116,3 +116,31 @@
     color: $primary_color;
   }
 }
+
+// Cart Card Style
+.cart-card {
+  height: auto;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.cart-card-header {
+  display: flex;
+  height: 8vh;
+  width: 100%;
+  background-color: #02aff3;
+
+  border-radius: 10px 10px 0 0;
+
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    color: white;
+  }
+}
+
+.cart-card-content {
+  padding: 5%;
+}
