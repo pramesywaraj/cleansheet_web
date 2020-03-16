@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
@@ -10,6 +10,7 @@ import AuthPage from './pages/Auth/AuthPage';
 import CartPage from './pages/CartPage/CartPage';
 
 import Layout from './components/Layout/Layout';
+import Loading from './components/Loading/Loading';
 
 import { useStore } from './context/store';
 import Snackbar from './components/Snackbars/Snackbar';
@@ -27,14 +28,15 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <Redirect to={{ pathname: '/login' }} />
-        )}
+        )
+      }
     />
   );
 }
 
 function Routes() {
   const firstLoad = useRef(true);
-
+  const [isChecking, setIsChecking] = useState(true);
   const { state, dispatch } = useStore();
   const { snackbarOpen, snackbarMessage, snackbarType } = state;
 
@@ -44,9 +46,14 @@ function Routes() {
       const userData = Cookies.getJSON('@userData') ? Cookies.getJSON('@userData') : null;
       if (userData) {
         dispatch({ type: 'USER_LOGGED_IN', data: userData });
+        setIsChecking(false);
       }
     }
   });
+
+  if (isChecking) {
+    return <Loading />;
+  }
 
   return (
     <Router>

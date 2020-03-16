@@ -1,9 +1,12 @@
 import React from 'react';
 
+import CartStyle from './cart.module.scss';
+
 export default function CartPage() {
   return (
-    <div>
-      <h1>This is Cart Page</h1>
+    <div className={`${CartStyle['cart-container']}`}>
+      <div className={`${CartStyle['cart-col']}`} />
+      <div className={`${CartStyle['cart-col']}`} />
     </div>
   );
 }
