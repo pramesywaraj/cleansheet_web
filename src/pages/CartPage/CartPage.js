@@ -2,16 +2,17 @@ import React from 'react';
 
 import CartStyle from './cart.module.scss';
 
-import CartCard from '../../components/Cards/CartCard';
+import SendingForm from './SendingForm';
+import CartSection from './CartSection';
 
 export default function CartPage() {
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartCard label="Keranjang Belanja" />
+        <CartSection />
       </div>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartCard label="Data Pengiriman" />
+        <SendingForm />
       </div>
     </div>
   );
