@@ -3,23 +3,27 @@ import { NavLink, Link, useHistory } from 'react-router-dom';
 import { FaShoppingBasket } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
-
+import useLoading from '../../hooks/useLoading';
 import HeaderStyle from './header.module.scss';
 import PrimaryButton from '../Buttons/PrimaryButton';
+import ButtonLoading from '../Loading/ButtonLoading';
 
 export default function Header() {
-  const [openSnackbar] = useSnackbar();
   const { state, dispatch } = useStore();
   const { user, isLoggedIn } = state;
-
   const history = useHistory();
 
+  const [openSnackbar] = useSnackbar();
+  const [loading, showLoading, hideLoading] = useLoading();
+
   const loggingOut = () => {
+    showLoading();
     setTimeout(() => {
       dispatch({ type: 'LOGOUT_SUCCESS' });
+      hideLoading();
       openSnackbar('info', 'Anda berhasil keluar dari aplikasi.');
       history.push('/login');
-    }, 1000);
+    }, 2500);
   };
 
   return (
@@ -56,7 +60,11 @@ export default function Header() {
               <FaShoppingBasket fontSize="1.5em" />
             </NavLink>
             <NavLink exact to="/">{`Hai, ${user.name}`}</NavLink>
-            <PrimaryButton type="primary" label="Keluar" clickAction={loggingOut} />
+            <PrimaryButton
+              type="primary"
+              label={loading ? <ButtonLoading /> : 'Keluar'}
+              clickAction={loggingOut}
+            />
           </>
         ) : (
           <>
