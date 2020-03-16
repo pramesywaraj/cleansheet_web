@@ -8,3 +8,29 @@
   width: 100%;
   padding: 1%;
 }
+
+// Cart Section
+
+.cart-total {
+  height: 20%;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+
+  padding: 2vh 0;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .cart-total-amount {
+    color: #02aff3;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}

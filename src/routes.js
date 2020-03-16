@@ -28,8 +28,7 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <Redirect to={{ pathname: '/login' }} />
-        )
-      }
+        )}
     />
   );
 }
@@ -46,8 +45,9 @@ function Routes() {
       const userData = Cookies.getJSON('@userData') ? Cookies.getJSON('@userData') : null;
       if (userData) {
         dispatch({ type: 'USER_LOGGED_IN', data: userData });
-        setIsChecking(false);
       }
+
+      setIsChecking(false);
     }
   });
 
