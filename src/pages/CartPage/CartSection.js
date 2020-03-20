@@ -2,7 +2,7 @@ import React from 'react';
 
 import CartStyle from './cart.module.scss';
 import CartCard from '../../components/Cards/CartCard';
-
+import NumberOfGoods from '../../components/Cart/NumberOfGoods';
 import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
 export default function CartSection() {
@@ -22,7 +22,7 @@ export default function CartSection() {
           </div>
         </div>
         <div className={`${CartStyle['cart-item-row']} ${CartStyle['cart-item-button']}`}>
-          <div>Button</div>
+          <NumberOfGoods />
           <div>Total Price per Item</div>
         </div>
       </div>
