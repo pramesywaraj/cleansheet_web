@@ -3,9 +3,17 @@ import CartNumberButton from '../Buttons/CartNumberButton';
 
 export default function NumberOfGoods() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: '9.5vw',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}
+    >
       <CartNumberButton type="minus" />
-      <div>0</div>
+      <p>0</p>
       <CartNumberButton type="plus" />
     </div>
   );

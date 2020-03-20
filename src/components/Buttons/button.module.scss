@@ -102,3 +102,24 @@
 
   margin-top: 2vh;
 }
+
+// Cart item number button
+.cart-button {
+  padding: 0.5vh 1vw;
+}
+
+.cart-button-plus {
+  background-color: #02aff3;
+
+  &:hover {
+    background-color: #0197d3;
+  }
+}
+
+.cart-button-minus {
+  background-color: #f2f2f2;
+
+  &:hover {
+    background-color: #d4d4d4;
+  }
+}
