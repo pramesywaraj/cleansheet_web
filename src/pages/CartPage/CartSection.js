@@ -1,8 +1,9 @@
 import React from 'react';
-
+import { FaTrash } from 'react-icons/fa';
 import CartStyle from './cart.module.scss';
 import CartCard from '../../components/Cards/CartCard';
 import NumberOfGoods from '../../components/Cart/NumberOfGoods';
+import SmallButton from '../../components/Buttons/SmallButton';
 import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
 export default function CartSection() {
@@ -16,8 +17,8 @@ export default function CartSection() {
           <div className={`${CartStyle['cart-item-detail']}`}>
             <p className={`${CartStyle['item-price']}`}>Sapu Lidi Kencrot</p>
             <div className={`${CartStyle['cart-item-price-delete']}`}>
-              <div>price</div>
-              <div>delete</div>
+              <p>Rp. 15.000</p>
+              <SmallButton label={<FaTrash />} />
             </div>
           </div>
         </div>
