@@ -10,12 +10,21 @@
 }
 
 // Cart Section
+.cart-item-list {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
 .cart-item-container {
   height: auto;
 
   padding: 2%;
-  margin: 2vh 0;
+  margin-bottom: 2vh;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .cart-item-row {
@@ -69,6 +78,8 @@
 .cart-total {
   height: auto;
   padding: 2vh 0;
+
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
 }
 .flex-row {
   display: flex;
