@@ -3,7 +3,7 @@ import { FaTrash } from 'react-icons/fa';
 import CartStyle from './cart.module.scss';
 import CartCard from '../../components/Cards/CartCard';
 import NumberOfGoods from '../../components/Cart/NumberOfGoods';
-import SmallButton from '../../components/Buttons/SmallButton';
+import IconButton from '../../components/Buttons/IconButton';
 import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
 export default function CartSection() {
@@ -18,7 +18,7 @@ export default function CartSection() {
             <p className={`${CartStyle['item-price']}`}>Sapu Lidi Kencrot</p>
             <div className={`${CartStyle['cart-item-price-delete']}`}>
               <p>Rp. 15.000</p>
-              <SmallButton label={<FaTrash />} />
+              <IconButton iconColor="#5e5e5e" label={<FaTrash />} />
             </div>
           </div>
         </div>
