@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductStyle from './product.module.scss';
 import ProductCard from '../../components/Cards/ProductCard';
+import PaginationButton from '../../components/Navigation/PaginationButton';
 
 export default function ProductPage() {
   return (
@@ -19,6 +20,8 @@ export default function ProductPage() {
         <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
         <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
       </div>
+
+      <PaginationButton />
     </div>
   );
 }
