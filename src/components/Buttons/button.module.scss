@@ -140,11 +140,9 @@
   transition-duration: 0.4s;
   font-size: 1.5em;
 
-  &:focus {
-    outline: 0;
-  }
+  transition: all 0.8s ease-in;
 
-  &:before {
+  &::before {
     content: '';
     background-color: rgba(87, 87, 87, 0.5);
     border-radius: 100%;
@@ -158,9 +156,10 @@
     opacity: 0;
   }
 
-  &:not(:active) {
-    &:before {
-      animation: ripple_effect 0.5s ease-out;
+  &:focus {
+    outline: 0;
+    &::before {
+      animation: ripple_effect 0.8s ease-out;
     }
   }
 
