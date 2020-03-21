@@ -11,7 +11,6 @@
 
 // Cart Section
 .cart-item-container {
-  border: 1px solid;
   height: auto;
 
   padding: 2%;
@@ -22,12 +21,11 @@
 .cart-item-row {
   display: flex;
   flex-direction: row;
-  border: 1px solid;
 
+  align-items: center;
   .cart-item-image {
     width: 10vw;
     height: auto;
-    border: 1px solid;
     object-fit: cover;
     img {
       width: 100%;
@@ -49,7 +47,6 @@
     font-weight: bold;
   }
 
-  border: 1px solid;
   .cart-item-price-delete {
     display: flex;
     flex-direction: row;
@@ -61,7 +58,12 @@
 
 .cart-item-button {
   justify-content: space-between;
-  padding: 1%;
+  padding: 4% 0;
+
+  p {
+    color: #02aff3;
+    font-size: 1.2em;
+  }
 }
 
 .cart-total {

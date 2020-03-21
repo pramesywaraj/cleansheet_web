@@ -17,14 +17,14 @@ export default function CartSection() {
           <div className={`${CartStyle['cart-item-detail']}`}>
             <p className={`${CartStyle['item-price']}`}>Sapu Lidi Kencrot</p>
             <div className={`${CartStyle['cart-item-price-delete']}`}>
-              <p>Rp. 15.000</p>
-              <IconButton iconColor="#5e5e5e" label={<FaTrash />} />
+              <p>Rp. 15.000 /pcs</p>
+              <IconButton iconColor="#a1a1a1" label={<FaTrash />} />
             </div>
           </div>
         </div>
         <div className={`${CartStyle['cart-item-row']} ${CartStyle['cart-item-button']}`}>
           <NumberOfGoods />
-          <div>Total Price per Item</div>
+          <p>Rp. 15.000</p>
         </div>
       </div>
       <div className={`${CartStyle['cart-total']}`}>
