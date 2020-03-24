@@ -6,7 +6,7 @@ import NumberOfGoods from './NumberOfGoods';
 import IconButton from '../Buttons/IconButton';
 import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
-export default function CartItem() {
+export default function CartItem({ counter }) {
   return (
     <div className={`${CartStyle['cart-item-container']}`}>
       <div className={`${CartStyle['cart-item-row']}`}>
@@ -22,7 +22,7 @@ export default function CartItem() {
         </div>
       </div>
       <div className={`${CartStyle['cart-item-row']} ${CartStyle['cart-item-button']}`}>
-        <NumberOfGoods />
+        <NumberOfGoods goodsTotal={counter.counter} add={counter.add} min={counter.min} />
         <p>Rp. 15.000</p>
       </div>
     </div>

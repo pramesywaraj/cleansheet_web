@@ -1,7 +1,7 @@
 import React from 'react';
 import CartNumberButton from '../Buttons/CartNumberButton';
 
-export default function NumberOfGoods() {
+export default function NumberOfGoods({ goodsTotal, add, min }) {
   return (
     <div
       style={{
@@ -12,9 +12,9 @@ export default function NumberOfGoods() {
         alignItems: 'center',
       }}
     >
-      <CartNumberButton type="minus" />
-      <p>0</p>
-      <CartNumberButton type="plus" />
+      <CartNumberButton type="minus" clickAction={min} />
+      <p>{goodsTotal}</p>
+      <CartNumberButton type="plus" clickAction={add} />
     </div>
   );
 }
