@@ -19,8 +19,7 @@ export default function LoginCard({ onLogin, isLoading }) {
   );
 
   function onSubmit() {
-    onLogin(loginObj);
-    resetValue();
+    onLogin(loginObj, resetValue);
   }
 
   return (

@@ -10,7 +10,7 @@ import useInput from '../../hooks/useInput';
 
 import CardStyle from './card.module.scss';
 
-export default function RegisterCard({ onRegister }) {
+export default function RegisterCard({ onRegister, isLoading }) {
   const [registerObj, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
@@ -22,9 +22,7 @@ export default function RegisterCard({ onRegister }) {
   );
 
   function onSubmit() {
-    console.log(registerObj);
-    console.log('submitted');
-    resetValue();
+    onRegister(registerObj, resetValue);
   }
 
   return (
@@ -68,9 +66,7 @@ export default function RegisterCard({ onRegister }) {
               error={errors.password}
               onChange={changeValue}
             />
-            <div className={`${CardStyle['login-button']}`}>
-              <FullSubmitButton label="Daftar" type="primary" />
-            </div>
+            <FullSubmitButton label="Daftar" type="primary" isLoading={isLoading} />
           </form>
         </div>
 

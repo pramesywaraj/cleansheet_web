@@ -36,7 +36,7 @@ export default function AuthPage({ location, history }) {
     };
   }, []);
 
-  async function onLogin(payload) {
+  async function onLogin(payload, resetValue) {
     showLoading();
     try {
       const option = {
@@ -54,6 +54,7 @@ export default function AuthPage({ location, history }) {
 
       await dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
       openSnackbar('success', 'Anda berhasil masuk.');
+      resetValue();
       hideLoading();
       history.push('/');
     } catch (err) {
@@ -70,9 +71,42 @@ export default function AuthPage({ location, history }) {
     }
   }
 
-  const onRegister = data => {
-    console.log(data);
-  };
+  async function onRegister(payload, resetValue) {
+    showLoading();
+    try {
+      const option = {
+        method: 'POST',
+        url: `${process.env.REACT_APP_API_ENDPOINT}/auth/register`,
+        data: payload,
+        config: { cancelToken: source.token },
+      };
+
+      const { data } = await axios(option);
+
+      console.log(data);
+
+      if (data.errors) {
+        throw data.errors;
+      }
+
+      openSnackbar('success', 'Anda berhasil terdaftar.');
+      resetValue();
+      hideLoading();
+
+      history.replace('/login');
+    } catch (err) {
+      if ('message' in err) {
+        openSnackbar('fail', err.message);
+      } else {
+        openSnackbar(
+          'fail',
+          'Terjadi kesalahan ketika memasuki aplikasi. Silahkan cek koneksi internet Anda dan coba kembali.',
+        );
+      }
+
+      hideLoading();
+    }
+  }
 
   return (
     <div className={AuthStyle.loginWrapper}>
@@ -89,11 +123,11 @@ export default function AuthPage({ location, history }) {
               alt="Cleansheet decoration 1"
               src={LandingPageMainImage}
             />
-            <p>Apapun bersih-bersihnya, Cleansheet jagonya. Haha</p>
+            <p>Apapun bersih-bersihnya, Cleansheet jagonya.</p>
           </div>
           <div className={`${AuthStyle['form-container-flex']}`}>
             {isRegister ? (
-              <RegisterCard onRegister={onRegister} />
+              <RegisterCard onRegister={onRegister} isLoading={loading} />
             ) : (
               <LoginCard onLogin={onLogin} isLoading={loading} />
             )}
