@@ -21,8 +21,9 @@ export default function CartPage() {
   );
   const [loading, showLoading, hideLoading] = useLoading();
 
-  function checkout() {
-    console.log('Checkout');
+  function checkout(e) {
+    // console.log('Checkout');
+    e.preventDefault();
     showLoading();
 
     setTimeout(() => {
@@ -38,7 +39,7 @@ export default function CartPage() {
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm
-          handleSubmit={handleSubmit}
+          handleSubmit={checkout}
           deliveryPayload={deliveryPayload}
           changeFormValue={changeValue}
           errors={errors}

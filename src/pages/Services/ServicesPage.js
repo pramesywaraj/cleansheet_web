@@ -6,6 +6,7 @@ import TabsContainer from '../../components/Tabs/TabsContainer';
 import Loading from '../../components/Loading/Loading';
 import ServiceCard from '../../components/Cards/ServiceCard';
 import OrderServiceModal from '../../components/Modals/OrderServiceModal';
+import PaginationButton from '../../components/Navigation/PaginationButton';
 
 const Cleaning = ({ onClickService }) => {
   return (
@@ -60,6 +61,8 @@ export default function ServicesPage() {
       {activePanel === 0 && <Cleaning onClickService={openModalHandler} />}
       {activePanel === 1 && <Washing />}
       {activePanel === 2 && <EnvirontmentClean />}
+
+      <PaginationButton />
     </div>
   );
 }

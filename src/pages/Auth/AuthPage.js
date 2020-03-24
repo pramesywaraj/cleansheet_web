@@ -20,7 +20,7 @@ export default function AuthPage({ location, history }) {
   const { dispatch } = useStore();
   const { pathname } = location;
 
-  const signal = axios.CancelToken.source();
+  const source = axios.CancelToken.source();
 
   useEffect(() => {
     if (pathname === '/register') {
@@ -32,25 +32,29 @@ export default function AuthPage({ location, history }) {
 
   useEffect(() => {
     return () => {
-      signal.cancel();
+      source.cancel();
     };
   }, []);
 
-  const onLogin = async payload => {
+  async function onLogin(payload) {
     showLoading();
     try {
-      const { data } = await axios.post(
-        `${process.env.REACT_APP_API_ENDPOINT}/auth/login`,
-        payload,
-        { cancelToken: signal.token },
-      );
+      const option = {
+        method: 'POST',
+        url: `${process.env.REACT_APP_API_ENDPOINT}/auth/login`,
+        data: payload,
+        config: { cancelToken: source.token },
+      };
+
+      const { data } = await axios(option);
 
       if (data.errors) {
         throw data.errors;
       }
 
-      dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
+      await dispatch({ type: 'LOGIN_SUCCESS', data: data.data });
       openSnackbar('success', 'Anda berhasil masuk.');
+      hideLoading();
       history.push('/');
     } catch (err) {
       if ('message' in err) {
@@ -61,10 +65,10 @@ export default function AuthPage({ location, history }) {
           'Terjadi kesalahan ketika memasuki aplikasi. Silahkan cek koneksi internet Anda dan coba kembali.',
         );
       }
-    } finally {
+
       hideLoading();
     }
-  };
+  }
 
   const onRegister = data => {
     console.log(data);
