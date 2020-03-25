@@ -1,7 +1,6 @@
 import React from 'react';
 import useInput from '../../hooks/useInput';
 import useLoading from '../../hooks/useLoading';
-import useAddMinCart from '../../hooks/useAddMinCart';
 
 import CartStyle from './cart.module.scss';
 
@@ -22,7 +21,7 @@ export default function CartPage() {
     checkout,
   );
   const [loading, showLoading, hideLoading] = useLoading();
-  const [counter, add, min] = useAddMinCart(1);
+  const cartData = 0;
 
   function checkout(e) {
     // console.log('Checkout');
@@ -38,7 +37,7 @@ export default function CartPage() {
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartSection counter={{ counter, add, min }} />
+        <CartSection cartData={cartData} />
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm

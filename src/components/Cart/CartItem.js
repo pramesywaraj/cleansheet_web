@@ -1,12 +1,17 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa';
+import useAddMinCart from '../../hooks/useAddMinCart';
+
 import CartStyle from './cartcomponent.module.scss';
 
 import NumberOfGoods from './NumberOfGoods';
 import IconButton from '../Buttons/IconButton';
+
 import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
-export default function CartItem({ counter }) {
+export default function CartItem({ initCounter }) {
+  const [counter, add, min] = useAddMinCart(1);
+
   return (
     <div className={`${CartStyle['cart-item-container']}`}>
       <div className={`${CartStyle['cart-item-row']}`}>
@@ -22,7 +27,7 @@ export default function CartItem({ counter }) {
         </div>
       </div>
       <div className={`${CartStyle['cart-item-row']} ${CartStyle['cart-item-button']}`}>
-        <NumberOfGoods goodsTotal={counter.counter} add={counter.add} min={counter.min} />
+        <NumberOfGoods goodsTotal={counter} add={add} min={min} />
         <p>Rp. 15.000</p>
       </div>
     </div>

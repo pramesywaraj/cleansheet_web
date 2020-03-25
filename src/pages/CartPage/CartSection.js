@@ -4,11 +4,12 @@ import CartCard from '../../components/Cards/CartCard';
 
 import CartItem from '../../components/Cart/CartItem';
 
-export default function CartSection({ counter }) {
+export default function CartSection({ cartData }) {
   return (
     <CartCard label="Keranjang Belanja">
       <div className={`${CartStyle['cart-item-list']}`}>
-        <CartItem counter={counter} />
+        <CartItem />
+        <CartItem />
       </div>
 
       <div className={`${CartStyle['cart-total']}`}>
