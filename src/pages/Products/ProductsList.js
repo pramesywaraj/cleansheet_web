@@ -9,7 +9,7 @@ import PaginationButton from '../../components/Navigation/PaginationButton';
 export default function ProductsList({ products, loading }) {
   if (loading) {
     return (
-      <div className={ProductStyle['products-container']}>
+      <div className={ProductStyle['products-layout']}>
         <Loading />
       </div>
     );
