@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductStyle from './product.module.scss';
-import ProductCard from '../../components/Cards/ProductCard';
-import PaginationButton from '../../components/Navigation/PaginationButton';
+
+import ProductsList from './ProductsList';
 
 export default function ProductPage() {
   return (
@@ -13,15 +13,7 @@ export default function ProductPage() {
           barang anda tampak bersih layaknya barang baru
         </p>
       </div>
-
-      <div className={ProductStyle['products-container']}>
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-      </div>
-
-      <PaginationButton />
+      <ProductsList />
     </div>
   );
 }

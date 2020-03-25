@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-export default function usePost(endpoint) {
+export default function useFetchData(endpoint) {
   const [url, setUrl] = useState(`${process.env.REACT_APP_API_ENDPOINT}/${endpoint}`);
   const [loading, setLoading] = useState(false);
-  // const [success, setSuccess] = useState(false);
-  // const [error, setError] = useState(false);
   const [response, setResponse] = useState({ data: {}, success: false, error: false });
 
-  async function onPost(payload) {
+  async function onFetch(payload) {
     setLoading(true);
 
     try {
@@ -27,5 +25,5 @@ export default function usePost(endpoint) {
     return response;
   }
 
-  return { loading, response, onPost };
+  return { loading, response };
 }
