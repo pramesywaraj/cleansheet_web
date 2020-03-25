@@ -15,11 +15,6 @@ export default function ProductCard({ imgSrc, productName, price }) {
     <CardBase>
       <div className={`${CardStyle['product-layout']}`}>
         <div className={`${CardStyle.productImageContainer}`}>
-          {/* <img
-            className={`${CardStyle.productImage}`}
-            src={imgSrc || ProductImagePath}
-            alt="Products"
-          /> */}
           <Image src={imgSrc} style={`${CardStyle.productImage}`} alt={productName} />
         </div>
         <div className={`${CardStyle.productDetail}`}>

@@ -6,7 +6,7 @@ import ProductCard from '../../components/Cards/ProductCard';
 import Loading from '../../components/Loading/Loading';
 import PaginationButton from '../../components/Navigation/PaginationButton';
 
-export default function ProductsList({ products, loading, error }) {
+export default function ProductsList({ products, loading, error, pagination }) {
   if (loading) {
     return (
       <div className={ProductStyle['products-layout']}>
@@ -35,7 +35,12 @@ export default function ProductsList({ products, loading, error }) {
           />
         ))}
       </div>
-      <PaginationButton />
+      <PaginationButton
+        next={pagination.paginate.next}
+        prev={pagination.paginate.prev}
+        nextHandler={pagination.nextHandler}
+        prevHandler={pagination.prevHandler}
+      />
     </div>
   );
 }

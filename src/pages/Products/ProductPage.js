@@ -5,7 +5,10 @@ import ProductStyle from './product.module.scss';
 import ProductsList from './ProductsList';
 
 export default function ProductPage() {
-  const { loading, response } = useFetchData('master/products');
+  const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
+    'master/products',
+    true,
+  );
 
   useEffect(() => {
     console.log('mounted');
@@ -13,6 +16,7 @@ export default function ProductPage() {
       console.log('unmounted');
     };
   }, []);
+
   return (
     <div className={ProductStyle['products-wrapper']}>
       <div className={ProductStyle['products-title']}>
@@ -22,7 +26,12 @@ export default function ProductPage() {
           barang anda tampak bersih layaknya barang baru
         </p>
       </div>
-      <ProductsList loading={loading} error={response.error} products={response.data.products} />
+      <ProductsList
+        pagination={{ paginate, nextHandler, prevHandler }}
+        loading={loading}
+        error={response.error}
+        products={response.data.products}
+      />
     </div>
   );
 }
