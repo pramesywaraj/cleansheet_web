@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useFetchData from '../../hooks/useFetchData';
 import ProductStyle from './product.module.scss';
 
@@ -6,6 +6,13 @@ import ProductsList from './ProductsList';
 
 export default function ProductPage() {
   const { loading, response } = useFetchData('master/products');
+
+  useEffect(() => {
+    console.log('mounted');
+    return () => {
+      console.log('unmounted');
+    };
+  }, []);
   return (
     <div className={ProductStyle['products-wrapper']}>
       <div className={ProductStyle['products-title']}>
