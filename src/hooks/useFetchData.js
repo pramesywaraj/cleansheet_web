@@ -22,6 +22,7 @@ export default function useFetchData(endpoint, headers) {
       }
       setResponse({ data: data.data, success: true, error: false });
     } catch (err) {
+      console.log(err);
       if ('message' in err) {
         openSnackbar('fail', err.message);
       } else {

@@ -6,7 +6,7 @@ import ProductCard from '../../components/Cards/ProductCard';
 import Loading from '../../components/Loading/Loading';
 import PaginationButton from '../../components/Navigation/PaginationButton';
 
-export default function ProductsList({ products, loading }) {
+export default function ProductsList({ products, loading, error }) {
   if (loading) {
     return (
       <div className={ProductStyle['products-layout']}>
@@ -15,7 +15,7 @@ export default function ProductsList({ products, loading }) {
     );
   }
 
-  if (!products) {
+  if (!products || error) {
     return (
       <div className={ProductStyle['products-layout']}>
         <h3>Tidak ada Produk untuk ditampilkan.</h3>
@@ -26,11 +26,14 @@ export default function ProductsList({ products, loading }) {
   return (
     <div className={ProductStyle['products-layout']}>
       <div className={ProductStyle['products-container']}>
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
-        <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
+        {products.map(product => (
+          <ProductCard
+            key={product.id}
+            imgSrc={product.image_url}
+            productName={product.name}
+            price={product.price}
+          />
+        ))}
       </div>
       <PaginationButton />
     </div>

@@ -15,14 +15,15 @@ export default function ProductCard({ imgSrc, productName, price }) {
     <CardBase>
       <div className={`${CardStyle['product-layout']}`}>
         <div className={`${CardStyle.productImageContainer}`}>
-          <img className={`${CardStyle.productImage}`} src={ProductImagePath} alt="Products" />
+          <img
+            className={`${CardStyle.productImage}`}
+            src={imgSrc || ProductImagePath}
+            alt="Products"
+          />
         </div>
         <div className={`${CardStyle.productDetail}`}>
           <p className={`${CardStyle.bold}`}>{productName}</p>
-          <small>
-            Harga: Rp.
-            {price}
-          </small>
+          <small>{`Harga: Rp. ${price}`}</small>
         </div>
         <div className={`${CardStyle['full-width-button']}`}>
           <SmallButton full label="Tambah ke Keranjang" clickAction={buyClickAction} />

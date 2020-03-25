@@ -15,7 +15,7 @@ export default function ProductPage() {
           barang anda tampak bersih layaknya barang baru
         </p>
       </div>
-      <ProductsList loading={loading} />
+      <ProductsList loading={loading} error={response.error} products={response.data.products} />
     </div>
   );
 }
