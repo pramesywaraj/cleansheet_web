@@ -39,6 +39,7 @@ export default function ServicesPage() {
       </div>
       <TabsContainer handleTabChange={handleTabChange} activeTab={activeTab} />
       <ServiceList
+        openServiceModal={openModalHandler}
         services={response.data.services}
         loading={loading}
         pagination={{ paginate, nextHandler, prevHandler }}

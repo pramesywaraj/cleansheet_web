@@ -6,7 +6,7 @@ import ServiceCard from '../../components/Cards/ServiceCard';
 import Loading from '../../components/Loading/Loading';
 import PaginationButton from '../../components/Navigation/PaginationButton';
 
-export default function ServiceList({ services, loading, error, pagination }) {
+export default function ServiceList({ services, loading, error, pagination, openServiceModal }) {
   if (loading) {
     return (
       <div className={ServiceStyle['services-layout']}>
@@ -33,6 +33,7 @@ export default function ServiceList({ services, loading, error, pagination }) {
             productName={service.title}
             price={service.price}
             unit={service.unit}
+            onClick={openServiceModal}
           />
         ))}
       </div>
