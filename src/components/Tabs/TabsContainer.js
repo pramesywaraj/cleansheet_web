@@ -3,25 +3,18 @@ import React from 'react';
 import TabsStyle from './tabs.module.scss';
 import Tab from './Tab';
 
-import useTabs from '../../hooks/useTabs';
+import { TABTYPE } from '../../hooks/useTabs';
 
-export default function TabsContainer({ changeActivePanel }) {
-  const [tabs, activeTab, onChangeTab] = useTabs(0);
-
-  const handleTabChange = id => {
-    onChangeTab(id);
-    changeActivePanel(id);
-  };
-
+export default function TabsContainer({ handleTabChange, activeTab }) {
   return (
     <div className={TabsStyle['tabs-container']}>
       <div className={TabsStyle['tabs-content']}>
-        {tabs.map(tab => (
+        {Object.keys(TABTYPE).map((key, index) => (
           <Tab
-            key={`${tab.id}-tab`}
-            label={tab.name}
-            selected={tab.id === activeTab}
-            onSelect={() => handleTabChange(tab.id)}
+            key={`${TABTYPE[key].code}-tab`}
+            label={TABTYPE[key].name}
+            selected={TABTYPE[key].code === activeTab}
+            onSelect={() => handleTabChange(TABTYPE[key].code)}
           />
         ))}
       </div>

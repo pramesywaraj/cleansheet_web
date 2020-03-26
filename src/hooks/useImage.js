@@ -22,13 +22,11 @@ export default function useImage(src) {
     async function load() {
       try {
         const image = await loadImage(src);
-        console.log('image', image);
 
         if (!mounted.current) return;
 
         cache.set(src, image);
         setStatus(STATUS.IMAGE_LOADED);
-        console.log(src, status, cache.get(src));
       } catch (err) {
         if (!mounted.current) return;
 
