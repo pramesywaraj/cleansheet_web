@@ -2,22 +2,21 @@ import React from 'react';
 import CardBase from './CardBase';
 import CardStyle from './card.module.scss';
 import SmallButton from '../Buttons/SmallButton';
+import Image from '../Image/Image';
 
-import ProductImagePath from '../../assets/product_pictures/prod1.png';
-
-export default function ServiceCard({ imgSrc, productName, price, onClick }) {
+export default function ServiceCard({ imgSrc, productName, price, unit, onClick }) {
   return (
     <CardBase>
       <div className={`${CardStyle['card-service-layout']}`}>
         <div className={`${CardStyle['card-service-image_container']}`}>
-          <img className={`${CardStyle['service-image']}`} src={ProductImagePath} alt="Services" />
+          <Image style={`${CardStyle['service-image']}`} src={imgSrc} alt="Services" />
         </div>
         <div className={`${CardStyle['service-detail']}`}>
-          <p className={`${CardStyle.bold}`}>Nama layanan</p>
+          <p className={`${CardStyle.bold}`}>{productName}</p>
           <div className={`${CardStyle['service-detail-estimation']}`}>
             <div>
               <p>Harga:</p>
-              <p>Rp. 15.000/Kg</p>
+              <p>{`Rp. ${price}/${unit}`}</p>
             </div>
             <div>
               <p>Estimasi:</p>

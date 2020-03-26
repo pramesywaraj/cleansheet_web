@@ -5,6 +5,16 @@
   align-items: center;
 }
 
+.services-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 50vh;
+  width: 100%;
+}
+
 .services-title {
   margin-bottom: 1vh;
 }

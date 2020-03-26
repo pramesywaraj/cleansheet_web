@@ -18,7 +18,7 @@ export default function ProductsList({ products, loading, error, pagination }) {
   if (!products || error) {
     return (
       <div className={ProductStyle['products-layout']}>
-        <h3>Tidak ada Produk untuk ditampilkan.</h3>
+        <h3>Tidak ada Produk yang dapat ditampilkan.</h3>
       </div>
     );
   }
