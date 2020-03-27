@@ -33,7 +33,7 @@ export default function ServiceList({ services, loading, error, pagination, open
             productName={service.title}
             price={service.price}
             unit={service.unit}
-            onClick={openServiceModal}
+            onClick={() => openServiceModal(service.id)}
           />
         ))}
       </div>

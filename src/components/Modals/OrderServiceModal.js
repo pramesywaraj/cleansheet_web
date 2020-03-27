@@ -1,37 +1,14 @@
 import React from 'react';
 import ModalBase from './ModalBase';
 import ModalStyle from './modal.module.scss';
-import useInput from '../../hooks/useInput';
 
 import TextInput from '../Input/TextInput';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
-export default function OrderServiceModal({ show, close }) {
-  const [serviceObj, changeValue, resetValue, handleSubmit, errors] = useInput(
-    {
-      name: '',
-      phone: '',
-      pickup_date: '',
-      pickup_time: '',
-      notes: '',
-      pickup_address: '',
-    },
-    onSubmit,
-  );
-
-  function onSubmit() {
-    console.log(serviceObj);
-    console.log('submitted');
-    resetValue();
-  }
-
-  function onCloseModal() {
-    resetValue();
-    close();
-  }
-
+export default function OrderServiceModal({ showModal, closeModal, formHandle }) {
+  const { serviceObj, changeValue, handleSubmit, errors } = formHandle;
   return (
-    <ModalBase show={show} close={onCloseModal}>
+    <ModalBase show={showModal} close={closeModal}>
       <div className={ModalStyle['modal-content']}>
         <h2>Data Pemesanan Layanan</h2>
         <div className={ModalStyle['modal-form']}>
