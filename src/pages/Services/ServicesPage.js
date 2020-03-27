@@ -3,6 +3,7 @@ import useModal from '../../hooks/useModal';
 import useTabs, { TABTYPE } from '../../hooks/useTabs';
 import useFetchData from '../../hooks/useFetchData';
 import useInput from '../../hooks/useInput';
+import usePostData from '../../hooks/usePostData';
 
 import ServicesPageStyle from './servicesPage.module.scss';
 import TabsContainer from '../../components/Tabs/TabsContainer';
@@ -16,6 +17,8 @@ export default function ServicesPage() {
     true,
     activeTab,
   );
+  const { onPostLoading, onPostData } = usePostData('order/service');
+
   const [serviceObj, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
@@ -45,10 +48,6 @@ export default function ServicesPage() {
     onChangeTab(key);
   }
 
-  function orderService() {
-    resetValue();
-  }
-
   function openModal(id) {
     setSelectedId(id);
     openModalHandler();
@@ -60,9 +59,17 @@ export default function ServicesPage() {
     closeModalHandler();
   }
 
+  function orderService() {
+    const payload = serviceObj;
+    payload.service_id = selectedId;
+
+    onPostData(payload, onCloseModal);
+  }
+
   return (
     <div className={ServicesPageStyle['services-wrapper']}>
       <OrderServiceModal
+        loading={onPostLoading}
         showModal={showModal}
         closeModal={onCloseModal}
         formHandle={{ serviceObj, changeValue, handleSubmit, errors }}
