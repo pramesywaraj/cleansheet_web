@@ -45,8 +45,8 @@ export default function OrderServiceModal({ showModal, closeModal, formHandle })
             <TextInput
               name="pickup_time"
               type="time"
-              label="Waktu Jemput"
-              placeholder="Tentukan waktu penjemputan pada tanggal yang telah ditentukan"
+              label="Waktu Jemput/Pelaksanaan"
+              placeholder="Tentukan waktu penjemputan/pelaksanaan pada tanggal yang telah ditentukan"
               value={serviceObj.pickup_time}
               error={errors.pickup_time}
               onChange={changeValue}

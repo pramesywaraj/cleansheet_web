@@ -31,9 +31,21 @@ export default function validateLogin(values) {
 
   if ('pickup_date' in values) {
     if (!values.pickup_date) {
-      errors.pickup_date = 'Tanggal penjemputan belum terisi.';
+      errors.pickup_date = 'Tanggal penjemputan/pelaksanaan belum terisi.';
     } else if (values.date < todayDate) {
       errors.pickup_date = `Tanggal harus ${todayDate} atau setelahnya.`;
+    }
+  }
+
+  if ('pickup_time' in values) {
+    if (!values.pickup_time) {
+      errors.pickup_time = 'Waktu penjemputan/pelaksanaan belum terisi.';
+    }
+  }
+
+  if ('pickup_address' in values) {
+    if (!values.pickup_address) {
+      errors.pickup_address = 'Alamat penjemputan/pelaksanaan belum terisi.';
     }
   }
 
