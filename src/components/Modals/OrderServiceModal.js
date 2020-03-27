@@ -3,10 +3,12 @@ import ModalBase from './ModalBase';
 import ModalStyle from './modal.module.scss';
 
 import TextInput from '../Input/TextInput';
+import DatePicker from '../Input/DatePicker';
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
 export default function OrderServiceModal({ showModal, closeModal, formHandle }) {
   const { serviceObj, changeValue, handleSubmit, errors } = formHandle;
+  const todayDate = new Date().toISOString().substr(0, 10);
   return (
     <ModalBase show={showModal} close={closeModal}>
       <div className={ModalStyle['modal-content']}>
@@ -31,9 +33,9 @@ export default function OrderServiceModal({ showModal, closeModal, formHandle })
               error={errors.phone}
               onChange={changeValue}
             />
-            <TextInput
+            <DatePicker
+              min={todayDate}
               name="pickup_date"
-              type="date"
               label="Tanggal Jemput"
               placeholder="Tentukan tanggal penjemputan tim kami"
               value={serviceObj.pickup_date}
