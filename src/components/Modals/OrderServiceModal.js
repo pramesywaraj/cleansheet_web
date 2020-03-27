@@ -26,7 +26,7 @@ export default function OrderServiceModal({ showModal, closeModal, formHandle })
               name="phone"
               type="tel"
               label="Nomor Telepon"
-              placeholder="Nomor telepon pemesan"
+              placeholder="Nomor telepon pemesan diawali dengan +62/62/08"
               value={serviceObj.phone}
               error={errors.phone}
               onChange={changeValue}

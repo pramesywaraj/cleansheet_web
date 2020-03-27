@@ -20,6 +20,14 @@ export default function validateLogin(values) {
     }
   }
 
+  if ('phone' in values) {
+    if (!values.phone) {
+      errors.phone = 'Nomor telepon belum terisi';
+    } else if (!/^((?:\+62|62)|0)[2-9]{1}[0-9]+$/.test(values.phone)) {
+      errors.phone = 'Nomor telepon Anda tidak sesuai format.';
+    }
+  }
+
   if ('city' in values) {
     if (!values.city) {
       errors.city = 'Kota belum terisi';
