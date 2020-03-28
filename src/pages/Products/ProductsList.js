@@ -6,7 +6,7 @@ import ProductCard from '../../components/Cards/ProductCard';
 import Loading from '../../components/Loading/Loading';
 import PaginationButton from '../../components/Navigation/PaginationButton';
 
-export default function ProductsList({ products, loading, error, pagination }) {
+export default function ProductsList({ products, loading, error, pagination, addProduct }) {
   if (loading) {
     return (
       <div className={ProductStyle['products-layout']}>
@@ -32,6 +32,7 @@ export default function ProductsList({ products, loading, error, pagination }) {
             imgSrc={product.image_url}
             productName={product.name}
             price={product.price}
+            addProduct={() => addProduct(product.id)}
           />
         ))}
       </div>

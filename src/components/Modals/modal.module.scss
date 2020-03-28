@@ -95,3 +95,36 @@
 .modal-input-marginLeft {
   margin-left: 1vw;
 }
+
+// Add to cart message
+.modal-content-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  width: 35vw;
+  height: 100%;
+}
+
+.modal-cart-image {
+  width: 15vw;
+  height: auto;
+}
+
+.modal-cart-caption {
+  margin: 5vh 0;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5vh;
+  }
+}
+
+.modal-cart-button {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  margin: 2vh 0;
+}

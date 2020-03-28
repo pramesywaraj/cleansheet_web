@@ -18,7 +18,6 @@ import Snackbar from './components/Snackbars/Snackbar';
 function PrivateRoutes({ component: Component }) {
   const { state } = useStore();
   const { isLoggedIn } = state;
-
   return (
     <Route
       render={props =>
@@ -57,6 +56,7 @@ function Routes() {
 
   return (
     <Router>
+      <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
       <Switch>
         <Route exact path="/">
           <Layout>
@@ -78,7 +78,6 @@ function Routes() {
         <Route path="/login" component={AuthPage} />
         <Route path="/register" component={AuthPage} />
       </Switch>
-      <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
     </Router>
   );
 }

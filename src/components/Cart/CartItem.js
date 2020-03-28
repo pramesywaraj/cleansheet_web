@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import useAddMinCart from '../../hooks/useAddMinCart';
 
@@ -11,7 +11,6 @@ import ProductImagePath from '../../assets/product_pictures/prod2.png';
 
 export default function CartItem({ initCounter }) {
   const [counter, add, min] = useAddMinCart(1);
-
   return (
     <div className={`${CartStyle['cart-item-container']}`}>
       <div className={`${CartStyle['cart-item-row']}`}>

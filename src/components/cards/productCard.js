@@ -6,11 +6,7 @@ import CardStyle from './card.module.scss';
 
 import Image from '../Image/Image';
 
-export default function ProductCard({ imgSrc, productName, price }) {
-  const buyClickAction = () => {
-    console.log('Buy a product');
-  };
-
+export default function ProductCard({ imgSrc, productName, price, addProduct }) {
   return (
     <CardBase>
       <div className={`${CardStyle['product-layout']}`}>
@@ -22,7 +18,7 @@ export default function ProductCard({ imgSrc, productName, price }) {
           <small>{`Harga: Rp. ${price}`}</small>
         </div>
         <div className={`${CardStyle['full-width-button']}`}>
-          <SmallButton full label="Tambah ke Keranjang" clickAction={buyClickAction} />
+          <SmallButton full label="Tambah ke Keranjang" clickAction={addProduct} />
         </div>
       </div>
     </CardBase>
