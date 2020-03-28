@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useStore } from '../../context/store';
 import useFetchData from '../../hooks/useFetchData';
 import usePostData from '../../hooks/usePostData';
 import useModal from '../../hooks/useModal';
+import useSnackbar from '../../hooks/useSnackbar';
 
 import ProductStyle from './product.module.scss';
 import ProductsList from './ProductsList';
@@ -9,13 +12,18 @@ import ProductsList from './ProductsList';
 import AddProductToCartModal from '../../components/Modals/AddProductToCartModal';
 
 export default function ProductPage() {
+  const { state } = useStore();
+  const history = useHistory();
+
   const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
     'master/products',
     true,
   );
+
   const { onPostLoading, onPostData } = usePostData('cart/ship');
   const [selectedProductId, setSelected] = useState('');
   const { showModal, openModalHandler, closeModalHandler } = useModal();
+  const [openSnackbar] = useSnackbar();
 
   useEffect(() => {
     console.log('mounted');
@@ -24,7 +32,12 @@ export default function ProductPage() {
     };
   }, []);
 
-  async function addProductToCart(id) {
+  function addProductToCart(id) {
+    if (!state.isLoggedIn) {
+      openSnackbar('info', 'Silahkan login terlebih dahulu.');
+      history.push('/login');
+    }
+
     openModalHandler();
     setSelected(id);
     // onPostData();

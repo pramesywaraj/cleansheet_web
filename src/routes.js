@@ -22,10 +22,7 @@ function PrivateRoutes({ component: Component }) {
   const [openSnackbar] = useSnackbar();
 
   function RedirectToLogin() {
-    openSnackbar(
-      'info',
-      'Mohon untuk melakukan login ke dalam aplikasi terlebih dahulu untuk mengakses bagian ini.',
-    );
+    openSnackbar('info', 'Silahkan login terlebih dahulu.');
     return <Redirect to={{ pathname: '/login' }} />;
   }
 
@@ -38,8 +35,7 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <RedirectToLogin />
-        )
-      }
+        )}
     />
   );
 }
