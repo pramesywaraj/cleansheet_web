@@ -13,11 +13,22 @@ import Layout from './components/Layout/Layout';
 import Loading from './components/Loading/Loading';
 
 import { useStore } from './context/store';
+import useSnackbar from './hooks/useSnackbar';
 import Snackbar from './components/Snackbars/Snackbar';
 
 function PrivateRoutes({ component: Component }) {
   const { state } = useStore();
   const { isLoggedIn } = state;
+  const [openSnackbar] = useSnackbar();
+
+  function RedirectToLogin() {
+    openSnackbar(
+      'info',
+      'Mohon untuk melakukan login ke dalam aplikasi terlebih dahulu untuk mengakses bagian ini.',
+    );
+    return <Redirect to={{ pathname: '/login' }} />;
+  }
+
   return (
     <Route
       render={props =>
@@ -26,8 +37,9 @@ function PrivateRoutes({ component: Component }) {
             <Component {...props} />
           </Layout>
         ) : (
-          <Redirect to={{ pathname: '/login' }} />
-        )}
+          <RedirectToLogin />
+        )
+      }
     />
   );
 }
