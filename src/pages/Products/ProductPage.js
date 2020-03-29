@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useStore } from '../../context/store';
 import useFetchData from '../../hooks/useFetchData';
@@ -14,23 +14,32 @@ import AddProductToCartModal from '../../components/Modals/AddProductToCartModal
 export default function ProductPage() {
   const { state } = useStore();
   const history = useHistory();
+  const ref = useRef({});
 
   const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
     'master/products',
     true,
   );
 
-  const { onPostLoading, onPostData } = usePostData('cart/ship');
-  const [selectedProductId, setSelected] = useState('');
+  const { onPostLoading, onPostData, isError } = usePostData('order/product/cart/ship');
   const { showModal, openModalHandler, closeModalHandler } = useModal();
   const [openSnackbar] = useSnackbar();
 
   useEffect(() => {
     console.log('mounted');
+    ref.current.rendered = true;
+
     return () => {
       console.log('unmounted');
     };
   }, []);
+
+  // Effect for handling the error when ship the product
+  useEffect(() => {
+    if (ref.current.rendered && isError) {
+      closeModalHandler();
+    }
+  }, [isError]);
 
   function addProductToCart(id) {
     if (!state.isLoggedIn) {
@@ -38,21 +47,34 @@ export default function ProductPage() {
       history.push('/login');
     }
 
+    const payload = {
+      product_id: id,
+      ahay: 0,
+    };
+
     openModalHandler();
-    setSelected(id);
-    // onPostData();
+    onPostData(payload);
+  }
+
+  function goToCart() {
+    history.push('/cart');
   }
 
   return (
     <div className={ProductStyle['products-wrapper']}>
-      <AddProductToCartModal loading={onPostLoading} show={showModal} close={closeModalHandler} />
+      <AddProductToCartModal
+        loading={onPostLoading}
+        show={showModal}
+        close={closeModalHandler}
+        isError={isError}
+        toCartAction={goToCart}
+      />
       <div className={ProductStyle['products-title']}>
         <h1>Produk Kebersihan</h1>
         <p>
           Menggunakan pelayanan modern dan canggih serta selalu memberi yang terbaik untuk membuat
           barang anda tampak bersih layaknya barang baru
         </p>
-        <p>{selectedProductId}</p>
       </div>
       <ProductsList
         addProduct={addProductToCart}

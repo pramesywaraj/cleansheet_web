@@ -6,10 +6,16 @@ import useSnackbar from './useSnackbar';
 
 export default function usePostData(endpoint) {
   const [onPostLoading, setPostLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const [openSnackbar] = useSnackbar();
   const { state } = useStore();
 
-  async function onPostData(payload, callback) {
+  function defaultCallback() {
+    console.log('Request has been finished');
+  }
+
+  async function onPostData(payload, callback = defaultCallback) {
     setPostLoading(true);
 
     const { user } = state;
@@ -32,10 +38,13 @@ export default function usePostData(endpoint) {
 
       if (data.success) {
         openSnackbar('success', 'Permintaan Anda berhasil dikirim.');
+        setIsError(false);
         callback();
       }
     } catch (err) {
       console.log('error when posting', err);
+      setIsError(true);
+
       if ('message' in err) {
         openSnackbar('fail', err.message);
       } else {
@@ -50,5 +59,5 @@ export default function usePostData(endpoint) {
     }
   }
 
-  return { onPostLoading, onPostData };
+  return { isError, onPostLoading, onPostData };
 }
