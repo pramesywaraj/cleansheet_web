@@ -36,6 +36,15 @@ export const reducers = (state, action) => {
         isLoggedIn: true,
       };
     }
+
+    case 'TOKEN_REFRESHED': {
+      Cookies.set('@userData', action.data, { expires: 1 });
+      return {
+        ...state,
+        user: action.data,
+        isLoggedIn: true,
+      };
+    }
     // Reducers for snackbar
 
     case 'SNACKBAR_SUCCESS': {

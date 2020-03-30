@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage/CartPage';
 
 import Layout from './components/Layout/Layout';
 import Loading from './components/Loading/Loading';
+import Interceptors from './components/Interceptors';
 
 import { useStore } from './context/store';
 import useSnackbar from './hooks/useSnackbar';
@@ -56,7 +57,7 @@ function Routes() {
 
       setIsChecking(false);
     }
-  });
+  }, []);
 
   if (isChecking) {
     return <Loading />;
@@ -65,6 +66,7 @@ function Routes() {
   return (
     <Router>
       <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
+      <Interceptors />
       <Switch>
         <Route exact path="/">
           <Layout>

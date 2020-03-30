@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import { FaShoppingBasket } from 'react-icons/fa';
 import { useStore } from '../../context/store';
@@ -25,6 +25,12 @@ export default function Header() {
       history.push('/login');
     }, 2500);
   };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout();
+    };
+  }, []);
 
   return (
     <header className={HeaderStyle.header}>

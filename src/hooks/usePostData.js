@@ -18,6 +18,10 @@ export default function usePostData(endpoint) {
   async function onPostData(payload, callback = defaultCallback) {
     setPostLoading(true);
 
+    if (isError) {
+      setIsError(false);
+    }
+
     const { user } = state;
 
     const config = {

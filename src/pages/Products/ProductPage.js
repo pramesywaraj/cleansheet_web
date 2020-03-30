@@ -49,7 +49,7 @@ export default function ProductPage() {
 
     const payload = {
       product_id: id,
-      ahay: 0,
+      amount: 0,
     };
 
     openModalHandler();
