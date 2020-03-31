@@ -30,13 +30,13 @@ export default function Interceptors() {
             refresh_token: state.user.refresh_token,
           })
           .then(secondaryResponse => {
-            console.log('token refresh request', secondaryResponse);
             dispatch({ type: 'TOKEN_REFRESHED', data: secondaryResponse.data.data });
 
             config.headers.Authorization = `Bearer ${secondaryResponse.data.data.access_token}`;
             return axios(config);
           })
           .catch(error => {
+            console.log('There is an error occured when intercepting,', error);
             return Promise.reject(error);
           })
           .finally(addErrorInterceptor);

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useStore } from '../../context/store';
 import useInput from '../../hooks/useInput';
 import useLoading from '../../hooks/useLoading';
+import useFetchData from '../../hooks/useFetchData';
 
 import CartStyle from './cart.module.scss';
 
@@ -8,6 +10,7 @@ import SendingForm from './SendingForm';
 import CartSection from './CartSection';
 
 export default function CartPage() {
+  const { state } = useStore();
   const [deliveryPayload, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
@@ -20,8 +23,15 @@ export default function CartPage() {
     },
     checkout,
   );
-  const [loading, showLoading, hideLoading] = useLoading();
-  const cartData = 0;
+  const { loading, response } = useFetchData('order/product/cart', false, '', {
+    Authorization: `Bearer ${state.user.access_token}`,
+  });
+
+  const [formLoading, showLoading, hideLoading] = useLoading();
+
+  useEffect(() => {
+    console.log(response.data);
+  }, [response]);
 
   function checkout(e) {
     // console.log('Checkout');
@@ -37,7 +47,7 @@ export default function CartPage() {
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartSection cartData={cartData} />
+        <CartSection cartData={response.data} isLoading={loading} />
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm
@@ -45,7 +55,7 @@ export default function CartPage() {
           deliveryPayload={deliveryPayload}
           changeFormValue={changeValue}
           errors={errors}
-          isLoading={loading}
+          isLoading={formLoading}
         />
       </div>
     </div>

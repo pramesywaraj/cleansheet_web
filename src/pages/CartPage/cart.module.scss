@@ -12,7 +12,21 @@
 // Cart Section
 .cart-item-list {
   max-height: 50vh;
-  overflow-y: auto;
+  min-height: 30vh;
+  overflow-y: scroll;
+}
+
+.cart-item-empty {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    height: 100%;
+  }
 }
 
 .cart-total {

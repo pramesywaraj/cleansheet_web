@@ -6,7 +6,10 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
   const [config, setConfig] = useState({
     method: 'GET',
     url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}`,
-    headers,
+    headers: {
+      ...headers,
+      'Content-Type': 'application/json',
+    },
   });
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState({ data: {}, success: false, error: false });
