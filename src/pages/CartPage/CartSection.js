@@ -1,6 +1,6 @@
 import React from 'react';
 import { setCommaToMoney } from '../../misc/otherFunctionality';
-import CartStyle from './cart.module.scss';
+import CartStyle from './cartPage.module.scss';
 import CartCard from '../../components/Cards/CartCard';
 
 import Loading from '../../components/Loading/Loading';
@@ -17,7 +17,15 @@ function CartItemList({ cartData }) {
             <h4>Tidak ada barang dalam keranjang.</h4>
           </div>
         ) : (
-          <CartItem />
+          products.map(item => (
+            <CartItem
+              key={item.id}
+              amount={item.amount}
+              name={item.product.name}
+              price={item.product.price}
+              image={item.product.image_url}
+            />
+          ))
         )}
       </div>
 

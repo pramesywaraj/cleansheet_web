@@ -4,7 +4,7 @@ import useInput from '../../hooks/useInput';
 import useLoading from '../../hooks/useLoading';
 import useFetchData from '../../hooks/useFetchData';
 
-import CartStyle from './cart.module.scss';
+import CartStyle from './cartPage.module.scss';
 
 import SendingForm from './SendingForm';
 import CartSection from './CartSection';
