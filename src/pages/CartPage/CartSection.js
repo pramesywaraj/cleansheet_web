@@ -44,7 +44,9 @@ function CartItemList({ cartData }) {
 export default function CartSection({ cartData, isLoading }) {
   return (
     <CartCard label="Keranjang Belanja">
-      {isLoading ? <Loading /> : <CartItemList cartData={cartData} />}
+      <div className={`${CartStyle['cart-item-container']}`}>
+        {isLoading ? <Loading /> : <CartItemList cartData={cartData} />}
+      </div>
     </CartCard>
   );
 }

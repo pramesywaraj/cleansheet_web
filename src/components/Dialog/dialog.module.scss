@@ -1,0 +1,25 @@
+.dialog-container {
+  min-height: 20vh;
+  min-width: 20vw;
+  max-width: 40vw;
+
+  div {
+    margin: 2vh 0;
+    text-align: center;
+  }
+}
+
+.dialog-title {
+  font-size: 1.3em;
+}
+
+.dialog-caption {
+  font-size: 1.2em;
+}
+
+.dialog-button {
+  width: auto;
+
+  display: flex;
+  justify-content: space-evenly;
+}

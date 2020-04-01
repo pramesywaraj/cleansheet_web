@@ -6,6 +6,9 @@ export const initialState = {
   snackbarOpen: false,
   snackbarMessage: '',
   snackbarType: '',
+  dialogOpen: false,
+  dialogTitle: '',
+  dialogCaption: '',
 };
 
 export const reducers = (state, action) => {
@@ -80,6 +83,24 @@ export const reducers = (state, action) => {
         snackbarOpen: false,
         snackbarMessage: '',
         snackbarType: '',
+      };
+    }
+
+    case 'DIALOG_OPEN': {
+      return {
+        ...state,
+        dialogOpen: true,
+        dialogTitle: action.data.title,
+        dialogCaption: action.data.caption,
+      };
+    }
+
+    case 'DIALOG_CLOSE': {
+      return {
+        ...state,
+        dialogOpen: false,
+        dialogTitle: '',
+        dialogCaption: '',
       };
     }
 

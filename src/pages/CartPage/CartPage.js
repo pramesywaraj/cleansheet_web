@@ -8,6 +8,7 @@ import CartStyle from './cartPage.module.scss';
 
 import SendingForm from './SendingForm';
 import CartSection from './CartSection';
+import ConfirmationDialog from '../../components/Dialog/ConfirmationDialog';
 
 export default function CartPage() {
   const { state } = useStore();
@@ -58,6 +59,7 @@ export default function CartPage() {
           isLoading={formLoading}
         />
       </div>
+      <ConfirmationDialog />
     </div>
   );
 }

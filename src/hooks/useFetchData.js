@@ -11,7 +11,7 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
       'Content-Type': 'application/json',
     },
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState({ data: {}, success: false, error: false });
   const [paginate, setPaginate] = useState({ next: null, prev: null, current: 1 });
   const [category, setCategory] = useState(initialCategory);
