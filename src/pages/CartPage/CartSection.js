@@ -6,7 +6,7 @@ import CartCard from '../../components/Cards/CartCard';
 import Loading from '../../components/Loading/Loading';
 import CartItem from '../../components/Cart/CartItem';
 
-function CartItemList({ cartData }) {
+function CartItemList({ cartData, deleteItem }) {
   const { total, products } = cartData;
 
   return (
@@ -19,11 +19,12 @@ function CartItemList({ cartData }) {
         ) : (
           products.map(item => (
             <CartItem
-              key={item.id}
+              key={item.product_id}
               amount={item.amount}
               name={item.product.name}
               price={item.product.price}
               image={item.product.image_url}
+              deleteItem={() => deleteItem(item.product_id)}
             />
           ))
         )}
@@ -41,11 +42,11 @@ function CartItemList({ cartData }) {
   );
 }
 
-export default function CartSection({ cartData, isLoading }) {
+export default function CartSection({ cartData, isLoading, deleteItem }) {
   return (
     <CartCard label="Keranjang Belanja">
       <div className={`${CartStyle['cart-item-container']}`}>
-        {isLoading ? <Loading /> : <CartItemList cartData={cartData} />}
+        {isLoading ? <Loading /> : <CartItemList cartData={cartData} deleteItem={deleteItem} />}
       </div>
     </CartCard>
   );

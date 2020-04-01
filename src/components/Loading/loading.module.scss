@@ -1,32 +1,78 @@
 @import '../../variable.scss';
 
+// Normal loading spinner
 .loading-container {
   width: auto;
   height: 100%;
-  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    opacity: 0.5;
+  }
 }
 
-.loading-spinner1,
-.loading-spinner2 {
+.loading-spinner {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: $primary_color;
-  opacity: 0.9;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -20px 0 0 -20px;
+  opacity: 0.5;
 
   -webkit-animation: loading-bounce 2s infinite ease-in-out;
   animation: loading-bounce 2s infinite ease-in-out;
 }
 
+// Small Loading spinner
+.small-loading-container {
+  width: auto;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    opacity: 0.5;
+    font-size: 0.7em;
+  }
+}
+
+.small-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $primary_color;
+  opacity: 0.5;
+
+  -webkit-animation: loading-bounce 2s infinite ease-in-out;
+  animation: loading-bounce 2s infinite ease-in-out;
+}
+
+// Button Loading spinner
 .loading-button-container {
   width: 1em;
   height: 1em;
   position: relative;
   margin: 0 auto;
+}
+
+.button-loading-spinner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $primary_color;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: loading-bounce 2s infinite ease-in-out;
+  animation: loading-bounce 2s infinite ease-in-out;
 }
 
 .color-white {

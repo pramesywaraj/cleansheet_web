@@ -1,7 +1,7 @@
 .dialog-container {
   min-height: 20vh;
   min-width: 20vw;
-  max-width: 40vw;
+  max-width: 30vw;
 
   div {
     margin: 2vh 0;
@@ -10,16 +10,22 @@
 }
 
 .dialog-title {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .dialog-caption {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .dialog-button {
   width: auto;
+  height: auto;
 
   display: flex;
   justify-content: space-evenly;
+
+  div {
+    flex: 1;
+    padding: 0 1vw;
+  }
 }

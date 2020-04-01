@@ -9,6 +9,8 @@ export const initialState = {
   dialogOpen: false,
   dialogTitle: '',
   dialogCaption: '',
+  dialogOnConfirm: '',
+  dialogOnLoad: false,
 };
 
 export const reducers = (state, action) => {
@@ -92,6 +94,7 @@ export const reducers = (state, action) => {
         dialogOpen: true,
         dialogTitle: action.data.title,
         dialogCaption: action.data.caption,
+        dialogOnConfirm: action.data.confirmAction,
       };
     }
 
@@ -101,6 +104,19 @@ export const reducers = (state, action) => {
         dialogOpen: false,
         dialogTitle: '',
         dialogCaption: '',
+        dialogOnConfirm: '',
+      };
+    }
+
+    case 'DIALOG_LOADING_ON': {
+      return {
+        dialogOnLoad: true,
+      };
+    }
+
+    case 'DIALOG_LOADING_OFF': {
+      return {
+        dialogOnLoad: false,
       };
     }
 

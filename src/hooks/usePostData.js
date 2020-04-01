@@ -41,7 +41,7 @@ export default function usePostData(endpoint) {
       }
 
       if (data.success) {
-        openSnackbar('success', 'Permintaan Anda berhasil dikirim.');
+        openSnackbar('success', 'Permintaan Anda berhasil terkirim.');
         setIsError(false);
         callback();
       }

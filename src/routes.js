@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { useStore } from './context/store';
 
 // The pages
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -13,9 +14,9 @@ import Layout from './components/Layout/Layout';
 import Loading from './components/Loading/Loading';
 import Interceptors from './components/Interceptors';
 
-import { useStore } from './context/store';
 import useSnackbar from './hooks/useSnackbar';
 import Snackbar from './components/Snackbars/Snackbar';
+import ConfirmationDialog from './components/Dialog/ConfirmationDialog';
 
 function PrivateRoutes({ component: Component }) {
   const { state } = useStore();
@@ -36,7 +37,8 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <RedirectToLogin />
-        )}
+        )
+      }
     />
   );
 }
@@ -45,7 +47,14 @@ function Routes() {
   const firstLoad = useRef(true);
   const [isChecking, setIsChecking] = useState(true);
   const { state, dispatch } = useStore();
-  const { snackbarOpen, snackbarMessage, snackbarType } = state;
+  const {
+    snackbarOpen,
+    snackbarMessage,
+    snackbarType,
+    dialogOpen,
+    dialogTitle,
+    dialogCaption,
+  } = state;
 
   useEffect(() => {
     if (firstLoad.current) {
@@ -65,8 +74,9 @@ function Routes() {
 
   return (
     <Router>
-      <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
       <Interceptors />
+      <ConfirmationDialog show={dialogOpen} title={dialogTitle} caption={dialogCaption} />
+      <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
       <Switch>
         <Route exact path="/">
           <Layout>

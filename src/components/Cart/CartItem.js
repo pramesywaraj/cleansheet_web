@@ -10,7 +10,7 @@ import Image from '../Image/Image';
 
 import { setCommaToMoney } from '../../misc/otherFunctionality';
 
-export default function CartItem({ amount, name, price, image }) {
+export default function CartItem({ amount, name, price, image, deleteItem }) {
   const [counter, add, min] = useAddMinCart(amount);
   return (
     <div className={`${CartStyle['cart-item-container']}`}>
@@ -22,7 +22,7 @@ export default function CartItem({ amount, name, price, image }) {
           <p className={`${CartStyle['item-price']}`}>{name}</p>
           <div className={`${CartStyle['cart-item-price-delete']}`}>
             <p>{`Rp. ${setCommaToMoney(price)}/pcs`}</p>
-            <IconButton iconColor="#a1a1a1" label={<FaTrash />} />
+            <IconButton iconColor="#a1a1a1" label={<FaTrash />} btnHandler={deleteItem} />
           </div>
         </div>
       </div>

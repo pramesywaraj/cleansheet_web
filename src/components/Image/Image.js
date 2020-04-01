@@ -3,13 +3,13 @@ import React from 'react';
 import useImage, { STATUS } from '../../hooks/useImage';
 import ImageDefault from '../../assets/image_default.svg';
 
-import Loading from '../Loading/Loading';
+import SmallLoading from '../Loading/SmallLoading';
 
 export default function Image({ src, style, alt }) {
   const [status, image] = useImage(src);
   let imageUrl;
 
-  if (status === STATUS.IMAGE_LOADING) return <Loading />;
+  if (status === STATUS.IMAGE_LOADING) return <SmallLoading />;
 
   if (status === STATUS.FAILED) {
     imageUrl = ImageDefault;
