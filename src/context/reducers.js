@@ -9,7 +9,7 @@ export const initialState = {
   dialogOpen: false,
   dialogTitle: '',
   dialogCaption: '',
-  dialogOnConfirm: '',
+  dialogOnConfirm: undefined,
   dialogOnLoad: false,
 };
 
@@ -98,24 +98,20 @@ export const reducers = (state, action) => {
       };
     }
 
-    case 'DIALOG_CLOSE': {
+    case 'DIALOG_PROCESS_ON': {
+      return {
+        ...state,
+        dialogOnLoad: true,
+      };
+    }
+
+    case 'DIALOG_PROCESS_DONE': {
       return {
         ...state,
         dialogOpen: false,
         dialogTitle: '',
         dialogCaption: '',
-        dialogOnConfirm: '',
-      };
-    }
-
-    case 'DIALOG_LOADING_ON': {
-      return {
-        dialogOnLoad: true,
-      };
-    }
-
-    case 'DIALOG_LOADING_OFF': {
-      return {
+        dialogOnConfirm: undefined,
         dialogOnLoad: false,
       };
     }

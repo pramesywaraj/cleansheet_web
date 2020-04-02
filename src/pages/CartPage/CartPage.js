@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { useStore } from '../../context/store';
 import useInput from '../../hooks/useInput';
@@ -27,23 +27,29 @@ export default function CartPage() {
     },
     checkout,
   );
-  const { openDialog, processStatus, closeDialog } = useConfirmationDialog();
+  const { openDialog, processDone, closeDialog } = useConfirmationDialog();
   const { loading, response } = useFetchData('order/product/cart', false, '', {
     Authorization: `Bearer ${state.user.access_token}`,
   });
+  const [data, setData] = useState({ total: '', products: [] });
   const [formLoading, showLoading, hideLoading] = useLoading();
   const [openSnackbar] = useSnackbar();
 
-  const selectedId = useRef(null);
+  const ref = useRef({});
 
   useEffect(() => {
+    console.log(response);
+    setData({
+      total: response.data.total,
+      products: response.data.products,
+    });
+
     return () => {
-      selectedId.current = null;
+      ref.current.selectedId = null;
     };
   }, [response]);
 
   function checkout(e) {
-    // console.log('Checkout');
     e.preventDefault();
     showLoading();
 
@@ -54,6 +60,8 @@ export default function CartPage() {
   }
 
   async function deleteItem() {
+    const { products, total } = data;
+
     const config = {
       method: 'POST',
       url: `${process.env.REACT_APP_API_ENDPOINT}/order/product/cart/remove`,
@@ -62,13 +70,27 @@ export default function CartPage() {
         Authorization: `Bearer ${state.user.access_token}`,
       },
       data: {
-        product_id: selectedId.current,
+        product_id: ref.current.selectedId,
       },
     };
 
     try {
       const deleteResponse = await axios(config);
       if (deleteResponse.status) {
+        let tempTotal = total;
+        let tempProducts = products;
+        tempProducts = tempProducts.filter(function(product) {
+          if (product.product_id === ref.current.selectedId) {
+            tempTotal -= product.amount * product.product.price;
+          }
+
+          return product.product_id !== ref.current.selectedId;
+        });
+
+        setData({
+          total: tempTotal,
+          products: tempProducts,
+        });
         openSnackbar('success', 'Produk berhasil dihapus.');
       } else {
         throw new Error();
@@ -84,13 +106,12 @@ export default function CartPage() {
         );
       }
     } finally {
-      processStatus(false);
-      closeDialog();
+      processDone();
     }
   }
 
   function deleteItemHandler(id) {
-    selectedId.current = id;
+    ref.current.selectedId = id;
     openDialog(
       'Menghapus Barang',
       'Apakah Anda yakin akan menghapus barang ini dari keranjang?',
@@ -101,7 +122,7 @@ export default function CartPage() {
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartSection cartData={response.data} isLoading={loading} deleteItem={deleteItemHandler} />
+        <CartSection cartData={data} isLoading={loading} deleteItem={deleteItemHandler} />
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm

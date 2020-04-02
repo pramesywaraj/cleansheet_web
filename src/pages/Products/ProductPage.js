@@ -49,7 +49,7 @@ export default function ProductPage() {
 
     const payload = {
       product_id: id,
-      amount: 0,
+      amount: 1,
     };
 
     openModalHandler();
@@ -57,7 +57,7 @@ export default function ProductPage() {
   }
 
   function goToCart() {
-    history.push('/cart');
+    history.push('/keranjang');
   }
 
   return (

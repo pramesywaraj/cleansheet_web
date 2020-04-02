@@ -55,21 +55,21 @@
 
 // Button Loading spinner
 .loading-button-container {
-  width: 1em;
-  height: 1em;
-  position: relative;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-loading-spinner {
-  width: 100%;
-  height: 100%;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
   background-color: $primary_color;
   opacity: 0.9;
-  position: absolute;
-  top: 0;
-  left: 0;
 
   -webkit-animation: loading-bounce 2s infinite ease-in-out;
   animation: loading-bounce 2s infinite ease-in-out;

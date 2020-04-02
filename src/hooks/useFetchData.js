@@ -119,5 +119,5 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
     }
   }, [config.url]);
 
-  return { loading, response, paginate, nextHandler, prevHandler, fetchByCategory };
+  return { loading, response, paginate, nextHandler, prevHandler, fetchByCategory, onFetch };
 }

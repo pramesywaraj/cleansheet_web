@@ -15,7 +15,6 @@ export default function AddProductToCartModal({ loading, show, close, toCartActi
         {loading ? (
           <div className={`${ModalStyle['modal-cart-caption']}`}>
             <Loading />
-            <h2>Sedang diproses...</h2>
           </div>
         ) : (
           <>

@@ -3,7 +3,7 @@ import React from 'react';
 import ButtonStyle from './button.module.scss';
 import ButtonLoading from '../Loading/ButtonLoading';
 
-export default function FullButton({ clickAction, label, type, isLoading }) {
+export default function FullSubmitButton({ clickAction, label, type, isLoading }) {
   const buttonColor =
     type === 'primary' ? ButtonStyle.backgroundPrimary : ButtonStyle.backgroundWhite;
 

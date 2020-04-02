@@ -1,13 +1,19 @@
 import React from 'react';
-import useConfirmationDialog from '../../hooks/useConfirmationDialog';
 
 import DialogStyle from './dialog.module.scss';
 import ModalBase from '../Modals/ModalBase';
 
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
-export default function ConfirmationDialog({ show, title, caption }) {
-  const { onConfirmDialog, closeDialog, dialogProcess } = useConfirmationDialog();
+export default function ConfirmationDialog({
+  show,
+  title,
+  caption,
+  onConfirm,
+  isLoading,
+  closeDialog,
+}) {
+  console.log(isLoading);
   return (
     <ModalBase show={show}>
       <div className={`${DialogStyle['dialog-container']}`}>
@@ -18,15 +24,15 @@ export default function ConfirmationDialog({ show, title, caption }) {
           <p>{caption}</p>
         </div>
         <div className={`${DialogStyle['dialog-button']}`}>
-          <div>
+          <div className={`${DialogStyle['dialog-button-reject']}`}>
             <FullSubmitButton label="Tidak" clickAction={closeDialog} />
           </div>
-          <div>
+          <div className={`${DialogStyle['dialog-button-confirm']}`}>
             <FullSubmitButton
               label="Ya"
               type="primary"
-              clickAction={onConfirmDialog}
-              isLoading={dialogProcess}
+              clickAction={onConfirm}
+              isLoading={isLoading}
             />
           </div>
         </div>

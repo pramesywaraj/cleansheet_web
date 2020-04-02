@@ -12,7 +12,7 @@ function CartItemList({ cartData, deleteItem }) {
   return (
     <>
       <div className={`${CartStyle['cart-item-list']}`}>
-        {!products ? (
+        {!products || products.length === 0 ? (
           <div className={`${CartStyle['cart-item-empty']}`}>
             <h4>Tidak ada barang dalam keranjang.</h4>
           </div>

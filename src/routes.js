@@ -37,8 +37,7 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <RedirectToLogin />
-        )
-      }
+        )}
     />
   );
 }
@@ -54,6 +53,8 @@ function Routes() {
     dialogOpen,
     dialogTitle,
     dialogCaption,
+    dialogOnConfirm,
+    dialogOnLoad,
   } = state;
 
   useEffect(() => {
@@ -68,6 +69,10 @@ function Routes() {
     }
   }, []);
 
+  function closeDialogHandler() {
+    dispatch({ type: 'DIALOG_PROCESS_DONE' });
+  }
+
   if (isChecking) {
     return <Loading />;
   }
@@ -75,7 +80,14 @@ function Routes() {
   return (
     <Router>
       <Interceptors />
-      <ConfirmationDialog show={dialogOpen} title={dialogTitle} caption={dialogCaption} />
+      <ConfirmationDialog
+        show={dialogOpen}
+        title={dialogTitle}
+        caption={dialogCaption}
+        isLoading={dialogOnLoad}
+        onConfirm={dialogOnConfirm}
+        closeDialog={closeDialogHandler}
+      />
       <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
       <Switch>
         <Route exact path="/">
