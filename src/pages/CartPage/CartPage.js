@@ -28,13 +28,13 @@ export default function CartPage() {
       address: '',
       notes: '',
     },
-    checkout,
+    checkoutCallback,
   );
   const { loading, response } = useFetchData('order/product/cart', false, '', {
     Authorization: `Bearer ${state.user.access_token}`,
   });
   const [data, setData] = useState({ total: '', products: [] });
-  const [formLoading, showLoading, hideLoading] = useLoading();
+  const { onPostLoading, onPostData } = usePostData('order/product/cart/checkout');
   const [openSnackbar] = useSnackbar();
   const { openDialog, processDone } = useConfirmationDialog();
   const [showPaymentModal, openPaymentModal, closePaymentModal] = useModal();
@@ -112,16 +112,18 @@ export default function CartPage() {
     );
   }
 
-  function checkout(e) {
-    e.preventDefault();
-    // showLoading();
-
+  function checkoutCallbackSuccess() {
     openPaymentModal();
+    resetValue();
+  }
 
-    // setTimeout(() => {
-    //   hideLoading();
-    //   resetValue();
-    // }, 1000);
+  function checkoutCallback() {
+    const payload = {
+      ...deliveryPayload,
+      delivery_date: new Date().toISOString(),
+    };
+
+    onPostData(payload, checkoutCallbackSuccess);
   }
 
   return (
@@ -131,11 +133,11 @@ export default function CartPage() {
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm
-          handleSubmit={checkout}
+          handleSubmit={handleSubmit}
           deliveryPayload={deliveryPayload}
           changeFormValue={changeValue}
           errors={errors}
-          isLoading={formLoading}
+          isLoading={onPostLoading}
         />
       </div>
       {showPaymentModal && (
