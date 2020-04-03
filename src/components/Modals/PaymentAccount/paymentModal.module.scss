@@ -1,12 +1,45 @@
-.modal-payment-container {
-  height: auto;
-  width: 35vw;
+@import '../../../variable.scss';
 
+.modal-payment-container {
+  width: 35vw;
+  height: auto;
   padding: 5vh 0;
+}
+
+.modal-payment-sub {
+  margin-bottom: 1vh;
+}
+
+// item
+.payment-item-container {
+  &:last-child {
+    border: none;
+  }
 }
 
 .modal-payment-list {
   padding: 2%;
+  overflow-y: auto;
+
+  max-height: 70vh;
+
+  &::-webkit-scrollbar {
+    width: 1vw;
+    margin-left: 0.5vw;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(2, 175, 243, 0.2);
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(2, 175, 243, 0.7);
+  }
 }
 
 // Item
@@ -17,15 +50,18 @@
   align-items: center;
   width: 100%;
   padding: 1vh 1vw;
-
-  border: 1px solid;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-bottom: 1.5px solid rgba($color: $primary_font_color, $alpha: 0.3);
+  &:hover {
+    background-color: rgba($color: #b7b7b7, $alpha: 0.2);
+  }
 }
 
 .payment-item-logo_container {
   width: 6vw;
   height: auto;
   object-fit: cover;
-  border: 1px solid;
 }
 
 .item-logo {
@@ -35,10 +71,9 @@
 }
 
 .payment-item-description {
-  line-height: 4vh;
-  border: 1px solid;
+  line-height: 3vh;
   flex: 2;
-  margin: 0 0.5vw;
+  margin: 0 0.7vw;
   p {
     &:first-child {
       font-size: 1.2em;
