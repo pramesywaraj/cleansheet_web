@@ -22,7 +22,7 @@ export default function ProductPage() {
   );
 
   const { onPostLoading, onPostData, isError } = usePostData('order/product/cart/ship');
-  const { showModal, openModalHandler, closeModalHandler } = useModal();
+  const [showModal, openModalHandler, closeModalHandler] = useModal();
   const [openSnackbar] = useSnackbar();
 
   useEffect(() => {

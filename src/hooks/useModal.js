@@ -11,5 +11,5 @@ export default function useModal() {
     setShowModal(false);
   };
 
-  return { showModal, openModalHandler, closeModalHandler };
+  return [showModal, openModalHandler, closeModalHandler];
 }

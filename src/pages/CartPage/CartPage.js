@@ -7,11 +7,14 @@ import useSnackbar from '../../hooks/useSnackbar';
 import useFetchData from '../../hooks/useFetchData';
 import usePostData from '../../hooks/usePostData';
 import useConfirmationDialog from '../../hooks/useConfirmationDialog';
+import useModal from '../../hooks/useModal';
 
 import CartStyle from './cartPage.module.scss';
 
 import SendingForm from './SendingForm';
 import CartSection from './CartSection';
+
+import PaymentAccountModal from '../../components/Modals/PaymentAccount/PaymentAccountModal';
 
 export default function CartPage() {
   const { state } = useStore();
@@ -27,18 +30,18 @@ export default function CartPage() {
     },
     checkout,
   );
-  const { openDialog, processDone, closeDialog } = useConfirmationDialog();
   const { loading, response } = useFetchData('order/product/cart', false, '', {
     Authorization: `Bearer ${state.user.access_token}`,
   });
   const [data, setData] = useState({ total: '', products: [] });
   const [formLoading, showLoading, hideLoading] = useLoading();
   const [openSnackbar] = useSnackbar();
+  const { openDialog, processDone } = useConfirmationDialog();
+  const [showPaymentModal, openPaymentModal, closePaymentModal] = useModal();
 
   const ref = useRef({});
 
   useEffect(() => {
-    console.log(response);
     setData({
       total: response.data.total,
       products: response.data.products,
@@ -48,16 +51,6 @@ export default function CartPage() {
       ref.current.selectedId = null;
     };
   }, [response]);
-
-  function checkout(e) {
-    e.preventDefault();
-    showLoading();
-
-    setTimeout(() => {
-      hideLoading();
-      resetValue();
-    }, 1000);
-  }
 
   async function deleteItem() {
     const { products, total } = data;
@@ -119,6 +112,18 @@ export default function CartPage() {
     );
   }
 
+  function checkout(e) {
+    e.preventDefault();
+    // showLoading();
+
+    openPaymentModal();
+
+    // setTimeout(() => {
+    //   hideLoading();
+    //   resetValue();
+    // }, 1000);
+  }
+
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
@@ -133,6 +138,7 @@ export default function CartPage() {
           isLoading={formLoading}
         />
       </div>
+      <PaymentAccountModal show={showPaymentModal} close={closePaymentModal} />
     </div>
   );
 }

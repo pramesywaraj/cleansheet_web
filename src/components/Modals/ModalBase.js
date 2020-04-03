@@ -2,15 +2,14 @@ import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import ModalStyle from './modal.module.scss';
 
-export default function OrderServiceModal({ children, show, close }) {
+export default function OrderServiceModal({ children, show, close, title }) {
   return (
     <div className={`${ModalStyle['modal-wrapper']} ${!show ? ModalStyle['modal-hide'] : ''}`}>
       <section className={ModalStyle['modal-container']}>
-        {close && (
-          <div className={ModalStyle['modal-close']}>
-            <FaTimes onClick={close} className={ModalStyle['modal-close-button']} />
-          </div>
-        )}
+        <div className={ModalStyle['modal-header']}>
+          <p className={ModalStyle['modal-title']}>{title}</p>
+          {close && <FaTimes onClick={close} className={ModalStyle['modal-close-button']} />}
+        </div>
 
         {children}
       </section>

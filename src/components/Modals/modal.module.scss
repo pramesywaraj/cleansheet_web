@@ -23,10 +23,18 @@
   height: auto;
 }
 
-.modal-close {
-  text-align: end;
+.modal-header {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  .modal-title {
+    font-size: 1.3em;
+  }
 
   .modal-close-button {
+    margin-left: auto;
     font-size: 1.5em;
     cursor: pointer;
     color: rgba(92, 92, 92, 0.5);

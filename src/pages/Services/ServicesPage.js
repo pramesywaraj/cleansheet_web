@@ -32,7 +32,7 @@ export default function ServicesPage() {
   );
 
   const [selectedId, setSelectedId] = useState('');
-  const { showModal, openModalHandler, closeModalHandler } = useModal();
+  const [showModal, openModalHandler, closeModalHandler] = useModal();
   const firstMount = useRef(true);
 
   useEffect(() => {

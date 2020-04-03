@@ -173,7 +173,7 @@ const ClientSection = () => {
 };
 
 const JoinCleansheetWorkerSection = () => {
-  const { showModal, openModalHandler, closeModalHandler } = useModal();
+  const [showModal, openModalHandler, closeModalHandler] = useModal();
 
   return (
     <section id="joinCleansheetWorker">
