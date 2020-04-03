@@ -16,7 +16,25 @@
 .cart-item-list {
   max-height: 50vh;
   min-height: 30vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 1vw;
+    margin-left: 0.5vw;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(2, 175, 243, 0.2);
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(2, 175, 243, 0.7);
+  }
 }
 
 .cart-item-empty {

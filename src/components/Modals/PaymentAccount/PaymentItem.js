@@ -4,17 +4,15 @@ import { FaAngleRight } from 'react-icons/fa';
 import PaymentItemStyle from './paymentModal.module.scss';
 import Image from '../../Image/Image';
 
-import LogoCSAbu from '../../../assets/logo_cs_abu.png';
-
-export default function PaymentItem() {
+export default function PaymentItem({ image, name, description }) {
   return (
     <div className={`${PaymentItemStyle['payment-item-container']}`}>
       <div className={PaymentItemStyle['payment-item-logo_container']}>
-        <Image src={LogoCSAbu} alt="Logo Bank" style={PaymentItemStyle['item-logo']} />
+        <Image src={image} alt="Logo Bank" style={PaymentItemStyle['item-logo']} />
       </div>
       <div className={PaymentItemStyle['payment-item-description']}>
-        <p>Title</p>
-        <p>Description</p>
+        <p>{name}</p>
+        <p>{description}</p>
       </div>
       <div>
         <FaAngleRight size="2em" color="#707070" />
