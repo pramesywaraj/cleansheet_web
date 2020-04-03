@@ -4,10 +4,11 @@ import useFetchData from '../../../hooks/useFetchData';
 import PaymentModalStyle from './paymentModal.module.scss';
 
 import ModalBase from '../ModalBase';
+import Image from '../../Image/Image';
 import PaymentItem from './PaymentItem';
 import Loading from '../../Loading/Loading';
 
-function AvailAccountSelect({ availAccounts, loading }) {
+function AvailAccountSelect({ availAccounts, loading, selectAnAccount }) {
   if (loading) {
     return (
       <div className={`${PaymentModalStyle['modal-payment-flex-center']}`}>
@@ -24,6 +25,7 @@ function AvailAccountSelect({ availAccounts, loading }) {
         {availAccounts.length > 0 ? (
           availAccounts.map(item => (
             <PaymentItem
+              onSelect={() => selectAnAccount(item)}
               key={item.id}
               name={item.name}
               image={item.image_url}
@@ -36,18 +38,42 @@ function AvailAccountSelect({ availAccounts, loading }) {
           </div>
         )}
       </div>
+      <div style={{ textAlign: 'center', fontSize: '0.8em', marginTop: '1vh' }}>
+        <p>Daftar akun pembayaran tersedia juga pada halaman Transaksi. </p>
+      </div>
     </div>
   );
 }
 
-function PaymentDetail() {
+function PaymentDetail({ paymentAccount }) {
   return (
     <div className={PaymentModalStyle['payment-detail-container']}>
       <div>
         <p>Silahkan transfer pembayaran ke nomor dibawah ini:</p>
       </div>
-      <div />
-      <div />
+      <div className={PaymentModalStyle['payment-detail-account']}>
+        <div className={PaymentModalStyle['payment-detail-logo']}>
+          <div className={PaymentModalStyle['payment-item-logo_container']}>
+            <Image
+              src={paymentAccount.image_url}
+              alt="Logo Bank"
+              style={PaymentModalStyle['item-logo']}
+            />
+          </div>
+          <p>{paymentAccount.name}</p>
+        </div>
+        <div className={PaymentModalStyle['account-name_number']}>
+          <p>{paymentAccount.account_number}</p>
+          <p>{`atas nama ${paymentAccount.account_name}`}</p>
+        </div>
+      </div>
+      <div className={PaymentModalStyle['payment-detail-contact']}>
+        <p>
+          Apabila telah melakukan pembayaran, silahkan hubungi kontak layanan kami dibawah ini agar
+          pesanan Anda dapat diproses.
+        </p>
+        <p>082839299299</p>
+      </div>
     </div>
   );
 }
@@ -55,7 +81,7 @@ function PaymentDetail() {
 export default function PaymentAccountModal({ show, close }) {
   const { loading, response } = useFetchData('master/payments/');
   const [availAccounts, setAvailAccounts] = useState([]);
-  const [selected, setSelected] = useState({});
+  const [selected, setSelected] = useState(null);
   const ref = useRef({});
 
   function selectPaymentAccount(obj) {
@@ -72,10 +98,14 @@ export default function PaymentAccountModal({ show, close }) {
 
   return (
     <ModalBase show={show} close={close} title="Pembayaran">
-      {!selected ? (
-        <PaymentDetail />
+      {selected ? (
+        <PaymentDetail paymentAccount={selected} />
       ) : (
-        <AvailAccountSelect loading={loading} availAccounts={availAccounts} />
+        <AvailAccountSelect
+          loading={loading}
+          availAccounts={availAccounts}
+          selectAnAccount={selectPaymentAccount}
+        />
       )}
     </ModalBase>
   );

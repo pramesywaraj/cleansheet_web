@@ -103,3 +103,61 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.payment-detail-account {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5vh 0;
+
+  .account-name_number {
+    text-align: center;
+    margin-top: 2vh;
+    p {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 1vh;
+      &:last-child {
+        font-size: 1em;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.payment-detail-contact {
+  width: 100%;
+  background-color: #f9f934;
+  border-radius: 12px;
+  padding: 3.5%;
+  text-align: center;
+
+  p {
+    font-size: 0.5em;
+    margin-bottom: 2vh;
+    &:last-child {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.payment-detail-logo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin-left: 1.5vw;
+    font-weight: 700;
+  }
+}

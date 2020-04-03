@@ -4,9 +4,16 @@ import { FaAngleRight } from 'react-icons/fa';
 import PaymentItemStyle from './paymentModal.module.scss';
 import Image from '../../Image/Image';
 
-export default function PaymentItem({ image, name, description }) {
+export default function PaymentItem({ image, name, description, onSelect }) {
   return (
-    <div className={`${PaymentItemStyle['payment-item-container']}`}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div
+      role="button"
+      aria-pressed="false"
+      tabIndex={0}
+      onClick={onSelect}
+      className={`${PaymentItemStyle['payment-item-container']}`}
+    >
       <div className={PaymentItemStyle['payment-item-logo_container']}>
         <Image src={image} alt="Logo Bank" style={PaymentItemStyle['item-logo']} />
       </div>
