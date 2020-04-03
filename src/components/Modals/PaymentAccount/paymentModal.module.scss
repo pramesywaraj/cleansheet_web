@@ -4,3 +4,45 @@
 
   padding: 5vh 0;
 }
+
+.modal-payment-list {
+  padding: 2%;
+}
+
+// Item
+
+.payment-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 1vh 1vw;
+
+  border: 1px solid;
+}
+
+.payment-item-logo_container {
+  width: 6vw;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid;
+}
+
+.item-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.payment-item-description {
+  line-height: 4vh;
+  border: 1px solid;
+  flex: 2;
+  margin: 0 0.5vw;
+  p {
+    &:first-child {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+  }
+}
