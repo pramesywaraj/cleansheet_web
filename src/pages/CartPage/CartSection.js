@@ -9,6 +9,17 @@ import CartItem from '../../components/Cart/CartItem';
 function CartItemList({ cartData, deleteItem }) {
   const { total, products } = cartData;
 
+  const renderItem = item => (
+    <CartItem
+      key={item.product_id}
+      amount={item.amount}
+      name={item.product.name}
+      price={item.product.price}
+      image={item.product.image_url}
+      deleteItem={() => deleteItem(item.product_id)}
+    />
+  );
+
   return (
     <>
       <div className={`${CartStyle['cart-item-list']}`}>
@@ -17,16 +28,7 @@ function CartItemList({ cartData, deleteItem }) {
             <h4>Tidak ada barang dalam keranjang.</h4>
           </div>
         ) : (
-          products.map(item => (
-            <CartItem
-              key={item.product_id}
-              amount={item.amount}
-              name={item.product.name}
-              price={item.product.price}
-              image={item.product.image_url}
-              deleteItem={() => deleteItem(item.product_id)}
-            />
-          ))
+          products.map(renderItem)
         )}
       </div>
 

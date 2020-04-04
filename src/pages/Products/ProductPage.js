@@ -14,24 +14,20 @@ import AddProductToCartModal from '../../components/Modals/AddProductToCartModal
 export default function ProductPage() {
   const { state } = useStore();
   const history = useHistory();
-  const ref = useRef({});
-
   const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
     'master/products',
     true,
   );
-
   const { onPostLoading, onPostData, isError } = usePostData('order/product/cart/ship');
   const [showModal, openModalHandler, closeModalHandler] = useModal();
   const [openSnackbar] = useSnackbar();
 
+  const ref = useRef({});
+
   useEffect(() => {
-    console.log('mounted');
     ref.current.rendered = true;
 
-    return () => {
-      console.log('unmounted');
-    };
+    return () => {};
   }, []);
 
   // Effect for handling the error when ship the product

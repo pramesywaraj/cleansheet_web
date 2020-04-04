@@ -2,6 +2,10 @@ import Cookies from 'js-cookie';
 
 export const initialState = {
   user: {},
+  cart: {
+    products: [],
+    total: '',
+  },
   isLoggedIn: false,
   snackbarOpen: false,
   snackbarMessage: '',
@@ -24,7 +28,6 @@ export const reducers = (state, action) => {
         isLoggedIn: true,
       };
     }
-
     case 'LOGOUT_SUCCESS': {
       Cookies.remove('@userData');
       return {
@@ -33,7 +36,6 @@ export const reducers = (state, action) => {
         isLoggedIn: false,
       };
     }
-
     case 'USER_LOGGED_IN': {
       return {
         ...state,
@@ -41,7 +43,6 @@ export const reducers = (state, action) => {
         isLoggedIn: true,
       };
     }
-
     case 'TOKEN_REFRESHED': {
       Cookies.set('@userData', action.data, { expires: 1 });
       return {
@@ -50,6 +51,36 @@ export const reducers = (state, action) => {
         isLoggedIn: true,
       };
     }
+
+    // Reducer for Cart
+    case 'CART_FETCH_PRODUCTS': {
+      return {
+        ...state,
+        cart: {
+          total: action.data.total,
+          products: action.data.products,
+        },
+      };
+    }
+    case 'CART_DELETE_PRODUCT': {
+      let newTotal = state.cart.total;
+      let newProducts = state.products;
+      newProducts = newProducts.filter(function(product) {
+        if (product.product_id === action.data.product_id) {
+          newTotal -= product.amount * product.product.price;
+        }
+        return product.product_id !== action.data.product_id;
+      });
+
+      return {
+        ...state,
+        cart: {
+          total: newTotal,
+          products: newProducts,
+        },
+      };
+    }
+
     // Reducers for snackbar
 
     case 'SNACKBAR_SUCCESS': {
@@ -60,7 +91,6 @@ export const reducers = (state, action) => {
         snackbarType: 'success',
       };
     }
-
     case 'SNACKBAR_FAIL': {
       return {
         ...state,
@@ -69,7 +99,6 @@ export const reducers = (state, action) => {
         snackbarType: 'fail',
       };
     }
-
     case 'SNACKBAR_INFO': {
       return {
         ...state,
@@ -78,7 +107,6 @@ export const reducers = (state, action) => {
         snackbarType: 'info',
       };
     }
-
     case 'SNACKBAR_CLOSE': {
       return {
         ...state,
@@ -88,6 +116,7 @@ export const reducers = (state, action) => {
       };
     }
 
+    // Reducer for dialog
     case 'DIALOG_OPEN': {
       return {
         ...state,

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { useStore } from '../../context/store';
 import useInput from '../../hooks/useInput';
-import useLoading from '../../hooks/useLoading';
 import useSnackbar from '../../hooks/useSnackbar';
 import useFetchData from '../../hooks/useFetchData';
 import usePostData from '../../hooks/usePostData';
@@ -17,7 +16,7 @@ import CartSection from './CartSection';
 import PaymentAccountModal from '../../components/Modals/PaymentAccount/PaymentAccountModal';
 
 export default function CartPage() {
-  const { state } = useStore();
+  const { state, dispatch } = useStore();
   const [deliveryPayload, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
@@ -30,10 +29,9 @@ export default function CartPage() {
     },
     checkoutCallback,
   );
-  const { loading, response } = useFetchData('order/product/cart', false, '', {
+  const { loading, response, onFetch } = useFetchData('order/product/cart', false, '', {
     Authorization: `Bearer ${state.user.access_token}`,
   });
-  const [data, setData] = useState({ total: '', products: [] });
   const { onPostLoading, onPostData } = usePostData('order/product/cart/checkout');
   const [openSnackbar] = useSnackbar();
   const { openDialog, processDone } = useConfirmationDialog();
@@ -41,10 +39,12 @@ export default function CartPage() {
 
   const ref = useRef({});
 
+  const { cart } = state;
+
   useEffect(() => {
-    setData({
-      total: response.data.total,
-      products: response.data.products,
+    dispatch({
+      type: 'CART_FETCH_PRODUCTS',
+      data: { total: response.data.total, products: response.data.products },
     });
 
     return () => {
@@ -53,8 +53,6 @@ export default function CartPage() {
   }, [response]);
 
   async function deleteItem() {
-    const { products, total } = data;
-
     const config = {
       method: 'POST',
       url: `${process.env.REACT_APP_API_ENDPOINT}/order/product/cart/remove`,
@@ -69,25 +67,18 @@ export default function CartPage() {
 
     try {
       const deleteResponse = await axios(config);
-      if (deleteResponse.status) {
-        let tempTotal = total;
-        let tempProducts = products;
-        tempProducts = tempProducts.filter(function(product) {
-          if (product.product_id === ref.current.selectedId) {
-            tempTotal -= product.amount * product.product.price;
-          }
-
-          return product.product_id !== ref.current.selectedId;
-        });
-
-        setData({
-          total: tempTotal,
-          products: tempProducts,
-        });
-        openSnackbar('success', 'Produk berhasil dihapus.');
-      } else {
-        throw new Error();
+      if (deleteResponse.errors) {
+        throw Error(errors);
       }
+
+      dispatch({
+        type: 'CART_DELETE_PRODUCT',
+        data: {
+          product_id: ref.current.selectedId,
+        },
+      });
+
+      openSnackbar('success', 'Produk berhasil dihapus.');
     } catch (err) {
       console.log('error when deleting a product from cart', err);
       if ('message' in err) {
@@ -115,6 +106,8 @@ export default function CartPage() {
   function checkoutCallbackSuccess() {
     openPaymentModal();
     resetValue();
+
+    onFetch();
   }
 
   function checkoutCallback() {
@@ -129,7 +122,7 @@ export default function CartPage() {
   return (
     <div className={`${CartStyle['cart-container']}`}>
       <div className={`${CartStyle['cart-col']}`}>
-        <CartSection cartData={data} isLoading={loading} deleteItem={deleteItemHandler} />
+        <CartSection cartData={cart} isLoading={loading} deleteItem={deleteItemHandler} />
       </div>
       <div className={`${CartStyle['cart-col']}`}>
         <SendingForm
