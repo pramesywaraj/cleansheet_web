@@ -5,11 +5,10 @@ import CartCard from '../../components/Cards/CartCard';
 
 import Loading from '../../components/Loading/Loading';
 import CartItem from '../../components/Cart/CartItem';
+import useAddMinCart from '../../hooks/useAddMinCart';
 
-function CartItemList({ cartData, deleteItem }) {
-  const { total, products } = cartData;
-
-  const renderItem = item => (
+function CartItemList({ totalPrice, products, deleteItem, addItem, minItem }) {
+  const renderItem = (item, index) => (
     <CartItem
       key={item.product_id}
       amount={item.amount}
@@ -17,6 +16,8 @@ function CartItemList({ cartData, deleteItem }) {
       price={item.product.price}
       image={item.product.image_url}
       deleteItem={() => deleteItem(item.product_id)}
+      addItem={() => addItem(index, item.product_id)}
+      minItem={() => minItem(index, item.product_id)}
     />
   );
 
@@ -34,9 +35,9 @@ function CartItemList({ cartData, deleteItem }) {
 
       <div className={`${CartStyle['cart-total']}`}>
         <div className={`${CartStyle['flex-row']}`}>
-          <p>Total</p>
+          <p>Total Harga</p>
           <p className={`${CartStyle['cart-total-amount']}`}>
-            {`Rp. ${total ? setCommaToMoney(total) : '-'}`}
+            {`Rp. ${totalPrice ? setCommaToMoney(totalPrice) : '-'}`}
           </p>
         </div>
       </div>
@@ -45,10 +46,22 @@ function CartItemList({ cartData, deleteItem }) {
 }
 
 export default function CartSection({ cartData, isLoading, deleteItem }) {
+  const [add, min] = useAddMinCart();
+
   return (
     <CartCard label="Keranjang Belanja">
       <div className={`${CartStyle['cart-item-container']}`}>
-        {isLoading ? <Loading /> : <CartItemList cartData={cartData} deleteItem={deleteItem} />}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <CartItemList
+            totalPrice={cartData.total}
+            products={cartData.products}
+            deleteItem={deleteItem}
+            addItem={add}
+            minItem={min}
+          />
+        )}
       </div>
     </CartCard>
   );

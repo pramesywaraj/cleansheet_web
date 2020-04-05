@@ -13,7 +13,6 @@ export default function ConfirmationDialog({
   isLoading,
   closeDialog,
 }) {
-  console.log(isLoading);
   return (
     <ModalBase show={show}>
       <div className={`${DialogStyle['dialog-container']}`}>

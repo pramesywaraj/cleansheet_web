@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useStore } from '../../context/store';
 import useInput from '../../hooks/useInput';
@@ -29,7 +29,7 @@ export default function CartPage() {
     },
     checkoutCallback,
   );
-  const { loading, response, onFetch } = useFetchData('order/product/cart', false, '', {
+  const { loading, response } = useFetchData('order/product/cart', false, '', {
     Authorization: `Bearer ${state.user.access_token}`,
   });
   const { onPostLoading, onPostData } = usePostData('order/product/cart/checkout');
@@ -107,7 +107,7 @@ export default function CartPage() {
     openPaymentModal();
     resetValue();
 
-    onFetch();
+    dispatch({ type: 'CART_CHECKOUT' });
   }
 
   function checkoutCallback() {

@@ -32,7 +32,7 @@ export default function useDebounce(func, delay = 0) {
 
         try {
           // jalankan fungsi yang di debounce
-          const response = await ref.current.fn(...args);
+          const response = await ref.current.func(...args);
           // If the request is latest, resolve
           if (checkLatestResponse()) ref.current.resolve(response);
         } catch (err) {

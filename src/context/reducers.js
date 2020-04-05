@@ -62,9 +62,10 @@ export const reducers = (state, action) => {
         },
       };
     }
+
     case 'CART_DELETE_PRODUCT': {
       let newTotal = state.cart.total;
-      let newProducts = state.products;
+      let newProducts = state.cart.products;
       newProducts = newProducts.filter(function(product) {
         if (product.product_id === action.data.product_id) {
           newTotal -= product.amount * product.product.price;
@@ -77,6 +78,73 @@ export const reducers = (state, action) => {
         cart: {
           total: newTotal,
           products: newProducts,
+        },
+      };
+    }
+
+    case 'CART_CHECKOUT': {
+      return {
+        ...state,
+        cart: {
+          total: '',
+          products: [],
+        },
+      };
+    }
+
+    case 'CART_ADD_PRODUCT': {
+      const productIndex = action.data.index;
+
+      return {
+        ...state,
+        cart: {
+          total: state.cart.total + parseInt(state.cart.products[productIndex].product.price, 10),
+          products: [
+            ...state.cart.products.slice(0, productIndex),
+            {
+              ...state.cart.products[productIndex],
+              amount: parseInt(state.cart.products[productIndex].amount, 10) + 1,
+            },
+            ...state.cart.products.slice(productIndex + 1),
+          ],
+        },
+      };
+    }
+
+    case 'CART_MIN_PRODUCT': {
+      const productIndex = action.data.index;
+
+      return {
+        ...state,
+        cart: {
+          total: state.cart.total - parseInt(state.cart.products[productIndex].product.price, 10),
+          products: [
+            ...state.cart.products.slice(0, productIndex),
+            {
+              ...state.cart.products[productIndex],
+              amount: parseInt(state.cart.products[productIndex].amount, 10) - 1,
+            },
+            ...state.cart.products.slice(productIndex + 1),
+          ],
+        },
+      };
+    }
+
+    case 'CART_MODIFY_FAIL': {
+      const { index, lastTotal, lastAmount } = action.data;
+
+      return {
+        ...state,
+        cart: {
+          total: parseInt(lastTotal, 10),
+          products: [
+            ...state.cart.products.slice(0, index),
+            {
+              ...state.cart.products[index],
+              amount: parseInt(lastAmount, 10),
+            },
+            ...state.cart.products.slice(index + 1),
+          ],
         },
       };
     }

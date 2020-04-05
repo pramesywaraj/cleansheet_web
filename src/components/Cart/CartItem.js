@@ -1,7 +1,5 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa';
-import useAddMinCart from '../../hooks/useAddMinCart';
-
 import CartStyle from './cart.module.scss';
 
 import NumberOfGoods from './NumberOfGoods';
@@ -10,8 +8,7 @@ import Image from '../Image/Image';
 
 import { setCommaToMoney } from '../../misc/otherFunctionality';
 
-export default function CartItem({ amount, name, price, image, deleteItem }) {
-  const [counter, add, min] = useAddMinCart(amount);
+export default function CartItem({ amount, name, price, image, deleteItem, addItem, minItem }) {
   return (
     <div className={`${CartStyle['cart-item-container']}`}>
       <div className={`${CartStyle['cart-item-row']}`}>
@@ -27,8 +24,8 @@ export default function CartItem({ amount, name, price, image, deleteItem }) {
         </div>
       </div>
       <div className={`${CartStyle['cart-item-row']} ${CartStyle['cart-item-button']}`}>
-        <NumberOfGoods goodsTotal={counter} add={add} min={min} />
-        <p>{`Rp. ${setCommaToMoney(counter * price)}`}</p>
+        <NumberOfGoods goodsTotal={amount} add={addItem} min={minItem} />
+        <p>{`Rp. ${setCommaToMoney(amount * price)}`}</p>
       </div>
     </div>
   );
