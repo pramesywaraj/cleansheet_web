@@ -9,6 +9,7 @@ import ServicesPage from './pages/Services/ServicesPage';
 import ProductPage from './pages/Products/ProductPage';
 import AuthPage from './pages/Auth/AuthPage';
 import CartPage from './pages/CartPage/CartPage';
+import TransactionPage from './pages/Transaction/TransactionPage';
 
 import Layout from './components/Layout/Layout';
 import Loading from './components/Loading/Loading';
@@ -106,6 +107,7 @@ function Routes() {
           </Layout>
         </Route>
         <PrivateRoutes path="/keranjang" component={CartPage} />
+        <PrivateRoutes path="/transaksi" component={TransactionPage} />
 
         <Route path="/login" component={AuthPage} />
         <Route path="/register" component={AuthPage} />

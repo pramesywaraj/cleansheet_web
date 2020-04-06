@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Link, useHistory } from 'react-router-dom';
-import { FaShoppingBasket } from 'react-icons/fa';
+import { FaShoppingBasket, FaExchangeAlt } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
 import useLoading from '../../hooks/useLoading';
@@ -62,8 +62,11 @@ export default function Header() {
       <div className={HeaderStyle.floatRight}>
         {isLoggedIn ? (
           <>
-            <NavLink className={HeaderStyle['header-cart-nav']} to="/keranjang">
+            <NavLink className={HeaderStyle['header-icon-nav']} to="/keranjang">
               <FaShoppingBasket fontSize="1.5em" />
+            </NavLink>
+            <NavLink className={HeaderStyle['header-icon-nav']} to="/transaksi">
+              <FaExchangeAlt fontSize="1.5em" />
             </NavLink>
             <NavLink exact to="/">{`Hai, ${user.name}`}</NavLink>
             <PrimaryButton

@@ -15,6 +15,17 @@ export const TABTYPE = {
   },
 };
 
+export const TRANSACTIONTAB = {
+  service: {
+    code: 'service',
+    name: 'Transaksi Layanan',
+  },
+  product: {
+    code: 'product',
+    name: 'Transaksi Produk',
+  },
+};
+
 export default function useTabs(selected) {
   const [activeTab, setActiveTab] = useState(selected);
 
