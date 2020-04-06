@@ -1,6 +1,27 @@
-.transaction-wrapper {
+.transaction-container {
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
   align-items: center;
+}
+
+.transaction-content-container {
+  min-height: 60vh;
+  width: 100%;
+}
+
+.transaction-payment-available {
+  margin-bottom: 3vh;
+
+  button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    font-family: inherit;
+    color: #02aff3;
+    cursor: pointer;
+
+    &:focus {
+      display: none;
+    }
+  }
 }
