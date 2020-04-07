@@ -180,3 +180,18 @@
     }
   }
 }
+
+// TextButton - just ordinary and no style button
+.text-button {
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  color: #02aff3;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+
+  &:focus {
+    display: none;
+  }
+}

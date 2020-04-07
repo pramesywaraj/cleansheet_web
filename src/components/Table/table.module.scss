@@ -32,7 +32,7 @@ thead {
   font-size: inherit;
   th {
     padding: 1.5%;
-    color: #5a5a5a;
+    color: #02aff3;
   }
 }
 
@@ -44,14 +44,14 @@ tbody {
   th {
     padding: 1.5%;
     text-align: left;
-
+    width: auto;
     color: #5a5a5a;
   }
 
   tr {
     margin-bottom: 1vh;
-    &:nth-child(even) {
-      background-color: #dddddd;
+    &:nth-child(odd) {
+      background-color: rgba(192, 191, 191, 0.3);
     }
   }
 

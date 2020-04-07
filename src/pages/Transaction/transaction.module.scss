@@ -11,17 +11,4 @@
 
 .transaction-payment-available {
   margin-bottom: 3vh;
-
-  button {
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    font-family: inherit;
-    color: #02aff3;
-    cursor: pointer;
-
-    &:focus {
-      display: none;
-    }
-  }
 }
