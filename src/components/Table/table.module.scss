@@ -33,6 +33,7 @@ thead {
   th {
     padding: 1.5%;
     color: #02aff3;
+    width: auto;
   }
 }
 
@@ -40,8 +41,7 @@ tbody {
   width: 100%;
   overflow-x: auto;
 
-  td,
-  th {
+  td {
     padding: 1.5%;
     text-align: left;
     width: auto;
