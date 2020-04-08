@@ -16,13 +16,13 @@ export const TABTYPE = {
 };
 
 export const TRANSACTIONTAB = {
-  service: {
-    code: 'service',
-    name: 'Transaksi Layanan',
-  },
   product: {
     code: 'product',
     name: 'Transaksi Produk',
+  },
+  service: {
+    code: 'service',
+    name: 'Transaksi Layanan',
   },
 };
 

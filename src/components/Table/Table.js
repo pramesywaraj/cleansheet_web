@@ -1,8 +1,9 @@
 import React from 'react';
 
 import TableStyle from './table.module.scss';
+import Loading from '../Loading/Loading';
 
-export default function Table({ headers, children }) {
+export default function Table({ loading, headers, children }) {
   function renderHeader() {
     return (
       <thead>
@@ -15,12 +16,22 @@ export default function Table({ headers, children }) {
     );
   }
 
+  function renderLoading() {
+    return (
+      <tr>
+        <td colSpan={headers.length + 1}>
+          <Loading />
+        </td>
+      </tr>
+    );
+  }
+
   return (
     <div className={TableStyle['table-wrapper']}>
       <div className={TableStyle['table-container']}>
         <table>
           {renderHeader()}
-          <tbody>{children}</tbody>
+          <tbody>{loading ? renderLoading() : children}</tbody>
         </table>
       </div>
     </div>

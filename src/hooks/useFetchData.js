@@ -1,18 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { useStore } from '../context/store';
+
 import useSnackbar from './useSnackbar';
 
 export default function useFetchData(endpoint, pagination, initialCategory, headers) {
+  const { state } = useStore();
   const [config, setConfig] = useState({
     method: 'GET',
     url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}`,
     headers: {
-      ...headers,
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${state.user.access_token}`,
     },
   });
   const [loading, setLoading] = useState(true);
-  const [response, setResponse] = useState({ data: {}, success: false, error: false });
+  const [response, setResponse] = useState({ data: [], success: false, error: false });
   const [paginate, setPaginate] = useState({ next: null, prev: null, current: 1 });
   const [category, setCategory] = useState(initialCategory);
   const [openSnackbar] = useSnackbar();
@@ -46,32 +49,6 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
     } finally {
       setLoading(false);
     }
-  }
-
-  function nextHandler() {
-    if (paginate.next === null) return;
-    setConfig({
-      ...config,
-      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?page=${paginate.current + 1}`,
-    });
-    setPaginate({ ...paginate, current: paginate.current + 1 });
-  }
-
-  function prevHandler() {
-    if (paginate.prev === null) return;
-    setConfig({
-      ...config,
-      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?page=${paginate.current - 1}`,
-    });
-    setPaginate({ ...paginate, current: paginate.current - 1 });
-  }
-
-  function fetchByCategory(type) {
-    urlChange.current = true;
-    setConfig({
-      ...config,
-      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?category=${type}`,
-    });
   }
 
   useEffect(() => {
@@ -118,6 +95,32 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
       urlChange.current = true;
     }
   }, [config.url]);
+
+  function nextHandler() {
+    if (paginate.next === null) return;
+    setConfig({
+      ...config,
+      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?page=${paginate.current + 1}`,
+    });
+    setPaginate({ ...paginate, current: paginate.current + 1 });
+  }
+
+  function prevHandler() {
+    if (paginate.prev === null) return;
+    setConfig({
+      ...config,
+      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?page=${paginate.current - 1}`,
+    });
+    setPaginate({ ...paginate, current: paginate.current - 1 });
+  }
+
+  function fetchByCategory(type) {
+    urlChange.current = true;
+    setConfig({
+      ...config,
+      url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?category=${type}`,
+    });
+  }
 
   return { loading, response, paginate, nextHandler, prevHandler, fetchByCategory, onFetch };
 }
