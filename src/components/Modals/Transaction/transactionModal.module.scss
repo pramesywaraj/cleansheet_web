@@ -1,7 +1,77 @@
+@import '../../../variable.scss';
+
 .modal-transaction-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  min-width: 40vw;
+  min-width: 35vw;
+  padding: 2%;
+}
+
+.modal-transaction-total_charge {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+
+  p {
+    &:last-child {
+      color: $primary_color;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+}
+
+.modal-transaction-detail {
+  width: 80%;
+  line-height: 4.5vh;
+
+  .transaction-detail-value {
+    display: table;
+    width: 100%;
+
+    & > div {
+      display: table-row;
+
+      & > p {
+        padding: 0 0.5vw;
+        display: table-cell;
+
+        &:first-child {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.modal-transaction-products_container {
+  margin: 4vh 0;
+  width: 100%;
+
+  .transaction-products-list {
+    display: table;
+    padding: 2%;
+    width: 100%;
+
+    .product-item {
+      display: table-row;
+
+      & > p {
+        display: table-cell;
+        padding: 2%;
+        border: 1px solid rgba(80, 80, 80, 0.3);
+        text-align: center;
+
+        &:nth-child(even) {
+          text-align: start;
+          width: 80%;
+        }
+      }
+    }
+  }
 }

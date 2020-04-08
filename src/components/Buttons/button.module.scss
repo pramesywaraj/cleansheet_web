@@ -191,7 +191,10 @@
   width: auto;
   height: auto;
 
-  &:focus {
-    display: none;
+  &:focus,
+  &:active {
+    background: none;
+    outline: none;
+    padding: 0;
   }
 }
