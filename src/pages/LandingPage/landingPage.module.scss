@@ -54,14 +54,22 @@
 }
 
 // Product Section
-.productGrid {
+.product-grid {
   margin: 8vh 0;
-  display: grid;
-  grid-template-columns: repeat(4, 20%);
-  grid-gap: 2vw;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.product-grid-item {
+  width: 20%;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  position: relative;
+  margin: 0 1%;
+  box-sizing: border-box;
 }
 
 // Client Section
