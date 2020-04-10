@@ -82,7 +82,15 @@ export default function TransactionPage() {
           </p>
         </div>
         <Table loading={loading} headers={tableHeader}>
-          {data ? renderTableData(data) : ''}
+          {data.length > 0 ? (
+            renderTableData(data)
+          ) : (
+            <tr>
+              <td colSpan={tableHeader.length + 1} style={{ textAlign: 'center' }}>
+                Tidak ada data
+              </td>
+            </tr>
+          )}
         </Table>
       </div>
       {showPaymentModal && (
@@ -93,7 +101,7 @@ export default function TransactionPage() {
           data={selectedElement}
           show={showTransDetail}
           close={handleCloseTransDetailModal}
-          title={`Detil Pesanan ${selectedElement.order_ref}`}
+          selectedTab={activeTab}
         />
       )}
     </div>
