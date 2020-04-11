@@ -1,13 +1,5 @@
 @import '../../variable.scss';
 
-.textAlignCenter {
-  text-align: center;
-}
-
-.sectionGap {
-  padding: 10vh 0;
-}
-
 .fullPageHeight {
   height: 100vh;
 }
@@ -56,20 +48,6 @@
 // Product Section
 .product-grid {
   margin: 8vh 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.product-grid-item {
-  width: 20%;
-  flex-basis: 20%;
-  -ms-flex: auto;
-  position: relative;
-  margin: 0 1%;
-  box-sizing: border-box;
 }
 
 // Client Section

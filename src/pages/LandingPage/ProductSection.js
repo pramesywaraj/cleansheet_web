@@ -7,20 +7,12 @@ import OutlinedButton from '../../components/Buttons/OutlinedButton';
 
 export default function ProductSection({ goToProductPage, products }) {
   return (
-    <section
-      className={`
-                ${LandingPageStyle.sectionGap}
-        `}
-    >
-      <div
-        className={`
-                ${LandingPageStyle.textAlignCenter}
-            `}
-      >
+    <section className="section-gap">
+      <div className="text-center">
         <h1>Produk Kami</h1>
         <p>Dapatkan produk unggulan kami dalam bidang kebersihan.</p>
-        <div className={`${LandingPageStyle['product-grid']}`}>
-          <div className={LandingPageStyle['product-grid-item']}>
+        <div className={`grid-container ${LandingPageStyle['product-grid']}`}>
+          <div className="grid-item-20">
             <ProductCard imgSrc="" productName="Sapu Kebersihan" price="15.000" />
           </div>
         </div>

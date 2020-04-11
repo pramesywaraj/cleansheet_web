@@ -6,8 +6,8 @@ import IPBLogo from '../../assets/ipb-university.png';
 
 export default function ClientSection() {
   return (
-    <section id="clients">
-      <div className={`${LandingPageStyle.textAlignCenter}`}>
+    <section id="clients" className="section-gap">
+      <div className="text-center">
         <h1>Klien Kami</h1>
         <div className={`${LandingPageStyle.clientGrid}`}>
           <div className={`${LandingPageStyle.clientImageContainer}`}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './global.module.scss';
+import './global.scss';
 import Routes from './routes';
 
 import { StoreProvider } from './context/store';

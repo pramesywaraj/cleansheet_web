@@ -9,17 +9,8 @@ import OutlinedButton from '../../components/Buttons/OutlinedButton';
 
 export default function ServiceSection({ goToServicePage }) {
   return (
-    <section
-      id="services"
-      className={`
-        ${LandingPageStyle.sectionGap}
-      `}
-    >
-      <div
-        className={`
-          ${LandingPageStyle.textAlignCenter}
-        `}
-      >
+    <section id="services" className="section-gapp">
+      <div className="text-center">
         <h1>Layanan Kami</h1>
         <div
           className={`

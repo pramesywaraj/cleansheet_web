@@ -10,12 +10,7 @@ export default function JoinCleansheetPartner() {
   const [showModal, openModalHandler, closeModalHandler] = useModal();
 
   return (
-    <section
-      id="joinPartner"
-      className={`
-        ${LandingPageStyle.sectionGap}
-      `}
-    >
+    <section id="joinPartner" className="section-gap">
       <div className={`${LandingPageStyle.joinPartnerContainer}`}>
         <div className={`${LandingPageStyle.joinPartnerContent}`}>
           <h1>Gabung Mitra</h1>
