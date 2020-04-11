@@ -10,7 +10,7 @@ export default function JoinCleansheetWorkerSection() {
   const [showModal, openModalHandler, closeModalHandler] = useModal();
 
   return (
-    <section id="joinCleansheetWorker">
+    <section id="joinCleansheetWorker" className="section-gap">
       <div className={`${LandingPageStyle.joinWorkerContainer}`}>
         <div className={`${LandingPageStyle.joinWorkerContent}`}>
           <div className={`${LandingPageStyle.joinWorkerImageContainer}`}>

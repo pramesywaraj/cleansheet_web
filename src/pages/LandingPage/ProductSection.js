@@ -7,7 +7,6 @@ import OutlinedButton from '../../components/Buttons/OutlinedButton';
 import Loading from '../../components/Loading/Loading';
 
 export default function ProductSection({ goToProductPage, products, loading }) {
-  console.log(products);
   const renderProducts = () => {
     if (products.length === 0) {
       return (

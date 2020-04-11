@@ -1,21 +1,24 @@
 import React from 'react';
 
 import LandingPageStyle from './landingPage.module.scss';
-import BogorLogo from '../../assets/logo-bogor.png';
-import IPBLogo from '../../assets/ipb-university.png';
+
+import ClientImages from '../../misc/clientImages';
+import images from '../../assets/clientImages/dompet-dhuafa.svg';
 
 export default function ClientSection() {
   return (
     <section id="clients" className="section-gap">
       <div className="text-center">
         <h1>Klien Kami</h1>
-        <div className={`${LandingPageStyle.clientGrid}`}>
-          <div className={`${LandingPageStyle.clientImageContainer}`}>
-            <img src={BogorLogo} alt="Client" />
-          </div>
-          <div className={`${LandingPageStyle.clientImageContainer}`}>
-            <img src={IPBLogo} alt="Client" />
-          </div>
+        <div className="grid-container">
+          {ClientImages.map(image => {
+            console.log(images);
+            return (
+              <div key={image.id} className={`${LandingPageStyle['client-image-container']}`}>
+                <img src={require('../../assets/clientImages/' + image.src)} alt={image.alt} title={image.title} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
