@@ -25,16 +25,17 @@ export default function ServiceList({ services, loading, error, pagination, open
 
   return (
     <div className={ServiceStyle['services-layout']}>
-      <div className={ServiceStyle['services-container']}>
+      <div className={`grid-container ${ServiceStyle['services-container']}`}>
         {services.map(service => (
-          <ServiceCard
-            key={service.id}
-            imgSrc={service.image_url}
-            productName={service.title}
-            price={service.price}
-            unit={service.unit}
-            onClick={() => openServiceModal(service.id)}
-          />
+          <div key={service.id} className="grid-item-20">
+            <ServiceCard
+              imgSrc={service.image_url}
+              productName={service.title}
+              price={service.price}
+              unit={service.unit}
+              onClick={() => openServiceModal(service.id)}
+            />
+          </div>
         ))}
       </div>
       <PaginationButton

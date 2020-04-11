@@ -25,15 +25,16 @@ export default function ProductsList({ products, loading, error, pagination, add
 
   return (
     <div className={ProductStyle['products-layout']}>
-      <div className={ProductStyle['products-container']}>
+      <div className={`grid-container ${ProductStyle['products-container']}`}>
         {products.map(product => (
-          <ProductCard
-            key={product.id}
-            imgSrc={product.image_url}
-            productName={product.name}
-            price={product.price}
-            addProduct={() => addProduct(product.id)}
-          />
+          <div key={product.id} className="grid-item-20">
+            <ProductCard
+              imgSrc={product.image_url}
+              productName={product.name}
+              price={product.price}
+              addProduct={() => addProduct(product.id)}
+            />
+          </div>
         ))}
       </div>
       <PaginationButton
