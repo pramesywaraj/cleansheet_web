@@ -21,11 +21,11 @@ export default function validateLogin(values) {
     }
   }
 
-  if ('phone' in values) {
-    if (!values.phone) {
-      errors.phone = 'Nomor telepon belum terisi';
-    } else if (!/^((?:\+62|62)|0)[2-9]{1}[0-9]+$/.test(values.phone)) {
-      errors.phone = 'Nomor telepon Anda tidak sesuai format.';
+  if ('phone_number' in values) {
+    if (!values.phone_number) {
+      errors.phone_number = 'Nomor telepon belum terisi';
+    } else if (!/^((?:\+62|62)|0)[2-9]{1}[0-9]+$/.test(values.phone_number)) {
+      errors.phone_number = 'Nomor telepon Anda tidak sesuai format.';
     }
   }
 
@@ -52,6 +52,12 @@ export default function validateLogin(values) {
   if ('city' in values) {
     if (!values.city) {
       errors.city = 'Kota belum terisi';
+    }
+  }
+
+  if ('is_bidikmisi' in values) {
+    if (!values.is_bidikmisi) {
+      errors.is_bidikmisi = 'Apakah Anda bidikmisi?';
     }
   }
 

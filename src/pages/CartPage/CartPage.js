@@ -21,7 +21,7 @@ export default function CartPage() {
     {
       name: '',
       email: '',
-      phone: '',
+      phone_number: '',
       city: '',
       postal_code: '',
       address: '',

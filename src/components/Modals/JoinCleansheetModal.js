@@ -1,8 +1,9 @@
 import React from 'react';
+import useInput from '../../hooks/useInput';
+import usePostData from '../../hooks/usePostData';
+
 import ModalBase from './ModalBase';
 import ModalStyle from './modal.module.scss';
-import useInput from '../../hooks/useInput';
-
 import TextInput from '../Input/TextInput';
 import TextArea from '../Input/TextArea';
 import BidikmisiRadioInput from '../Input/BidikmisiRadioInput';
@@ -12,30 +13,29 @@ export default function JoinCleansheetModal({ show, close }) {
   const [joinObject, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
-      phone: '',
+      phone_number: '',
       nim: '',
       year: '',
       major: '',
-      bidikmisi: undefined,
+      is_bidikmisi: undefined,
       address: '',
-      join_reason: '',
+      reason: '',
     },
     onSubmit,
   );
+  const { onPostLoading, onPostData } = usePostData();
 
-  function onSubmit() {
-    console.log(joinObject);
-    console.log('submitted');
-    resetValue();
-  }
-
-  function onCloseModal() {
+  function successHandling() {
     resetValue();
     close();
   }
 
+  function onSubmit() {
+    onPostData(joinObject, successHandling);
+  }
+
   return (
-    <ModalBase show={show} close={onCloseModal}>
+    <ModalBase show={show} close={close}>
       <div className={ModalStyle['modal-content']}>
         <h1 style={{ marginBottom: '1vh' }}>Bergabung Bersama Cleansheet</h1>
         <h3>Yuk isi data berikut untuk keperluan rekrutmen staf Cleansheet</h3>
@@ -53,12 +53,12 @@ export default function JoinCleansheetModal({ show, close }) {
             <div className={ModalStyle['modal-input-row']}>
               <div className={ModalStyle['modal-input-marginRight']}>
                 <TextInput
-                  name="phone"
+                  name="phone_number"
                   type="tel"
                   label="Nomor Telepon (WA)"
                   placeholder="Nomor telepon pendaftar yang terhubung dengan WA"
-                  value={joinObject.phone}
-                  error={errors.phone}
+                  value={joinObject.phone_number}
+                  error={errors.phone_number}
                   onChange={changeValue}
                 />
               </div>
@@ -98,7 +98,11 @@ export default function JoinCleansheetModal({ show, close }) {
                 />
               </div>
             </div>
-            <BidikmisiRadioInput name="bidikmisi" error={errors.bidikmisi} onChange={changeValue} />
+            <BidikmisiRadioInput
+              name="is_bidikmisi"
+              error={errors.is_bidikmisi}
+              onChange={changeValue}
+            />
             <TextInput
               name="address"
               type="text"
@@ -117,7 +121,7 @@ export default function JoinCleansheetModal({ show, close }) {
               onChange={changeValue}
             />
             <div className={`${ModalStyle['modal-button']}`}>
-              <FullSubmitButton label="Kirim" type="primary" />
+              <FullSubmitButton label="Kirim" type="primary" isLoading={onPostLoading} />
             </div>
           </form>
         </div>

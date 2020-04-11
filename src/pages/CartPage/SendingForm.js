@@ -34,12 +34,12 @@ export default function SendingForm({
           onChange={changeFormValue}
         />
         <TextInput
-          name="phone"
+          name="phone_number"
           label="Kontak Penerima"
           type="tel"
           placeholder="Kontak yang dapat dihubungi (WA)"
-          value={deliveryPayload.phone}
-          error={errors.phone}
+          value={deliveryPayload.phone_number}
+          error={errors.phone_number}
           onChange={changeFormValue}
         />
         <TextInput

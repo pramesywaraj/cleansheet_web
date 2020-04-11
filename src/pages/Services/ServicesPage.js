@@ -22,7 +22,7 @@ export default function ServicesPage() {
   const [serviceObj, changeValue, resetValue, handleSubmit, errors] = useInput(
     {
       name: '',
-      phone: '',
+      phone_number: '',
       pickup_date: '',
       pickup_time: '',
       notes: '',

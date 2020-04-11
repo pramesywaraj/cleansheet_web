@@ -31,12 +31,12 @@ export default function OrderServiceModal({ loading, showModal, closeModal, form
                   onChange={changeValue}
                 />
                 <TextInput
-                  name="phone"
+                  name="phone_number"
                   type="tel"
                   label="Nomor Telepon"
                   placeholder="Nomor telepon pemesan diawali dengan +62/62/08"
-                  value={serviceObj.phone}
-                  error={errors.phone}
+                  value={serviceObj.phone_number}
+                  error={errors.phone_number}
                   onChange={changeValue}
                 />
                 <DatePicker
