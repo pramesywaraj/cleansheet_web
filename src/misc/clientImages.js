@@ -90,6 +90,36 @@ const ClientImages = [
     title: 'yayasan-bakti-insani',
     alt: 'yayasan-bakti-insani',
   },
+  {
+    id: 17,
+    src: 'dibalik-layar.svg',
+    title: 'dibalik-layar',
+    alt: 'dibalik-layar',
+  },
+  {
+    id: 18,
+    src: 'radar-bogor.svg',
+    title: 'radar-bogor',
+    alt: 'radar-bogor',
+  },
+  {
+    id: 19,
+    src: 'tebar-aqiqah.svg',
+    title: 'tebar-aqiqah',
+    alt: 'tebar-aqiqah',
+  },
+  {
+    id: 20,
+    src: 'tribun-bogor.svg',
+    title: 'tribun-bogor',
+    alt: 'tribun-bogor',
+  },
+  {
+    id: 21,
+    src: 'weding-design-bogor.svg',
+    title: 'wedding-design-bogor',
+    alt: 'wedding-design-bogor',
+  },
 ];
 
 export default ClientImages;
