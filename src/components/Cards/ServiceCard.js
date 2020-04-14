@@ -3,8 +3,9 @@ import CardBase from './CardBase';
 import CardStyle from './card.module.scss';
 import SmallButton from '../Buttons/SmallButton';
 import Image from '../Image/Image';
+import { setCommaToMoney } from '../../misc/otherFunctionality';
 
-export default function ServiceCard({ imgSrc, productName, price, unit, onClick }) {
+export default function ServiceCard({ imgSrc, productName, price, unit, onClick, estimation }) {
   return (
     <CardBase>
       <div className={`${CardStyle['card-service-layout']}`}>
@@ -15,12 +16,12 @@ export default function ServiceCard({ imgSrc, productName, price, unit, onClick 
           <p className={`${CardStyle.bold}`}>{productName}</p>
           <div className={`${CardStyle['service-detail-estimation']}`}>
             <div>
-              <p>Harga:</p>
-              <p>{`Rp. ${price}/${unit}`}</p>
+              <p style={{ fontWeight: '600' }}>Harga:</p>
+              <p>{`Rp. ${setCommaToMoney(price)}/${unit}`}</p>
             </div>
             <div>
-              <p>Estimasi:</p>
-              <p>1-2 Hari</p>
+              <p style={{ fontWeight: '600' }}>Estimasi Pengerjaan:</p>
+              <p>{estimation}</p>
             </div>
           </div>
         </div>
