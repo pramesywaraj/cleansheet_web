@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link, useHistory } from 'react-router-dom';
-import { FaShoppingBasket, FaExchangeAlt, FaBars } from 'react-icons/fa';
+import { FaShoppingBasket, FaExchangeAlt, FaBars, FaSignOutAlt } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
 import useLoading from '../../hooks/useLoading';
@@ -44,9 +44,7 @@ export default function Header() {
         <FaBars onClick={openCloseMenu} fontSize="1.5em" />
       </div>
       <nav className={`${HeaderStyle['header-navigation']}`}>
-        <ul
-          className={`${HeaderStyle['navigation-links']} ${isMenuOpen ? HeaderStyle.open : ''}`}
-        >
+        <ul className={`${HeaderStyle['navigation-links']} ${isMenuOpen ? HeaderStyle.open : ''}`}>
           <li>
             <NavLink exact activeClassName={HeaderStyle['active-route']} to="/">
               Beranda
@@ -93,7 +91,7 @@ export default function Header() {
             <li>
               <PrimaryButton
                 type="primary"
-                label={loading ? <ButtonLoading /> : 'Keluar'}
+                label={loading ? <ButtonLoading /> : <FaSignOutAlt fontSize="1em" color="white" />}
                 clickAction={loggingOut}
               />
             </li>
