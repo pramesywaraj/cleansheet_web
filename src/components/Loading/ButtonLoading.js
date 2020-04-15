@@ -1,10 +1,13 @@
 import React from 'react';
 import LoadingStyle from './loading.module.scss';
 
-export default function ButtonLoading() {
+export default function ButtonLoading({ color }) {
   return (
     <div className={`${LoadingStyle['loading-button-container']}`}>
-      <div className={`${LoadingStyle['button-loading-spinner']} ${LoadingStyle['color-white']}`} />
+      <div
+        className={`${LoadingStyle['button-loading-spinner']}`}
+        style={{ backgroundColor: color || 'white' }}
+      />
     </div>
   );
 }
