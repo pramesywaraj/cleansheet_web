@@ -40,6 +40,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className={FooterStyle['footer-copyright']}>
+        <p>&copy; Cleansheet Indonesia 2020</p>
+      </div>
     </footer>
   );
 }
