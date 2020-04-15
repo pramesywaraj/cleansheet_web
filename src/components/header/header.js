@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, Link, useHistory } from 'react-router-dom';
-import { FaShoppingBasket, FaExchangeAlt } from 'react-icons/fa';
+import { FaShoppingBasket, FaExchangeAlt, FaBars } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
 import useLoading from '../../hooks/useLoading';
@@ -11,12 +11,13 @@ import ButtonLoading from '../Loading/ButtonLoading';
 export default function Header() {
   const { state, dispatch } = useStore();
   const { user, isLoggedIn } = state;
-  const history = useHistory();
 
   const [openSnackbar] = useSnackbar();
   const [loading, showLoading, hideLoading] = useLoading();
+  const history = useHistory();
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const loggingOut = () => {
+  function loggingOut() {
     showLoading();
     setTimeout(() => {
       dispatch({ type: 'LOGOUT_SUCCESS' });
@@ -24,7 +25,12 @@ export default function Header() {
       openSnackbar('info', 'Anda berhasil keluar dari aplikasi.');
       history.push('/login');
     }, 2500);
-  };
+  }
+
+  function openCloseMenu() {
+    console.log(isMenuOpen);
+    setMenuOpen(!isMenuOpen);
+  }
 
   useEffect(() => {
     return () => {
@@ -33,21 +39,26 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={HeaderStyle.header}>
-      <nav className={HeaderStyle.navigation}>
-        <ul>
+    <header className={HeaderStyle['header-container']}>
+      <div className={HeaderStyle['hamburger-menu']}>
+        <FaBars onClick={openCloseMenu} fontSize="1.5em" />
+      </div>
+      <nav className={`${HeaderStyle['header-navigation']}`}>
+        <ul
+          className={`${HeaderStyle['navigation-links']} ${isMenuOpen ? HeaderStyle.open : ''}`}
+        >
           <li>
-            <NavLink exact activeClassName={HeaderStyle['header-active-route']} to="/">
+            <NavLink exact activeClassName={HeaderStyle['active-route']} to="/">
               Beranda
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={HeaderStyle['header-active-route']} to="layanan">
+            <NavLink activeClassName={HeaderStyle['active-route']} to="layanan">
               Layanan
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={HeaderStyle['header-active-route']} to="produk">
+            <NavLink activeClassName={HeaderStyle['active-route']} to="produk">
               Produk
             </NavLink>
           </li>
@@ -59,31 +70,47 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div className={HeaderStyle.floatRight}>
+      <div />
+
+      <div className={HeaderStyle['user-menu']}>
         {isLoggedIn ? (
-          <>
-            <NavLink className={HeaderStyle['header-icon-nav']} to="/keranjang">
-              <FaShoppingBasket fontSize="1.5em" />
-            </NavLink>
-            <NavLink className={HeaderStyle['header-icon-nav']} to="/transaksi">
-              <FaExchangeAlt fontSize="1.5em" />
-            </NavLink>
-            <NavLink exact to="/">{`Hai, ${user.name}`}</NavLink>
-            <PrimaryButton
-              type="primary"
-              label={loading ? <ButtonLoading /> : 'Keluar'}
-              clickAction={loggingOut}
-            />
-          </>
+          <ul className={HeaderStyle['user-navigation']}>
+            <li>
+              <NavLink className={HeaderStyle['header-icon-nav']} to="/keranjang">
+                <FaShoppingBasket fontSize="1.5em" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={HeaderStyle['header-icon-nav']} to="/transaksi">
+                <FaExchangeAlt fontSize="1.5em" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={HeaderStyle['header-user-name']} exact to="/">
+                {`Hai, ${user.name}`}
+              </NavLink>
+            </li>
+            <li>
+              <PrimaryButton
+                type="primary"
+                label={loading ? <ButtonLoading /> : 'Keluar'}
+                clickAction={loggingOut}
+              />
+            </li>
+          </ul>
         ) : (
-          <>
-            <NavLink exact to="/login">
-              Masuk
-            </NavLink>
-            <Link to="/register">
-              <PrimaryButton type="primary" label="Daftar" />
-            </Link>
-          </>
+          <ul className={HeaderStyle['user-navigation']}>
+            <li>
+              <NavLink exact to="/login">
+                Masuk
+              </NavLink>
+            </li>
+            <li>
+              <Link to="/register">
+                <PrimaryButton type="primary" label="Daftar" />
+              </Link>
+            </li>
+          </ul>
         )}
       </div>
     </header>

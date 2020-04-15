@@ -1,12 +1,36 @@
-$white: #FFFFFF;
-$primary_color: #02AFF3;
+$white: #ffffff;
+$primary_color: #02aff3;
 
 $primary_font_color: #707070;
 
-$primary_button_color: #02AFF3;
-$outlined_button_color: #02AFF3;
+$primary_button_color: #02aff3;
+$outlined_button_color: #02aff3;
 
 // footer color
-$footer_base_color: #DFE9ED;
-$whatsapp_button: #4CAF50;
+$footer_base_color: #dfe9ed;
+$whatsapp_button: #4caf50;
 $whatsapp_button_hover: rgb(42, 127, 45);
+
+@mixin response-to-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-potrait-up {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == large-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
