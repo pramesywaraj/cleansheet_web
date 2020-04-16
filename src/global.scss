@@ -31,7 +31,7 @@ html {
   }
 
   @include response-to-size(large-desktop) {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -401,7 +401,11 @@ h6 {
 
 // Section
 .section-gap {
-  padding: 10vh 0;
+  margin: 10vh 0;
+
+  @include response-to-size(phone-only) {
+    margin: 10vh 0;
+  }
 }
 
 .section-full-height {
