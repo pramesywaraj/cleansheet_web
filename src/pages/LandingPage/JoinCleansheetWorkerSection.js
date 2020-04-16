@@ -19,7 +19,7 @@ export default function JoinCleansheetWorkerSection() {
           <div className={`${LandingPageStyle.joinWorkerTextContainer}`}>
             <h1>Gabung CleanSheet</h1>
             <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
-            <div className={`${LandingPageStyle.buttonMargin5}`}>
+            <div className={LandingPageStyle['button-margin']}>
               <PrimaryButton type="white" clickAction={openModalHandler} label="Gabung Sekarang" />
             </div>
           </div>

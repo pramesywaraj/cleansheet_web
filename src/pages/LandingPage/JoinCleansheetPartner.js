@@ -15,7 +15,7 @@ export default function JoinCleansheetPartner() {
         <div className={`${LandingPageStyle.joinPartnerContent}`}>
           <h1>Gabung Mitra</h1>
           <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
-          <div className={`${LandingPageStyle.buttonMargin5}`}>
+          <div className={LandingPageStyle['button-margin']}>
             <PrimaryButton type="primary" clickAction={openModalHandler} label="Gabung Sekarang" />
           </div>
         </div>
