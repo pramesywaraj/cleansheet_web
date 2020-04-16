@@ -7,7 +7,7 @@
 
 //Main Section
 .main-section {
-  height: 80vh;
+  height: 100vh;
 }
 
 .main-section-caption {
@@ -29,14 +29,40 @@
   .main-section-caption {
     max-width: 30vw;
     margin: 2.5% 0;
-
-    p {
-      font-size: 1em;
-    }
   }
 
   .main-section-orderbutton {
     width: 15vw;
+  }
+
+  @include response-to-size(phone-only) {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    .main-section-logo {
+      width: 47.5vw;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .main-section-caption {
+      margin: 2.5% 0;
+      text-align: center;
+      max-width: 55vw;
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+
+    .main-section-orderbutton {
+      width: 30vw;
+    }
   }
 }
 
@@ -50,6 +76,10 @@
     width: 100%;
     height: 100%;
     display: block;
+  }
+
+  @include response-to-size(phone-only) {
+    display: none;
   }
 }
 
