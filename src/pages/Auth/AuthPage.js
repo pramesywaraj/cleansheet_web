@@ -109,10 +109,12 @@ export default function AuthPage({ location, history }) {
   return (
     <div className={AuthStyle['auth-wrapper']}>
       <Suspense fallback={<Loading />}>
-        <div className={AuthStyle['auth-logo-container']}>
-          <Link to="/">
-            <img alt="Cleansheet Logo" src={LogoCleansheet} />
-          </Link>
+        <div className={AuthStyle['auth-logo']}>
+          <div className={AuthStyle['auth-logo-container']}>
+            <Link to="/">
+              <img alt="Cleansheet Logo" src={LogoCleansheet} />
+            </Link>
+          </div>
         </div>
         <div className={AuthStyle['auth-container']}>
           <div className={AuthStyle['auth-image']}>
