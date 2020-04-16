@@ -1,31 +1,59 @@
 @import '../../variable.scss';
 
-.fullPageHeight {
-  height: 100vh;
-}
-
-.flexboxContainer {
+.flex-row {
   display: flex;
   align-items: center;
 }
 
-.captionLayout {
-  width: 20vw;
-  margin: 5% 0;
+//Main Section
+.main-section {
+  height: 80vh;
 }
 
-.mainCaption {
-  font-size: 1.2em;
-}
-
-.rightAlign {
-  margin-left: auto;
-}
-
-.mainDecorationImage {
+.main-section-caption {
+  flex: 1;
   width: 100%;
-  height: auto;
+
+  .main-section-logo {
+    width: 15vw;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  .main-section-caption {
+    max-width: 30vw;
+    margin: 2.5% 0;
+
+    p {
+      font-size: 1em;
+    }
+  }
+
+  .main-section-orderbutton {
+    width: 15vw;
+  }
 }
+
+.main-section-image {
+  flex: 1;
+  width: 15vw;
+  height: 100%;
+  object-fit: contain;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+// Services
 
 .gridContainer {
   display: grid;

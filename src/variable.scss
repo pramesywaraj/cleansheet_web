@@ -16,19 +16,19 @@ $whatsapp_button_hover: rgb(42, 127, 45);
     @media (max-width: 599px) {
       @content;
     }
-  } @else if $size == tablet-potrait-up {
-    @media (min-width: 600px) {
+  } @else if $size == tablet-potrait {
+    @media (min-width: 600px) and (max-width: 899px) {
       @content;
     }
-  } @else if $size == tablet-landscape-up {
-    @media (min-width: 900px) {
+  } @else if $size == tablet-landscape {
+    @media (min-width: 900px) and (max-width: 1199px) {
       @content;
     }
-  } @else if $size == desktop-up {
-    @media (min-width: 1200px) {
+  } @else if $size == desktop {
+    @media (min-width: 1200px) and (max-width: 1799px) {
       @content;
     }
-  } @else if $size == large-desktop-up {
+  } @else if $size == large-desktop {
     @media (min-width: 1800px) {
       @content;
     }

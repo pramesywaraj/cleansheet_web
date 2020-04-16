@@ -2,38 +2,27 @@ import React from 'react';
 import LogoCleansheet from '../../assets/logo_cs.png';
 import LandingPageStyle from './landingPage.module.scss';
 import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import FullSubmitButton from '../../components/Buttons/FullSubmitButton';
 
 export default function MainSection({ goToProductPage }) {
   return (
-    <section id="mainHeader">
-      <div
-        className={`
-          ${LandingPageStyle.flexboxContainer} 
-          ${LandingPageStyle.fullPageHeight}
-        `}
-      >
-        <div>
+    <section
+      id="mainHeader"
+      className={`${LandingPageStyle['flex-row']} ${LandingPageStyle['main-section']}`}
+    >
+      <div className={LandingPageStyle['main-section-caption']}>
+        <div className={LandingPageStyle['main-section-logo']}>
           <img alt="Cleansheet Logo" src={LogoCleansheet} />
-          <div
-            className={`
-              ${LandingPageStyle.captionLayout} 
-              ${LandingPageStyle.mainCaption}
-            `}
-          >
-            <p>Start up kebersihan modern berbasis Sociotechnopreneur</p>
-          </div>
-          <div>
-            <PrimaryButton type="primary" clickAction={goToProductPage} label="Pesan" />
-          </div>
         </div>
-        <div className={`${LandingPageStyle.rightAlign}`}>
-          <img
-            className={`${LandingPageStyle.mainDecorationImage}`}
-            alt="Cleansheet decoration 1"
-            src={LandingPageMainImage}
-          />
+        <div className={LandingPageStyle['main-section-caption']}>
+          <p>Start up kebersihan modern berbasis Sociotechnopreneur</p>
         </div>
+        <div className={LandingPageStyle['main-section-orderbutton']}>
+          <FullSubmitButton type="primary" clickAction={goToProductPage} label="Pesan" />
+        </div>
+      </div>
+      <div className={`${LandingPageStyle['main-section-image']}`}>
+        <img alt="Cleansheet decoration 1" src={LandingPageMainImage} />
       </div>
     </section>
   );

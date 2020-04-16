@@ -164,11 +164,11 @@
     width: 50%;
   }
 
-  @include response-to-size(tablet-potrait-up) {
+  @include response-to-size(tablet-potrait) {
     width: 30%;
   }
 
-  @include response-to-size(desktop-up) {
+  @include response-to-size(desktop) {
     width: 20%;
   }
 }

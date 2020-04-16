@@ -9,7 +9,7 @@ import OutlinedButton from '../../components/Buttons/OutlinedButton';
 
 export default function ServiceSection({ goToServicePage }) {
   return (
-    <section id="services" className="section-gapp">
+    <section id="services" className="section-gap">
       <div className="text-center">
         <h1>Layanan Kami</h1>
         <div
