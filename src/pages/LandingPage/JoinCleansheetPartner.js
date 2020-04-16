@@ -11,8 +11,8 @@ export default function JoinCleansheetPartner() {
 
   return (
     <section id="joinPartner" className="section-gap">
-      <div className={`${LandingPageStyle.joinPartnerContainer}`}>
-        <div className={`${LandingPageStyle.joinPartnerContent}`}>
+      <div className={LandingPageStyle['join-partner-container']}>
+        <div className="text-center">
           <h1>Gabung Mitra</h1>
           <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
           <div className={LandingPageStyle['button-margin']}>

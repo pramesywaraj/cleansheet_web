@@ -11,12 +11,12 @@ export default function JoinCleansheetWorkerSection() {
 
   return (
     <section id="joinCleansheetWorker" className="section-gap">
-      <div className={`${LandingPageStyle.joinWorkerContainer}`}>
-        <div className={`${LandingPageStyle.joinWorkerContent}`}>
-          <div className={`${LandingPageStyle.joinWorkerImageContainer}`}>
+      <div className={LandingPageStyle['join-worker-container']}>
+        <div className={LandingPageStyle['join-worker-content']}>
+          <div className={LandingPageStyle['owner-photo']}>
             <img src={CleansheetOwner} alt="Cleansheet Owner" />
           </div>
-          <div className={`${LandingPageStyle.joinWorkerTextContainer}`}>
+          <div className={LandingPageStyle['join-worker-caption']}>
             <h1>Gabung CleanSheet</h1>
             <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
             <div className={LandingPageStyle['button-margin']}>

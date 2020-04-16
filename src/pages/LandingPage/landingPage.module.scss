@@ -186,15 +186,13 @@
 }
 
 // Join Cleansheet (Worker)
-.joinWorkerContainer {
-  // left: 0;
-
+.join-worker-container {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 
   background-color: $primary-color;
 
-  .joinWorkerContent {
+  .join-worker-content {
     padding: 5vh 5vw;
     display: flex;
     flex-direction: row;
@@ -202,30 +200,36 @@
     align-items: center;
     justify-content: center;
   }
-}
 
-.joinWorkerImageContainer {
-  width: 40vw;
-  height: auto;
+  .owner-photo {
+    width: 40vw;
+    height: auto;
 
-  padding-right: 5vw;
+    padding-right: 5vw;
 
-  img {
-    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
   }
-}
 
-.joinWorkerTextContainer {
-  text-align: center;
+  .join-worker-caption {
+    text-align: center;
 
-  h1,
-  h3 {
-    color: $white;
+    h1,
+    h3 {
+      color: $white;
+    }
+  }
+
+  @include response-to-size(phone-only) {
+    .owner-photo {
+      display: none;
+    }
   }
 }
 
 // Join Cleansheet Partner
-.joinPartnerContainer {
+.join-partner-container {
   height: 50vh;
   display: flex;
 
