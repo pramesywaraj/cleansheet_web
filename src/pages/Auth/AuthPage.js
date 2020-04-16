@@ -83,8 +83,6 @@ export default function AuthPage({ location, history }) {
 
       const { data } = await axios(option);
 
-      console.log(data);
-
       if (data.errors) {
         throw data.errors;
       }
@@ -109,20 +107,16 @@ export default function AuthPage({ location, history }) {
   }
 
   return (
-    <div className={AuthStyle.loginWrapper}>
-      <header className={AuthStyle.topLogoContainer}>
-        <Link to="/">
-          <img alt="Cleansheet Logo" src={LogoCleansheet} className={AuthStyle.cleansheetLogo} />
-        </Link>
-      </header>
+    <div className={AuthStyle['auth-wrapper']}>
       <Suspense fallback={<Loading />}>
-        <section className={AuthStyle.loginContainer}>
-          <div className={AuthStyle.imageContainer}>
-            <img
-              className={`${AuthStyle.image}`}
-              alt="Cleansheet decoration 1"
-              src={LandingPageMainImage}
-            />
+        <div className={AuthStyle['auth-logo-container']}>
+          <Link to="/">
+            <img alt="Cleansheet Logo" src={LogoCleansheet} />
+          </Link>
+        </div>
+        <div className={AuthStyle['auth-container']}>
+          <div className={AuthStyle['auth-image']}>
+            <img alt="Cleansheet decoration 1" src={LandingPageMainImage} />
             <p>Apapun bersih-bersihnya, Cleansheet jagonya.</p>
           </div>
           <div className={`${AuthStyle['form-container-flex']}`}>
@@ -132,7 +126,7 @@ export default function AuthPage({ location, history }) {
               <LoginCard onLogin={onLogin} isLoading={loading} />
             )}
           </div>
-        </section>
+        </div>
       </Suspense>
     </div>
   );

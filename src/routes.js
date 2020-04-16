@@ -38,7 +38,8 @@ function PrivateRoutes({ component: Component }) {
           </Layout>
         ) : (
           <RedirectToLogin />
-        )}
+        )
+      }
     />
   );
 }
@@ -75,7 +76,19 @@ function Routes() {
   }
 
   if (isChecking) {
-    return <Loading />;
+    return (
+      <div
+        style={{
+          display: 'flex',
+          height: '100vh',
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Loading />
+      </div>
+    );
   }
 
   return (

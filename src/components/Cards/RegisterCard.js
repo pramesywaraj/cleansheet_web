@@ -27,48 +27,46 @@ export default function RegisterCard({ onRegister, isLoading }) {
 
   return (
     <CardBase>
-      <div className={`${CardStyle['card-layout']}`}>
-        <div className={`${CardStyle['card-container-input']}`}>
-          <form onSubmit={handleSubmit}>
-            <TextInput
-              name="name"
-              label="Nama"
-              placeholder="Nama"
-              type="text"
-              value={registerObj.name}
-              onChange={changeValue}
-              error={errors.name}
-            />
-            <TextInput
-              name="city"
-              label="Kota"
-              placeholder="Kota"
-              type="text"
-              value={registerObj.city}
-              onChange={changeValue}
-              error={errors.city}
-            />
-            <TextInput
-              name="email"
-              label="Email"
-              placeholder="Email"
-              type="text"
-              value={registerObj.email}
-              error={errors.email}
-              onChange={changeValue}
-            />
-            <TextInput
-              name="password"
-              label="Password"
-              placeholder="Password"
-              type="password"
-              value={registerObj.password}
-              error={errors.password}
-              onChange={changeValue}
-            />
-            <FullSubmitButton label="Daftar" type="primary" isLoading={isLoading} />
-          </form>
-        </div>
+      <div className={`${CardStyle['card-auth-layout']}`}>
+        <form onSubmit={handleSubmit} className={`${CardStyle['card-auth-form']}`}>
+          <TextInput
+            name="name"
+            label="Nama"
+            placeholder="Nama"
+            type="text"
+            value={registerObj.name}
+            onChange={changeValue}
+            error={errors.name}
+          />
+          <TextInput
+            name="city"
+            label="Kota"
+            placeholder="Kota"
+            type="text"
+            value={registerObj.city}
+            onChange={changeValue}
+            error={errors.city}
+          />
+          <TextInput
+            name="email"
+            label="Email"
+            placeholder="Email"
+            type="text"
+            value={registerObj.email}
+            error={errors.email}
+            onChange={changeValue}
+          />
+          <TextInput
+            name="password"
+            label="Password"
+            placeholder="Password"
+            type="password"
+            value={registerObj.password}
+            error={errors.password}
+            onChange={changeValue}
+          />
+          <FullSubmitButton label="Daftar" type="primary" isLoading={isLoading} />
+        </form>
 
         <div className={`${CardStyle['login-register-text']}`}>
           <p>

@@ -95,14 +95,19 @@
 }
 
 /////////////////////////// Login Card Section
-.card-layout {
-  width: 20vw;
+.card-auth-layout {
+  width: 30vw;
+  height: auto;
+
+  @include response-to-size(phone-only) {
+    width: 75vw;
+  }
 }
-.card-container-input {
-  display: flex;
-  flex-direction: column;
-  color: $primary_font_color;
+
+.card-auth-form {
+  width: auto;
 }
+
 .login-button {
   display: flex;
   align-content: center;
@@ -110,6 +115,7 @@
 
   margin-top: 2vh;
 }
+
 .login-register-text {
   text-align: center;
   margin-top: 2vh;
