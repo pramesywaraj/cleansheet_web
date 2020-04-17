@@ -1,23 +1,54 @@
+@import '../../variable.scss';
+
 .snackbar-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   visibility: hidden;
   min-width: 15vw;
-  max-width: 70vw;
-  // margin-left: -125px;
-  background-color: green;
+  max-width: 80vw;
+  height: auto;
+  padding: 2vh 2vw;
+
   color: #fff;
   text-align: center;
   border-radius: 9px;
-  padding: 2vh 1vw;
   position: fixed;
-  z-index: 100;
+  z-index: 300;
   top: 5%;
   left: 50%;
   transform: translate(-50%, 5%);
-  font-size: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  @include response-to-size(phone-small) {
+    width: 95vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 95vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: auto;
+  }
+}
+
+.snackbar-icon {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  margin-right: 1.5vw;
+}
+
+.snackbar-message {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  font-size: 1em;
+
+  text-align: center;
 }
 
 .snackbar-show {
@@ -29,7 +60,7 @@
 }
 
 .snackbar-success {
-  background-color: rgba(7, 209, 0, 1);
+  background-color: rgb(11, 183, 5);
 }
 
 .snackbar-fail {
@@ -38,10 +69,6 @@
 
 .snackbar-info {
   background-color: rgba(0, 164, 219, 1);
-}
-
-.snackbar-icon {
-  margin-right: 1.5vw;
 }
 
 /* Animations to fade the snackbar in and out */

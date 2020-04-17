@@ -8,16 +8,16 @@ export default function Snackbar({ message, type, isShow }) {
   let iconType;
   switch (type) {
     case 'success':
-      colorType = SnackbarStyle['snackbar-show'];
-      iconType = <FaCheckCircle className={SnackbarStyle['snackbar-icon']} fontSize="20" />;
+      colorType = SnackbarStyle['snackbar-success'];
+      iconType = <FaCheckCircle fontSize="1.3em" />;
       break;
     case 'fail':
       colorType = SnackbarStyle['snackbar-fail'];
-      iconType = <FaExclamationTriangle className={SnackbarStyle['snackbar-icon']} fontSize="20" />;
+      iconType = <FaExclamationTriangle fontSize="1.3em" />;
       break;
     case 'info':
       colorType = SnackbarStyle['snackbar-info'];
-      iconType = <FaInfoCircle className={SnackbarStyle['snackbar-icon']} fontSize="20" />;
+      iconType = <FaInfoCircle fontSize="1.3em" />;
       break;
     default:
       break;
@@ -27,8 +27,8 @@ export default function Snackbar({ message, type, isShow }) {
       className={`${SnackbarStyle['snackbar-container']} ${isShow &&
         SnackbarStyle['snackbar-show']} ${colorType}`}
     >
-      {iconType}
-      {message}
+      <div className={SnackbarStyle['snackbar-icon']}>{iconType}</div>
+      <div className={SnackbarStyle['snackbar-message']}>{message}</div>
     </div>
   );
 }
