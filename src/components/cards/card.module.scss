@@ -7,8 +7,31 @@
   transition: 0.3s;
   width: auto;
   height: auto;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 5%;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 30vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    border-radius: 10px;
+  }
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
 }
 
 // Product Card styling
@@ -16,31 +39,20 @@
   font-weight: bold;
 }
 
-.product-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 100%;
-}
-
-.productImageContainer {
-  flex: 2;
-  width: 100%;
-  height: 30vh;
-}
-
-.productImage {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.productDetail {
+.product-detail {
   text-align: center;
   margin: 5% 0;
+  p {
+    font-weight: bold;
+  }
   small {
     color: #5c5c5c;
+  }
+
+  @include response-to-size(phone) {
+    p {
+      font-size: 0.8em;
+    }
   }
 }
 
@@ -49,26 +61,6 @@
 }
 
 ////////////////////////// Service card
-.card-service-layout {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  align-items: flex-start;
-}
-
-.card-service-image_container {
-  flex: 2;
-  width: 100%;
-  height: 30vh;
-}
-
-.service-image {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
 .service-detail {
   flex: 1;
   margin: 5% 0;
@@ -99,7 +91,7 @@
   width: 30vw;
   height: auto;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     width: 75vw;
   }
 }

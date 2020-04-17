@@ -8,9 +8,9 @@ import { setCommaToMoney } from '../../misc/otherFunctionality';
 export default function ServiceCard({ imgSrc, productName, price, unit, onClick, estimation }) {
   return (
     <CardBase>
-      <div className={`${CardStyle['card-service-layout']}`}>
-        <div className={`${CardStyle['card-service-image_container']}`}>
-          <Image style={`${CardStyle['service-image']}`} src={imgSrc} alt="Services" />
+      <div className={`${CardStyle['card-layout']}`}>
+        <div className={`${CardStyle['card-image-container']}`}>
+          <Image src={imgSrc} alt="Services" />
         </div>
         <div className={`${CardStyle['service-detail']}`}>
           <p className={`${CardStyle.bold}`}>{productName}</p>

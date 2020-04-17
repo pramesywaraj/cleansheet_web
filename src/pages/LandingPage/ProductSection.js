@@ -35,7 +35,7 @@ export default function ProductSection({ goToProductPage, products, loading }) {
         <div className={`grid-container ${LandingPageStyle['product-grid']}`}>
           {loading ? <Loading /> : renderProducts()}
         </div>
-        <div className={`${LandingPageStyle.buttonMargin5}`}>
+        <div className={LandingPageStyle['button-margin']}>
           <OutlinedButton clickAction={goToProductPage} label="Selengkapnya" />
         </div>
       </div>

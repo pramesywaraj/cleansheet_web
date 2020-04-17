@@ -12,7 +12,7 @@ $whatsapp_button: #4caf50;
 $whatsapp_button_hover: rgb(42, 127, 45);
 
 @mixin response-to-size($size) {
-  @if $size == phone-only {
+  @if $size == phone {
     @media (max-width: 599px) {
       @content;
     }

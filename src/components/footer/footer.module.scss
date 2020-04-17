@@ -17,7 +17,7 @@
     align-items: flex-start;
     padding: 1.5%;
 
-    @include response-to-size(phone-only) {
+    @include response-to-size(phone) {
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -40,13 +40,14 @@
 }
 
 .footer-element {
+  width: auto;
   max-width: 20vw;
 
   .footer-caption {
     margin-top: 2vh;
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     max-width: 100%;
     width: 100%;
     text-align: center;

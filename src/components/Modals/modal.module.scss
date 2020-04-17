@@ -24,7 +24,7 @@
 
   opacity: 1;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     border-radius: 10px;
   }
 }
@@ -46,7 +46,7 @@
     color: rgba(92, 92, 92, 0.5);
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     .modal-title {
       font-size: 1em;
     }
@@ -87,7 +87,7 @@
     background: rgba(2, 175, 243, 0.8);
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     width: 95vw;
   }
 

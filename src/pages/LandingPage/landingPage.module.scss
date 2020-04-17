@@ -39,7 +39,7 @@
     width: 15vw;
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     display: flex;
     flex-direction: column;
 
@@ -82,7 +82,7 @@
     display: block;
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     display: none;
   }
 }
@@ -94,7 +94,7 @@
   justify-content: space-evenly;
   height: auto;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     justify-content: start;
   }
 }
@@ -105,7 +105,7 @@
   align-items: center;
   margin: 5vh 0;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     flex-direction: column;
     margin: 0;
   }
@@ -135,7 +135,7 @@
     }
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     margin-top: 5vh;
 
     h4,
@@ -154,7 +154,7 @@
 .service-section-button {
   text-align: center;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     margin-top: 5vh;
   }
 }
@@ -179,7 +179,7 @@
     height: 100%;
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     width: 20%;
     flex-basis: 20%;
   }
@@ -221,7 +221,7 @@
     }
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     .owner-photo {
       display: none;
     }

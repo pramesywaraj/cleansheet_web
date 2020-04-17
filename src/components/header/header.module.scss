@@ -28,7 +28,7 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   }
 }
@@ -53,7 +53,7 @@
       }
     }
 
-    @include response-to-size(phone-only) {
+    @include response-to-size(phone) {
       background: white;
       position: absolute;
       top: 9vh;
@@ -104,7 +104,7 @@
       height: auto;
     }
 
-    @include response-to-size(phone-only) {
+    @include response-to-size(phone) {
       a {
         margin-right: 5vw;
       }
@@ -118,13 +118,13 @@
 
 .active-route {
   color: $primary_color;
-  border-bottom: 1.5px solid $primary_color;
+  border-bottom: 0.5vh solid $primary_color;
 }
 
 .hamburger-menu {
   display: none;
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     display: inline-block;
     cursor: pointer;
     color: $primary_color;
@@ -166,7 +166,7 @@
     opacity: 1;
   }
 
-  @include response-to-size(phone-only) {
+  @include response-to-size(phone) {
     width: 50%;
   }
 
