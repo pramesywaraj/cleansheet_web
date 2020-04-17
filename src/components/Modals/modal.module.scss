@@ -145,6 +145,18 @@
   padding: 0%;
   width: 35vw;
   height: 100%;
+
+  @include response-to-size(phone-small) {
+    width: 90vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 75vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 50vw;
+  }
 }
 
 .modal-cart-image {
@@ -158,6 +170,18 @@
 
   h2 {
     margin-bottom: 1.5vh;
+  }
+
+  @include response-to-size(phone-small) {
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+
+  @include response-to-size(phone) {
+    h2 {
+      font-size: 1.5em;
+    }
   }
 }
 

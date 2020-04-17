@@ -461,7 +461,7 @@ h6 {
     flex-basis: 20%;
   }
 
-  @include response-to-size(desktop-up) {
+  @include response-to-size(large-desktop) {
     width: 20%;
     flex-basis: 20%;
   }

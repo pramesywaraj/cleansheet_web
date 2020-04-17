@@ -9,6 +9,22 @@
   box-shadow: 0px 0px 12px #00000029;
   border-radius: 39px;
   opacity: 1;
+
+  @include response-to-size(phone-small) {
+    width: 90vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 90vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 60vw;
+  }
+
+  @include response-to-size(tablet-landscape) {
+    width: 60vw;
+  }
 }
 
 .tabs-content {
@@ -37,16 +53,18 @@
   &:focus {
     outline: 0;
   }
+
+  @include response-to-size(phone-small) {
+    font-size: 0.9em;
+  }
+
+  @include response-to-size(phone) {
+    font-size: 0.9em;
+  }
 }
 
 .tab-active {
   border-radius: 50px;
   background-color: $primary_color;
   color: $white;
-}
-
-@media only screen and (min-width: 1440px) {
-  .tab-normal {
-    font-size: 1.5em;
-  }
 }

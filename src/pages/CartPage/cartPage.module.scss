@@ -1,12 +1,30 @@
+@import '../../variable.scss';
+
 .cart-container {
   margin: 10vh 0;
   display: flex;
   flex-direction: row;
+
+  @include response-to-size(phone-small) {
+    flex-direction: column;
+  }
+
+  @include response-to-size(phone) {
+    flex-direction: column;
+  }
 }
 
 .cart-col {
   width: 100%;
   padding: 1%;
+
+  @include response-to-size(phone-small) {
+    margin-top: 5vh;
+  }
+
+  @include response-to-size(phone) {
+    margin-top: 5vh;
+  }
 }
 
 // Cart Section
@@ -35,6 +53,10 @@
   &::-webkit-scrollbar-thumb:hover {
     background: rgba(2, 175, 243, 0.7);
   }
+
+  @include response-to-size(phone-small) {
+    min-height: 20vh;
+  }
 }
 
 .cart-item-empty {
@@ -52,6 +74,7 @@
 
   border-top: 3px solid rgba(0, 0, 0, 0.2);
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -67,5 +90,13 @@
     color: #02aff3;
     font-weight: bold;
     font-size: 1.5em;
+  }
+
+  @include response-to-size(phone-small) {
+    font-size: 1em;
+
+    .cart-total-amount {
+      font-size: 1.2em;
+    }
   }
 }

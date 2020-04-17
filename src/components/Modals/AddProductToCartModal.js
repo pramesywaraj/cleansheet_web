@@ -10,7 +10,7 @@ import Image from '../Image/Image';
 
 export default function AddProductToCartModal({ loading, show, close, toCartAction, isError }) {
   return (
-    <ModalBase show={show} close={close}>
+    <ModalBase show={show}>
       <div className={`${ModalStyle['modal-content-cart']}`}>
         {loading ? (
           <div className={`${ModalStyle['modal-cart-caption']}`}>
@@ -22,9 +22,8 @@ export default function AddProductToCartModal({ loading, show, close, toCartActi
             <div className={`${ModalStyle['modal-cart-caption']}`}>
               <h2>Produk berhasil ditambahkan.</h2>
               <p>
-                {`Silahkan tekan tombol ${(
-                  <bold>Menuju Pembayaran</bold>
-                )} di bawah ini untuk melanjutkan ke bagian pembayaran.`}
+                Silahkan tekan tombol Menuju Pembayaran di bawah ini untuk melanjutkan ke bagian
+                pembayaran.
               </p>
             </div>
             <div className={`${ModalStyle['modal-cart-button']}`}>

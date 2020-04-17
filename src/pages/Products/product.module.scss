@@ -1,8 +1,18 @@
+@import '../../variable.scss';
+
 .products-wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
+  margin-top: 3vh;
   align-items: center;
+
+  @include response-to-size(phone-small) {
+    margin-top: 8vh;
+  }
+
+  @include response-to-size(phone) {
+    margin-top: 8vh;
+  }
 }
 
 .products-layout {

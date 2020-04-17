@@ -13,7 +13,7 @@ export default function CartItem({ amount, name, price, image, deleteItem, addIt
     <div className={`${CartStyle['cart-item-container']}`}>
       <div className={`${CartStyle['cart-item-row']}`}>
         <div className={`${CartStyle['cart-item-image-container']}`}>
-          <Image src={image} alt="Services" style={`${CartStyle['cart-item-image']}`} />
+          <Image src={image} alt="Services" />
         </div>
         <div className={`${CartStyle['cart-item-detail']}`}>
           <p className={`${CartStyle['item-price']}`}>{name}</p>

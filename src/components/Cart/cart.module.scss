@@ -1,3 +1,5 @@
+@import '../../variable.scss';
+
 .cart-item-container {
   height: auto;
 
@@ -18,15 +20,31 @@
 }
 
 .cart-item-image-container {
-  width: 12vw;
-  height: auto;
-  object-fit: cover;
-}
+  width: 7vw;
+  height: 10vh;
 
-.cart-item-image {
-  width: 100%;
-  max-width: 100%;
-  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  @include response-to-size(phone-small) {
+    display: none;
+  }
+
+  @include response-to-size(phone) {
+    width: 15vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 13vw;
+  }
+
+  @include response-to-size(tablet-landscape) {
+    width: 10vw;
+  }
 }
 
 .cart-item-detail {
@@ -35,7 +53,7 @@
 
   width: 100%;
   height: auto;
-  padding: 2vh;
+  padding-left: 2vw;
 
   .item-price {
     font-weight: bold;
@@ -46,16 +64,57 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: auto 0;
   }
 }
 
 .cart-item-button {
   justify-content: space-between;
-  padding: 4% 0;
+  margin: 4vh 0;
 
   p {
     color: #02aff3;
     font-size: 1.2em;
+  }
+
+  @include response-to-size(phone-small) {
+    margin: 2vh 0;
+    p {
+      font-size: 1em;
+    }
+  }
+
+  @include response-to-size(phone) {
+    margin: 2vh 0;
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+.cart-add-min-button {
+  display: flex;
+  flex-direction: row;
+  width: 8vw;
+  justify-content: space-around;
+  align-items: center;
+
+  @include response-to-size(phone-small) {
+    width: 24vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 20vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 16vw;
+  }
+
+  @include response-to-size(tablet-landscape) {
+    width: 14vw;
+  }
+
+  @include response-to-size(desktop) {
+    width: 12vw;
   }
 }
