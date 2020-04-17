@@ -133,9 +133,10 @@ export default function CartPage() {
           isLoading={onPostLoading}
         />
       </div>
-      {showPaymentModal && (
+      {/* {showPaymentModal && (
         <PaymentAccountModal show={showPaymentModal} close={closePaymentModal} />
-      )}
+      )} */}
+      <PaymentAccountModal show close={closePaymentModal} />
     </div>
   );
 }

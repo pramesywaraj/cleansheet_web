@@ -4,6 +4,18 @@
   width: 35vw;
   height: auto;
   padding: 5vh 0;
+
+  @include response-to-size(phone-small) {
+    width: 90vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 80vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 50vw;
+  }
 }
 
 .modal-payment-sub {
@@ -70,13 +82,21 @@
 .payment-item-logo_container {
   width: 6vw;
   height: auto;
-  object-fit: cover;
-}
 
-.item-logo {
-  width: 100%;
-  height: 100%;
-  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  @include response-to-size(phone-small) {
+    display: none;
+  }
+
+  @include response-to-size(phone) {
+    width: 6vw;
+  }
 }
 
 .payment-item-description {
@@ -102,6 +122,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include response-to-size(phone-small) {
+    width: 90vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 90vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 50vw;
+  }
 }
 
 .payment-detail-account {

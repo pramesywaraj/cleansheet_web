@@ -26,10 +26,12 @@
 
   @include response-to-size(phone-small) {
     border-radius: 10px;
+    padding: 2%;
   }
 
   @include response-to-size(phone) {
     border-radius: 10px;
+    padding: 2%;
   }
 }
 
@@ -52,13 +54,13 @@
 
   @include response-to-size(phone-small) {
     .modal-title {
-      font-size: 1em;
+      font-size: 1.2em;
     }
   }
 
   @include response-to-size(phone) {
     .modal-title {
-      font-size: 1em;
+      font-size: 1.3em;
     }
   }
 }
