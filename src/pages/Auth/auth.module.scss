@@ -7,6 +7,11 @@
   margin: 0% 3%;
   height: 100vh;
 
+  @include response-to-size(phone-small) {
+    justify-content: center;
+    align-items: center;
+  }
+
   @include response-to-size(phone) {
     justify-content: center;
     align-items: center;
@@ -31,6 +36,13 @@
     }
   }
 
+  @include response-to-size(phone-small) {
+    margin: 3vh 0;
+    .auth-logo-container {
+      width: 25vw;
+    }
+  }
+
   @include response-to-size(phone) {
     margin: 3vh 0;
     .auth-logo-container {
@@ -47,6 +59,10 @@
   align-items: center;
   justify-content: center;
   margin: auto 0;
+
+  @include response-to-size(phone-small) {
+    margin: 0;
+  }
 
   @include response-to-size(phone) {
     margin: 0;
@@ -74,6 +90,10 @@
     margin: 20px 0;
   }
 
+  @include response-to-size(phone-small) {
+    display: none;
+  }
+
   @include response-to-size(phone) {
     display: none;
   }
@@ -86,6 +106,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @include response-to-size(phone-small) {
+    wdith: 80vw;
+  }
 
   @include response-to-size(phone) {
     wdith: 80vw;

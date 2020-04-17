@@ -49,6 +49,12 @@
     color: #5c5c5c;
   }
 
+  @include response-to-size(phone-small) {
+    p {
+      font-size: 0.8em;
+    }
+  }
+
   @include response-to-size(phone) {
     p {
       font-size: 0.8em;
@@ -90,6 +96,10 @@
 .card-auth-layout {
   width: 30vw;
   height: auto;
+
+  @include response-to-size(phone-small) {
+    width: 75vw;
+  }
 
   @include response-to-size(phone) {
     width: 75vw;
