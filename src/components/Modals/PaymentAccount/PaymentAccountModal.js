@@ -54,11 +54,7 @@ function PaymentDetail({ paymentAccount }) {
       <div className={PaymentModalStyle['payment-detail-account']}>
         <div className={PaymentModalStyle['payment-detail-logo']}>
           <div className={PaymentModalStyle['payment-item-logo_container']}>
-            <Image
-              src={paymentAccount.image_url}
-              alt="Logo Bank"
-              style={PaymentModalStyle['item-logo']}
-            />
+            <Image src={paymentAccount.image_url} alt="Logo Bank" />
           </div>
           <p>{paymentAccount.name}</p>
         </div>

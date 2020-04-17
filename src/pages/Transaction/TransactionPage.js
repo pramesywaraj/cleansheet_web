@@ -85,7 +85,7 @@ export default function TransactionPage() {
           {data.length > 0 ? (
             renderTableData(data)
           ) : (
-            <tr>
+            <tr className={TransactionStyle['transaction-none']}>
               <td colSpan={tableHeader.length + 1} style={{ textAlign: 'center' }}>
                 Tidak ada data
               </td>

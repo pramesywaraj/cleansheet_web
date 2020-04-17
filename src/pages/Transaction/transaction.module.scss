@@ -1,7 +1,27 @@
+@import '../../variable.scss';
+
 .transaction-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin-top: 2vh;
+
+  @include response-to-size(phone-small) {
+    margin-top: 12vh;
+  }
+
+  @include response-to-size(phone) {
+    margin-top: 10vh;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    margin-top: 6vh;
+  }
+
+  @include response-to-size(tablet-landscape) {
+    margin-top: 4vh;
+  }
 }
 
 .transaction-content-container {
@@ -11,4 +31,8 @@
 
 .transaction-payment-available {
   margin-bottom: 3vh;
+}
+
+.transaction-none {
+  height: 15vh;
 }
