@@ -17,6 +17,14 @@
     align-items: flex-start;
     padding: 1.5%;
 
+    @include response-to-size(phone-small) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 2%;
+    }
+
     @include response-to-size(phone) {
       flex-direction: column;
       justify-content: center;
@@ -45,6 +53,29 @@
 
   .footer-caption {
     margin-top: 2vh;
+  }
+
+  @include response-to-size(phone-small) {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 1vh 0;
+
+    border-bottom: 0.5px solid rgba(121, 121, 121, 0.5);
+
+    h3,
+    p {
+      font-size: 0.5rem;
+    }
+
+    &:last-of-type {
+      border-bottom: hidden;
+    }
+
+    .footer-caption {
+      margin-top: 0.5vh;
+      text-align: center;
+    }
   }
 
   @include response-to-size(phone) {

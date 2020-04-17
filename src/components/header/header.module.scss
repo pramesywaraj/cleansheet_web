@@ -28,6 +28,10 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
 
+  @include response-to-size(phone-small) {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
   @include response-to-size(phone) {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   }
@@ -50,6 +54,30 @@
 
       &:hover {
         color: $primary_color;
+      }
+    }
+
+    @include response-to-size(phone-small) {
+      background: white;
+      position: absolute;
+      top: 9vh;
+      left: 0;
+      height: 10vh;
+      width: 100%;
+
+      justify-content: space-evenly;
+
+      z-index: -5;
+
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 200ms linear;
+
+      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+
+      &.open {
+        visibility: visible;
+        opacity: 1;
       }
     }
 
@@ -104,6 +132,16 @@
       height: auto;
     }
 
+    @include response-to-size(phone-small) {
+      a {
+        margin-right: 3vw;
+      }
+
+      .header-user-name {
+        display: none;
+      }
+    }
+
     @include response-to-size(phone) {
       a {
         margin-right: 5vw;
@@ -123,6 +161,12 @@
 
 .hamburger-menu {
   display: none;
+
+  @include response-to-size(phone-small) {
+    display: inline-block;
+    cursor: pointer;
+    color: $primary_color;
+  }
 
   @include response-to-size(phone) {
     display: inline-block;
@@ -164,6 +208,10 @@
   &.open {
     visibility: visible;
     opacity: 1;
+  }
+
+  @include response-to-size(phone-small) {
+    width: 50%;
   }
 
   @include response-to-size(phone) {

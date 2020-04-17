@@ -81,6 +81,16 @@
     color: $white;
     background-color: $whatsapp_button_hover;
   }
+
+  @include response-to-size(phone-small) {
+    font-size: 0.5em;
+    padding: 1%;
+  }
+
+  @include response-to-size(phone) {
+    font-size: 0.5em;
+    padding: 1%;
+  }
 }
 
 .whatsappIcon {

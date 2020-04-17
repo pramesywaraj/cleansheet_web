@@ -39,6 +39,36 @@
     width: 15vw;
   }
 
+  @include response-to-size(phone-small) {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    .main-section-logo {
+      width: 47.5vw;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .main-section-caption {
+      margin: 2.5% 0;
+      text-align: center;
+      max-width: 80vw;
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+
+    .main-section-orderbutton {
+      width: 40vw;
+    }
+  }
+
   @include response-to-size(phone) {
     display: flex;
     flex-direction: column;
@@ -82,6 +112,10 @@
     display: block;
   }
 
+  @include response-to-size(phone-small) {
+    display: none;
+  }
+
   @include response-to-size(phone) {
     display: none;
   }
@@ -94,6 +128,10 @@
   justify-content: space-evenly;
   height: auto;
 
+  @include response-to-size(phone-small) {
+    justify-content: start;
+  }
+
   @include response-to-size(phone) {
     justify-content: start;
   }
@@ -104,6 +142,11 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 5vh 0;
+
+  @include response-to-size(phone-small) {
+    flex-direction: column;
+    margin: 0;
+  }
 
   @include response-to-size(phone) {
     flex-direction: column;
@@ -134,6 +177,20 @@
       display: block;
     }
   }
+  @include response-to-size(phone-small) {
+    margin-top: 5vh;
+
+    h4,
+    p {
+      margin: 2vh auto;
+      text-align: center;
+      max-width: 80vw;
+    }
+
+    .service-image {
+      width: 50vw;
+    }
+  }
 
   @include response-to-size(phone) {
     margin-top: 5vh;
@@ -153,6 +210,10 @@
 
 .service-section-button {
   text-align: center;
+
+  @include response-to-size(phone-small) {
+    margin-top: 5vh;
+  }
 
   @include response-to-size(phone) {
     margin-top: 5vh;
@@ -177,6 +238,11 @@
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @include response-to-size(phone-small) {
+    width: 20%;
+    flex-basis: 20%;
   }
 
   @include response-to-size(phone) {
@@ -218,6 +284,12 @@
     h1,
     h3 {
       color: $white;
+    }
+  }
+
+  @include response-to-size(phone-small) {
+    .owner-photo {
+      display: none;
     }
   }
 
