@@ -22,7 +22,7 @@ export default function JoinPartnerModal({ show, close }) {
     },
     onSubmit,
   );
-  const { onPostLoading, onPostData } = usePostData();
+  const { onPostLoading, onPostData } = usePostData('partner/create');
 
   function successHandling() {
     resetValue();

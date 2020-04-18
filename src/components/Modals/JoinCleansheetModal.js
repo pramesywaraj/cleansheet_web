@@ -23,7 +23,7 @@ export default function JoinCleansheetModal({ show, close }) {
     },
     onSubmit,
   );
-  const { onPostLoading, onPostData } = usePostData();
+  const { onPostLoading, onPostData } = usePostData('registrant/create');
 
   function successHandling() {
     resetValue();
