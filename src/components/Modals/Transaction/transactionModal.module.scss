@@ -6,7 +6,11 @@
   justify-content: center;
 
   min-width: 35vw;
+  width: 100%;
+
   padding: 2%;
+
+  font-size: 1em;
 }
 
 .modal-transaction-total_charge {
@@ -24,10 +28,46 @@
       font-weight: 700;
     }
   }
+
+  @include response-to-size(phone-small) {
+    p {
+      &:last-child {
+        font-size: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include response-to-size(phone) {
+    p {
+      &:last-child {
+        font-size: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include response-to-size(phone) {
+    p {
+      &:last-child {
+        font-size: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include response-to-size(tablet-potrait) {
+    p {
+      &:last-child {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 .modal-transaction-detail {
-  width: 80%;
+  width: 100%;
   line-height: 4.5vh;
 
   .transaction-detail-value {

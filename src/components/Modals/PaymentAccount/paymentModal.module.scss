@@ -61,6 +61,18 @@
   width: 35vw;
 
   min-height: 25vh;
+
+  @include response-to-size(phone-small) {
+    width: 90vw;
+  }
+
+  @include response-to-size(phone) {
+    width: 80vw;
+  }
+
+  @include response-to-size(tablet-potrait) {
+    width: 50vw;
+  }
 }
 
 // Item

@@ -68,7 +68,7 @@ function PaymentDetail({ paymentAccount }) {
           Apabila telah melakukan pembayaran, silahkan hubungi kontak layanan kami dibawah ini agar
           pesanan Anda dapat diproses.
         </p>
-        <p>082839299299</p>
+        <p>+62812-9798-4971</p>
       </div>
     </div>
   );
