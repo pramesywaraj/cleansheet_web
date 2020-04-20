@@ -156,7 +156,34 @@
 
 .active-route {
   color: $primary_color;
-  border-bottom: 0.5vh solid $primary_color;
+  animation: navActive 0.6s linear 0s;
+
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &:after {
+    margin-left: 2px;
+    height: 7px;
+    width: 7px;
+    background-color: $primary_color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes navActive {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .hamburger-menu {
