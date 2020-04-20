@@ -17,11 +17,10 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
   const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState({ data: [], success: false, error: false });
   const [paginate, setPaginate] = useState({ next: null, prev: null, current: 1 });
-  const [category, setCategory] = useState(initialCategory);
+  // const [category, setCategory] = useState(initialCategory);
   const [openSnackbar] = useSnackbar();
-  const firstMount = useRef(true);
-  const urlChange = useRef(false);
-  const categoryChange = useRef(false);
+  const ref = useRef({});
+  // const categoryChange = useRef(false);
 
   async function onFetch() {
     setLoading(true);
@@ -52,47 +51,49 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
   }
 
   useEffect(() => {
-    if (firstMount.current) {
-      if (category && !urlChange.current) {
+    ref.current.firstMount = true;
+    ref.current.urlChange = false;
+
+    if (ref.current.firstMount) {
+      if (initialCategory && !ref.current.urlChange) {
         setConfig({
           ...config,
-          url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?category=${category}`,
+          url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?category=${initialCategory}`,
         });
       } else {
         onFetch();
-        firstMount.current = false;
+        ref.current.firstMount = false;
       }
     }
 
     return () => {
-      firstMount.current = true;
-      urlChange.current = false;
+      ref.current = {};
     };
   }, []);
 
   useEffect(() => {
-    if (!firstMount.current && response.success) {
+    if (!ref.current.firstMount && response.success) {
       onFetch();
     }
 
-    firstMount.current = false;
+    ref.current.firstMount = false;
   }, [paginate.current]);
 
-  useEffect(() => {
-    if (categoryChange.current) {
-      onFetch();
-      categoryChange.current = false;
-    } else {
-      categoryChange.current = true;
-    }
-  }, [category]);
+  // useEffect(() => {
+  //   if (categoryChange.current) {
+  //     onFetch();
+  //     categoryChange.current = false;
+  //   } else {
+  //     categoryChange.current = true;
+  //   }
+  // }, [category]);
 
   useEffect(() => {
-    if (urlChange.current) {
+    if (ref.current.urlChange) {
       onFetch();
-      urlChange.current = false;
+      ref.current.urlChange = false;
     } else {
-      urlChange.current = true;
+      ref.current.urlChange = true;
     }
   }, [config.url]);
 
@@ -115,7 +116,7 @@ export default function useFetchData(endpoint, pagination, initialCategory, head
   }
 
   function fetchByCategory(type) {
-    urlChange.current = true;
+    ref.current.urlChange = true;
     setConfig({
       ...config,
       url: `${process.env.REACT_APP_API_ENDPOINT}/${endpoint}?category=${type}`,

@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+/* eslint-disable camelcase  */
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { parseStatus, setCommaToMoney } from '../../../misc/otherFunctionality';
@@ -12,11 +12,12 @@ export default function TransactionDetailModal({ data, show, close, selectedTab 
   useEffect(() => {
     if (Array.isArray(detail)) {
       setDetail(detail);
-    } else {
-      const tempArray = [];
-      tempArray.push(detail);
-      setDetail(tempArray);
+      return;
     }
+
+    const tempArray = [];
+    tempArray.push(detail);
+    setDetail(tempArray);
   }, []);
 
   const renderTransactionDetail = () => (

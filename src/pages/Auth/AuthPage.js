@@ -119,7 +119,7 @@ export default function AuthPage({ location, history }) {
         <div className={AuthStyle['auth-container']}>
           <div className={AuthStyle['auth-image']}>
             <img alt="Cleansheet decoration 1" src={LandingPageMainImage} />
-            <p>Apapun bersih-bersihnya, Cleansheet jagonya.</p>
+            <p>Bersihin ini itu, jadi mudah dan berkah.</p>
           </div>
           <div className={`${AuthStyle['form-container-flex']}`}>
             {isRegister ? (

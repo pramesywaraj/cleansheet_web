@@ -17,8 +17,8 @@ export default function JoinCleansheetWorkerSection() {
             <img src={CleansheetOwner} alt="Cleansheet Owner" />
           </div>
           <div className={LandingPageStyle['join-worker-caption']}>
-            <h1>Gabung CleanSheet</h1>
-            <h3>Yuk daftarkan dirimu menjadi bagian dari CleanSheet</h3>
+            <h1>Gabung Mitra Cleansheet</h1>
+            <h3>Yuk daftarkan dirimu menjadi bagian dari Cleansheet</h3>
             <div className={LandingPageStyle['button-margin']}>
               <PrimaryButton type="white" clickAction={openModalHandler} label="Gabung Sekarang" />
             </div>

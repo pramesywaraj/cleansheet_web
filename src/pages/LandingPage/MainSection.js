@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import LogoCleansheet from '../../assets/logo_cs.png';
 import LandingPageStyle from './landingPage.module.scss';
@@ -15,7 +16,9 @@ export default function MainSection({ goToProductPage }) {
           <img alt="Cleansheet Logo" src={LogoCleansheet} />
         </div>
         <div className={LandingPageStyle['main-section-caption']}>
-          <p>Start up kebersihan modern berbasis Sociotechnopreneur</p>
+          <p>
+            Start-up kebersihan <b>kekinian</b> berbasis Sociotechnopreneur
+          </p>
         </div>
         <div className={LandingPageStyle['main-section-orderbutton']}>
           <FullSubmitButton type="primary" clickAction={goToProductPage} label="Pesan" />

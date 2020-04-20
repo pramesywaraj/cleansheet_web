@@ -222,7 +222,15 @@
     width: 30%;
   }
 
+  @include response-to-size(tablet-landscape) {
+    width: 25%;
+  }
+
   @include response-to-size(desktop) {
+    width: 20%;
+  }
+
+  @include response-to-size(desktop-large) {
     width: 20%;
   }
 }

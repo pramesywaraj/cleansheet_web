@@ -8,7 +8,7 @@ export default function ClientSection() {
   return (
     <section id="clients" className="section-gap">
       <div className="text-center">
-        <h1>Klien Kami</h1>
+        <h1>Klien dan Kerjasama Kami</h1>
         <div className="grid-container">
           {ClientImages.map(image => (
             <div key={image.id} className={`${LandingPageStyle['client-image-container']}`}>

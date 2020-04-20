@@ -12,18 +12,22 @@
 
   @include response-to-size(phone-small) {
     width: 90vw;
+    height: 10vh;
   }
 
   @include response-to-size(phone) {
     width: 90vw;
+    height: 10vh;
   }
 
   @include response-to-size(tablet-potrait) {
     width: 60vw;
+    height: 10vh;
   }
 
   @include response-to-size(tablet-landscape) {
     width: 60vw;
+    height: 10vh;
   }
 }
 

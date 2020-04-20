@@ -42,6 +42,8 @@
 .product-detail {
   text-align: center;
   margin: 5% 0;
+  min-height: 15vh;
+
   p {
     font-weight: bold;
   }
@@ -68,28 +70,43 @@
 
 ////////////////////////// Service card
 .service-detail {
-  flex: 1;
   margin: 5% 0;
   width: 100%;
+  height: auto;
 
-  .service-detail-estimation {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: initial;
-    height: 100%;
+  font-size: 0.6em;
 
-    p {
-      display: block;
-      font-size: 0.6em;
-      color: #5c5c5c;
+  div {
+    margin: 2vh 0;
+    &:first-child {
+      margin: 0;
     }
+  }
+
+  .name {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .detail-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.6em;
+    color: #5c5c5c;
+  }
+
+  .detail-value {
+    display: block;
+    font-size: 0.6em;
+    color: #5c5c5c;
   }
 }
 
 .full-width-button {
+  display: block;
   width: 100%;
-  margin-top: 3vh;
+  height: 100%;
+  min-height: 7vh;
 }
 
 /////////////////////////// Login Card Section

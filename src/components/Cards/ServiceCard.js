@@ -13,16 +13,16 @@ export default function ServiceCard({ imgSrc, productName, price, unit, onClick,
           <Image src={imgSrc} alt="Services" />
         </div>
         <div className={`${CardStyle['service-detail']}`}>
-          <p className={`${CardStyle.bold}`}>{productName}</p>
-          <div className={`${CardStyle['service-detail-estimation']}`}>
-            <div>
-              <p style={{ fontWeight: '600' }}>Harga:</p>
-              <p>{`Rp. ${setCommaToMoney(price)}/${unit}`}</p>
-            </div>
-            <div>
-              <p style={{ fontWeight: '600' }}>Estimasi Pengerjaan:</p>
-              <p>{estimation}</p>
-            </div>
+          <div>
+            <p className={`${CardStyle.bold} ${CardStyle.name}`}>{productName}</p>
+          </div>
+          <div>
+            <p className={CardStyle['detail-title']}>Harga:</p>
+            <p className={CardStyle['detail-value']}>{`Rp. ${setCommaToMoney(price)}/${unit}`}</p>
+          </div>
+          <div>
+            <p className={CardStyle['detail-title']}>Estimasi Pengerjaan:</p>
+            <p className={CardStyle['detail-value']}>{estimation}</p>
           </div>
         </div>
         <div className={`${CardStyle['full-width-button']}`}>

@@ -13,8 +13,11 @@ export default function JoinCleansheetPartner() {
     <section id="joinPartner" className="section-gap">
       <div className={LandingPageStyle['join-partner-container']}>
         <div className="text-center">
-          <h1>Gabung Mitra</h1>
-          <h3>Untuk Anda yang membutuhkan tenaga kerja kebersihan</h3>
+          <h1>Kolaborasi Bersama Cleansheet</h1>
+          <h3>
+            Untuk instansi, komunitas, organisasi, dan perusahaan yang ingin berkolaborasi dalam
+            kebersihan lingkungan.
+          </h3>
           <div className={LandingPageStyle['button-margin']}>
             <PrimaryButton type="primary" clickAction={openModalHandler} label="Gabung Sekarang" />
           </div>

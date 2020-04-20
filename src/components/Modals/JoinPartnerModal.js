@@ -36,8 +36,8 @@ export default function JoinPartnerModal({ show, close }) {
   return (
     <ModalBase show={show} close={close}>
       <div className={ModalStyle['modal-content']}>
-        <h1 style={{ marginBottom: '1vh' }}>Bermitra Bersama Cleansheet</h1>
-        <h3>Yuk isi data berikut untuk keperluan kemitraan Cleansheet</h3>
+        <h1 style={{ marginBottom: '1vh' }}>Kolaborasi Bersama Cleansheet</h1>
+        <h3>Yuk isi data berikut untuk keperluan kolaborasi bersama Cleansheet</h3>
         <div className={ModalStyle['modal-form']}>
           <form onSubmit={handleSubmit}>
             <TextInput

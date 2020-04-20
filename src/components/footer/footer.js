@@ -3,26 +3,27 @@ import React from 'react';
 import FooterStyle from './footer.module.scss';
 import WhatsappButton from '../Buttons/WhatsappButton';
 
-import LogoCSAbu from '../../assets/logo_cs_abu.png';
+import LogoCleansheet from '../../assets/logo_cs.png';
 
 export default function Footer() {
   return (
     <footer className={`${FooterStyle['footer-container']}`}>
       <div className={FooterStyle['footer-content']}>
         <div className={FooterStyle['footer-logo']}>
-          <img src={LogoCSAbu} alt="Logo CleanSheet Abu" />
+          <img src={LogoCleansheet} alt="Logo CleanSheet Abu" />
         </div>
         <div className={FooterStyle['footer-element']}>
           <h3>Alamat</h3>
           <div className={FooterStyle['footer-caption']}>
-            <p>Taman Dramaga Permai Jalan Rasamala Blok I.11 No.7 Ciampea, Bogor</p>
+            <p>Jalan Alternatif Babakan Tengah Gg Masjid Al-Wustho No.55 Dramaga, Bogor</p>
           </div>
         </div>
         <div className={FooterStyle['footer-element']}>
           <h3>Sosial Media</h3>
           <div className={FooterStyle['footer-caption']}>
-            <p>Instagram : @cleansheet</p>
-            <p>Line : cleansheet</p>
+            <p>Instagram : @cleansheet_id</p>
+            <p>Line : cleansheet.id</p>
+            <p>Youtube : Cleansheet Indonesia</p>
           </div>
         </div>
         <div className={FooterStyle['footer-element']}>
@@ -36,12 +37,12 @@ export default function Footer() {
           <h3>Kontak</h3>
           <div className={FooterStyle['footer-caption']}>
             <WhatsappButton />
-            <p>085882021749 (Whatsapp)</p>
+            <p>+62 812-9798-4971 (Whatsapp)</p>
           </div>
         </div>
       </div>
       <div className={FooterStyle['footer-copyright']}>
-        <p>&copy; Cleansheet Indonesia 2020</p>
+        <p>&copy; PT. Cita Indonesia Bersih 2020</p>
       </div>
     </footer>
   );

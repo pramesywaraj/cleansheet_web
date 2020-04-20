@@ -53,6 +53,7 @@
 
   .footer-caption {
     margin-top: 2vh;
+    line-height: 5vh;
   }
 
   @include response-to-size(phone-small) {
@@ -65,7 +66,7 @@
 
     h3,
     p {
-      font-size: 0.5rem;
+      font-size: 0.8rem;
     }
 
     &:last-of-type {
@@ -75,6 +76,7 @@
     .footer-caption {
       margin-top: 0.5vh;
       text-align: center;
+      line-height: 3vh;
     }
   }
 
@@ -86,6 +88,11 @@
 
     border-bottom: 0.5px solid rgba(121, 121, 121, 0.5);
 
+    h3,
+    p {
+      font-size: 0.8rem;
+    }
+
     &:last-of-type {
       border-bottom: hidden;
     }
@@ -93,6 +100,7 @@
     .footer-caption {
       margin-top: 0.5vh;
       text-align: center;
+      line-height: 3vh;
     }
   }
 }

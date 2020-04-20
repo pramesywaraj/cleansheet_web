@@ -127,7 +127,7 @@ export default function Header() {
       <div className={`${HeaderStyle['dropdown-menu']} ${isUserMenuOpen ? HeaderStyle.open : ''}`}>
         <div>
           <p>Halo,</p>
-          <p style={{ color: '#02aff3' }}>{user.name}</p>
+          <p style={{ color: '#02aff3' }}>{user.name || ''}</p>
         </div>
         <div className={HeaderStyle['dropdown-logout']}>
           <FullSubmitButton

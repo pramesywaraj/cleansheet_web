@@ -38,7 +38,7 @@ export default function JoinCleansheetModal({ show, close }) {
     <ModalBase show={show} close={close}>
       <div className={ModalStyle['modal-content']}>
         <h1 style={{ marginBottom: '1vh' }}>Bergabung Bersama Cleansheet</h1>
-        <h4>Yuk isi data berikut untuk keperluan rekrutmen staf Cleansheet</h4>
+        <h4>Yuk isi data berikut untuk keperluan rekrutmen mitra Cleansheet</h4>
         <div className={ModalStyle['modal-form']}>
           <form onSubmit={handleSubmit}>
             <TextInput

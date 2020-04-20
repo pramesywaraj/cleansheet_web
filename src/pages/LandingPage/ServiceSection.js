@@ -20,20 +20,14 @@ export default function ServiceSection({ goToServicePage }) {
             <img alt="Layanan Kebersihan" src={CleaningServicesImage} />
           </div>
           <h4>Layanan Kebersihan</h4>
-          <p>
-            Cleansheet dapat membersihkan rumah dan kosan apapun sebelum atau sehabis acara sampai
-            pindahan.
-          </p>
+          <p>Cleansheet dapat membersihkan rumah, kantor, dan kebersihan apapun.</p>
         </div>
         <div className={LandingPageStyle['service-description']}>
           <div className={LandingPageStyle['service-image']}>
             <img alt="Layanan Cuci Barang" src={LaundryServicesImage} />
           </div>
           <h4>Layanan Cuci Barang</h4>
-          <p>
-            Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, helm sampai
-            kendaraan.
-          </p>
+          <p>Cleansheet dapat membersihkan barang apapun dari sepatu, tas, karpet, dan helm.</p>
         </div>
         <div className={LandingPageStyle['service-description']}>
           <div className={LandingPageStyle['service-image']}>
