@@ -9,9 +9,11 @@ import LogoCleansheet from '../../assets/logo_cs.png';
 import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
 
 import Loading from '../../components/Loading/Loading';
+import LoginCard from '../../components/Cards/LoginCard';
+import RegisterCard from '../../components/Cards/RegisterCard';
 
-const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
-const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
+// const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
+// const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
 
 export default function AuthPage({ location, history }) {
   const [isRegister, setIsRegister] = useState(false);
@@ -125,8 +127,8 @@ export default function AuthPage({ location, history }) {
             {isRegister ? (
               <RegisterCard onRegister={onRegister} isLoading={loading} />
             ) : (
-              <LoginCard onLogin={onLogin} isLoading={loading} />
-            )}
+                <LoginCard onLogin={onLogin} isLoading={loading} />
+              )}
           </div>
         </div>
       </Suspense>
