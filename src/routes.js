@@ -11,7 +11,7 @@ import AuthPage from './pages/Auth/AuthPage';
 import CartPage from './pages/CartPage/CartPage';
 import TransactionPage from './pages/Transaction/TransactionPage';
 
-import Layout from './components/Layout/Layout';
+import Layout from './components/layout/layout';
 import Loading from './components/Loading/Loading';
 import Interceptors from './components/Interceptors';
 
@@ -37,8 +37,8 @@ function PrivateRoutes({ component: Component }) {
             <Component {...props} />
           </Layout>
         ) : (
-          <RedirectToLogin />
-        )
+            <RedirectToLogin />
+          )
       }
     />
   );

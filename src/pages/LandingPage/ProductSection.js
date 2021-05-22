@@ -8,7 +8,7 @@ import Loading from '../../components/Loading/Loading';
 
 export default function ProductSection({ goToProductPage, products, loading }) {
   const renderProducts = () => {
-    if (products.length === 0) {
+    if (!products || products?.length === 0) {
       return (
         <div className="grid-item-20">
           <p>Tidak ada produk untuk ditampilkan.</p>
