@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaShoppingBasket, FaExchangeAlt, FaBars, FaSignOutAlt, FaEllipsisV } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
@@ -17,17 +17,17 @@ function HeaderLinksMenu({ isMenuOpen }) {
     <nav className={`${HeaderStyle['header-navigation']}`}>
       <ul className={`${HeaderStyle['navigation-links']} ${isMenuOpen ? HeaderStyle.open : ''}`}>
         <li>
-          <NavLink exact activeClassName={HeaderStyle['active-route']} to="/">
+          <NavLink exact activeClassName={HeaderStyle['active-route']} to="/" strict>
             Beranda
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName={HeaderStyle['active-route']} to="layanan">
+          <NavLink activeClassName={HeaderStyle['active-route']} to="/layanan" strict>
             Layanan
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName={HeaderStyle['active-route']} to="produk">
+          <NavLink activeClassName={HeaderStyle['active-route']} to="/produk" strict>
             Produk
           </NavLink>
         </li>
