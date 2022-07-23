@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { FaShoppingBasket, FaExchangeAlt, FaBars, FaSignOutAlt, FaEllipsisV } from 'react-icons/fa';
+import { FaShoppingBasket, FaExchangeAlt, FaBars, FaEllipsisV } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
 import useLoading from '../../hooks/useLoading';
@@ -31,11 +31,6 @@ function HeaderLinksMenu({ isMenuOpen }) {
             Produk
           </NavLink>
         </li>
-        {/* <li>
-            <NavLink activeClassName={HeaderStyle['header-active-route']} to="tentang">
-              Tentang Kami
-            </NavLink>
-          </li> */}
       </ul>
     </nav>
   );
