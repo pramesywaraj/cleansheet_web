@@ -1,20 +1,73 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "sourceType": "module",
         "allowImportExportEverywhere": false,
         "codeFrame": false
     },
-    "extends": ["airbnb", "prettier"],
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
     "env": {
         "browser": true,
+        "es2021": true,
         "jest": true
     },
     "rules": {
-        "max-len": ["error", {"code": 100}],
-        "prefer-promise-reject-errors": ["off"],
-        "react/jsx-filename-extension": ["off"],
-        "react/prop-types": ["warn"],
-        "no-return-assign": ["off"]
+        "no-use-before-define": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/destructuring-assignment": [
+            0,
+            "always"
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "printWidth": 100,
+                "useTabs": true,
+            }
+        ],
+        "react/prop-types": "off",
+        "comma-dangle": "off",
+        "no-tabs": 0,
+        "indent": [
+            2,
+            "tab",
+            { "SwitchCase": 1, "VariableDeclarator": 1 }
+        ],
+        "no-underscore-dangle": "off",
+        "sort-imports": [
+            "warn",
+            {
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false
+            },
+        ],
+        "sort-keys": [
+            "warn",
+            "asc",
+            {
+                "caseSensitive": true,
+                "natural": false,
+                "minKeys": 2
+            }
+        ],
+        "no-unused-expressions": 0,
+        "no-inline-styles/no-inline-styles": [
+            "warn"
+        ],
+        "no-console": 1 // warn
     }
 }
