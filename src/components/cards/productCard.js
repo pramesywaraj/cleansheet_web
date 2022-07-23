@@ -9,7 +9,7 @@ import { setCommaToMoney } from '../../misc/otherFunctionality';
 export default function ProductCard({ imgSrc, productName, price, addProduct }) {
   return (
     <CardBase>
-      <div className={`${CardStyle['card-layout']}`}>
+      <div className={`${CardStyle['card-layout']} ${CardStyle['card-h-50']}`}>
         <div className={`${CardStyle['card-image-container']}`}>
           <Image src={imgSrc} alt={productName} />
         </div>
