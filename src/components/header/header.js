@@ -17,17 +17,17 @@ function HeaderLinksMenu({ isMenuOpen }) {
     <nav className={`${HeaderStyle['header-navigation']}`}>
       <ul className={`${HeaderStyle['navigation-links']} ${isMenuOpen ? HeaderStyle.open : ''}`}>
         <li>
-          <NavLink exact activeClassName={HeaderStyle['active-route']} to="/" strict>
+          <NavLink exact={true} className={({ isActive }) => isActive ? HeaderStyle['active-route'] : ''} to="/" strict>
             Beranda
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName={HeaderStyle['active-route']} to="/layanan" strict>
+          <NavLink exact={true} className={({ isActive }) => isActive ? HeaderStyle['active-route'] : ''} to="/layanan" strict>
             Layanan
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName={HeaderStyle['active-route']} to="/produk" strict>
+          <NavLink exact={true} className={({ isActive }) => isActive ? HeaderStyle['active-route'] : ''} to="/produk" strict>
             Produk
           </NavLink>
         </li>
