@@ -10,16 +10,16 @@ import JoinCleansheetWorkerSection from './JoinCleansheetWorkerSection';
 import JoinCleansheetPartner from './JoinCleansheetPartner';
 
 export default function LandingPage() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { loading, response } = useFetchData('master/products?item_per_page=4');
   const [products, setProducts] = useState([]);
 
   const goToProductPage = () => {
-    history.push('/produk');
+    navigate('/produk');
   };
 
   const goToServicePage = () => {
-    history.push('/layanan');
+    navigate('/layanan');
   };
 
   useEffect(() => {

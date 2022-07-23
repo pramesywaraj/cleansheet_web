@@ -83,17 +83,17 @@ export default function Header() {
 
   const [openSnackbar] = useSnackbar();
   const [loading, showLoading, hideLoading] = useLoading();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isUserMenuOpen, setUserMenuOpen] = useState(false);
 
   function signOutHandler() {
     showLoading();
-    setTimeout(() => {
-      dispatch({ type: 'LOGOUT_SUCCESS' });
+    setTimeout(async () => {
+      await dispatch({ type: 'LOGOUT_SUCCESS' });
       hideLoading();
       openSnackbar('info', 'Anda berhasil keluar dari aplikasi.');
-      history.push('/login');
+      navigate('/login');
     }, 2500);
   }
 

@@ -13,7 +13,7 @@ import AddProductToCartModal from '../../components/Modals/AddProductToCartModal
 
 export default function ProductPage() {
   const { state } = useStore();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
     'master/products',
     true,
@@ -40,7 +40,7 @@ export default function ProductPage() {
   function addProductToCart(id) {
     if (!state.isLoggedIn) {
       openSnackbar('info', 'Silahkan login terlebih dahulu.');
-      history.push('/login');
+      navigate('/login');
     }
 
     const payload = {
@@ -53,7 +53,7 @@ export default function ProductPage() {
   }
 
   function goToCart() {
-    history.push('/keranjang');
+    navigate('/keranjang');
   }
 
   return (
