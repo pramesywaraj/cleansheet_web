@@ -17,8 +17,7 @@ export default function ServiceCard({ imgSrc, productName, price, unit, onClick,
             <p className={`${CardStyle.bold} ${CardStyle.name}`}>{productName}</p>
           </div>
           <div>
-            <p className={CardStyle['detail-title']}>Harga:</p>
-            <p className={CardStyle['detail-value']}>{`Rp. ${setCommaToMoney(price)}/${unit}`}</p>
+            <p className={CardStyle['detail-value']}>{`Harga : Rp. ${setCommaToMoney(price)}/${unit}`}</p>
           </div>
           <div>
             <p className={CardStyle['detail-title']}>Estimasi Pengerjaan:</p>
