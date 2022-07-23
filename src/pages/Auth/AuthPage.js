@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import useLoading from '../../hooks/useLoading';
 import useSnackbar from '../../hooks/useSnackbar';
@@ -15,13 +15,15 @@ import RegisterCard from '../../components/Cards/RegisterCard';
 // const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
 // const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
 
-export default function AuthPage({ history }) {
+export default function AuthPage() {
   const [isRegister, setIsRegister] = useState(false);
   const [loading, showLoading, hideLoading] = useLoading();
   const [openSnackbar] = useSnackbar();
   const { dispatch } = useStore();
   const location = useLocation();
   const { pathname } = location;
+  
+  const navigate = useNavigate();
   
 
   const source = axios.CancelToken.source();
@@ -60,7 +62,7 @@ export default function AuthPage({ history }) {
       openSnackbar('success', 'Anda berhasil masuk.');
       resetValue();
       hideLoading();
-      history.push('/');
+      navigate('/', { replace: true });
     } catch (err) {
       if ('message' in err) {
         openSnackbar('fail', err.message);
@@ -95,7 +97,7 @@ export default function AuthPage({ history }) {
       resetValue();
       hideLoading();
 
-      history.replace('/login');
+      navigate('/login', { replace: true });
     } catch (err) {
       if ('message' in err) {
         openSnackbar('fail', err.message);
