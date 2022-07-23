@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Link, useHistory } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { FaShoppingBasket, FaExchangeAlt, FaBars, FaSignOutAlt, FaEllipsisV } from 'react-icons/fa';
 import { useStore } from '../../context/store';
 import useSnackbar from '../../hooks/useSnackbar';
@@ -88,7 +88,7 @@ export default function Header() {
 
   const [openSnackbar] = useSnackbar();
   const [loading, showLoading, hideLoading] = useLoading();
-  const history = useHistory();
+  const history = useNavigate();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isUserMenuOpen, setUserMenuOpen] = useState(false);
 

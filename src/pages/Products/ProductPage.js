@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../context/store';
 import useFetchData from '../../hooks/useFetchData';
 import usePostData from '../../hooks/usePostData';
@@ -13,7 +13,7 @@ import AddProductToCartModal from '../../components/Modals/AddProductToCartModal
 
 export default function ProductPage() {
   const { state } = useStore();
-  const history = useHistory();
+  const history = useNavigate();
   const { loading, response, paginate, nextHandler, prevHandler } = useFetchData(
     'master/products',
     true,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import useLoading from '../../hooks/useLoading';
 import useSnackbar from '../../hooks/useSnackbar';
@@ -15,12 +15,14 @@ import RegisterCard from '../../components/Cards/RegisterCard';
 // const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
 // const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
 
-export default function AuthPage({ location, history }) {
+export default function AuthPage({ history }) {
   const [isRegister, setIsRegister] = useState(false);
   const [loading, showLoading, hideLoading] = useLoading();
   const [openSnackbar] = useSnackbar();
   const { dispatch } = useStore();
+  const location = useLocation();
   const { pathname } = location;
+  
 
   const source = axios.CancelToken.source();
 

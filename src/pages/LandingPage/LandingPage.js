@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useFetchData from '../../hooks/useFetchData';
 
 import MainSection from './MainSection';
@@ -10,7 +10,7 @@ import JoinCleansheetWorkerSection from './JoinCleansheetWorkerSection';
 import JoinCleansheetPartner from './JoinCleansheetPartner';
 
 export default function LandingPage() {
-  const history = useHistory();
+  const history = useNavigate();
   const { loading, response } = useFetchData('master/products?item_per_page=4');
   const [products, setProducts] = useState([]);
 

@@ -5,14 +5,7 @@ import ModalBase from '../Modals/ModalBase';
 
 import FullSubmitButton from '../Buttons/FullSubmitButton';
 
-export default function ConfirmationDialog({
-  show,
-  title,
-  caption,
-  onConfirm,
-  isLoading,
-  closeDialog,
-}) {
+function ConfirmationDialog({ show, title, caption, onConfirm, isLoading, closeDialog }) {
   return (
     <ModalBase show={show}>
       <div className={`${DialogStyle['dialog-container']}`}>
@@ -39,3 +32,5 @@ export default function ConfirmationDialog({
     </ModalBase>
   );
 }
+
+export default ConfirmationDialog;
