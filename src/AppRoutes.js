@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useStore } from './context/store';
 
@@ -19,32 +19,26 @@ import useSnackbar from './hooks/useSnackbar';
 import Snackbar from './components/Snackbars/Snackbar';
 import ConfirmationDialog from './components/Dialog/ConfirmationDialog';
 
-function PrivateRoutes({ component: Component }) {
+function PrivateRoutes({ children }) {
   const { state } = useStore();
   const { isLoggedIn } = state;
   const [openSnackbar] = useSnackbar();
 
-  function RedirectToLogin() {
+  function redirectToLogin() {
     openSnackbar('info', 'Silahkan login terlebih dahulu.');
-    return <Redirect to={{ pathname: '/login' }} />;
+    return <Navigate to='/login' replace />;
   }
+  
+  if (!isLoggedIn) return redirectToLogin();
 
   return (
-    <Route
-      render={props =>
-        isLoggedIn ? (
-          <Layout>
-            <Component {...props} />
-          </Layout>
-        ) : (
-            <RedirectToLogin />
-          )
-      }
-    />
+    <Layout>
+      {children}
+    </Layout>
   );
 }
 
-function Routes() {
+function AppRoutes() {
   const firstLoad = useRef(true);
   const [isChecking, setIsChecking] = useState(true);
   const { state, dispatch } = useStore();
@@ -62,7 +56,7 @@ function Routes() {
   useEffect(() => {
     if (firstLoad.current) {
       firstLoad.current = false;
-      const userData = Cookies.getJSON('@userData') ? Cookies.getJSON('@userData') : null;
+      const userData = Cookies?.get('@userData') ? Cookies.get('@userData') : null;
       if (userData) {
         dispatch({ type: 'USER_LOGGED_IN', data: userData });
       }
@@ -103,30 +97,54 @@ function Routes() {
         closeDialog={closeDialogHandler}
       />
       <Snackbar type={snackbarType} message={snackbarMessage} isShow={snackbarOpen} />
-      <Switch>
-        <Route exact path="/">
-          <Layout>
-            <LandingPage />
-          </Layout>
-        </Route>
-        <Route path="/layanan">
-          <Layout>
-            <ServicesPage />
-          </Layout>
-        </Route>
-        <Route path="/produk">
-          <Layout>
-            <ProductPage />
-          </Layout>
-        </Route>
-        <PrivateRoutes path="/keranjang" component={CartPage} />
-        <PrivateRoutes path="/transaksi" component={TransactionPage} />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={(
+            <Layout>
+              <LandingPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/layanan"
+          element={(
+            <Layout>
+              <ServicesPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/produk"
+          element={(
+            <Layout>
+              <ProductPage />
+            </Layout>
+          )}
+        />
+        
+        <Route path="/keranjang" element={(
+          <PrivateRoutes>
+            <CartPage />
+          </PrivateRoutes>
+        )} />
+        
+        <Route path="/transaksi" element={(
+          <PrivateRoutes>
+            <TransactionPage />
+          </PrivateRoutes>
+        )} />
 
-        <Route path="/login" component={AuthPage} />
-        <Route path="/register" component={AuthPage} />
-      </Switch>
+        <Route path="/login" element={(
+          <AuthPage />
+        )} />
+        <Route path="/register" element={(
+          <AuthPage />
+        )} />
+      </Routes>
     </Router>
   );
 }
 
-export default Routes;
+export default AppRoutes;
