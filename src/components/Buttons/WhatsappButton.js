@@ -6,7 +6,7 @@ import { ReactComponent as WhatsappIcon } from '../../assets/whatsapp.svg';
 
 export default function WhatsappButton() {
   return (
-    <form action="https://wa.me/6281297984971 ">
+    <form action="https://wa.me/xxxxxxxxxxx">
       <button type="submit" className={`${ButtonStyle.button} ${ButtonStyle.whatsappButton}`}>
         <WhatsappIcon className={`${ButtonStyle.whatsappIcon}`} />
         Hubungi Kami

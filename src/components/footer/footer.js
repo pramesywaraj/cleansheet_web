@@ -2,6 +2,7 @@ import React from 'react';
 
 import FooterStyle from './footer.module.scss';
 import WhatsappButton from '../Buttons/WhatsappButton';
+import { FaInstagram, FaLine, FaYoutube } from 'react-icons/fa';
 
 import LogoCleansheet from '../../assets/logo_cs.png';
 
@@ -21,9 +22,18 @@ export default function Footer() {
         <div className={FooterStyle['footer-element']}>
           <h3>Sosial Media</h3>
           <div className={FooterStyle['footer-caption']}>
-            <p>Instagram : @cleansheet_id</p>
-            <p>Line : cleansheet.id</p>
-            <p>Youtube : Cleansheet Indonesia</p>
+            <div className={FooterStyle['footer-sosmed-container']}>
+              <FaInstagram className={FooterStyle['footer-sosmed-icon']} fontSize="1.2em" />
+              <p>@cleansheet_id</p>
+            </div>
+            <div className={FooterStyle['footer-sosmed-container']}>
+              <FaLine className={FooterStyle['footer-sosmed-icon']} fontSize="1.2em" />
+              <p>cleansheet.id</p>
+            </div>
+            <div className={FooterStyle['footer-sosmed-container']}>
+              <FaYoutube className={FooterStyle['footer-sosmed-icon']} fontSize="1.2em" />
+              <p>Cleansheet Indonesia</p>
+            </div>
           </div>
         </div>
         <div className={FooterStyle['footer-element']}>
@@ -37,7 +47,6 @@ export default function Footer() {
           <h3>Kontak</h3>
           <div className={FooterStyle['footer-caption']}>
             <WhatsappButton />
-            <p>+62 812-9798-4971 (Whatsapp)</p>
           </div>
         </div>
       </div>

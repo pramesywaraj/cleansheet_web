@@ -15,7 +15,7 @@
 
     justify-content: space-evenly;
     align-items: flex-start;
-    padding: 1.5%;
+    padding: 1.5%; 
 
     @include response-to-size(phone-small) {
       flex-direction: column;
@@ -53,7 +53,22 @@
 
   .footer-caption {
     margin-top: 2vh;
-    line-height: 5vh;
+    line-height: 1.5em;
+
+    .footer-sosmed-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+      
+      .footer-sosmed-icon {
+        margin-right: 8px;
+        color: $primary_font_color;
+      }
+    }
   }
 
   @include response-to-size(phone-small) {
@@ -76,7 +91,6 @@
     .footer-caption {
       margin-top: 0.5vh;
       text-align: center;
-      line-height: 3vh;
     }
   }
 
@@ -100,7 +114,6 @@
     .footer-caption {
       margin-top: 0.5vh;
       text-align: center;
-      line-height: 3vh;
     }
   }
 }
