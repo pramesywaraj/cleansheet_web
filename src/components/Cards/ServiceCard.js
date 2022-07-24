@@ -17,11 +17,11 @@ export default function ServiceCard({ imgSrc, productName, price, unit, onClick,
             <p className={`${CardStyle.bold} ${CardStyle.name}`}>{productName}</p>
           </div>
           <div>
-            <p className={CardStyle['detail-value']}>{`Harga : Rp. ${setCommaToMoney(price)}/${unit}`}</p>
+            <p className={CardStyle['detail-title']}>{`Harga : Rp. ${setCommaToMoney(price)}/${unit}`}</p>
           </div>
           <div>
             <p className={CardStyle['detail-title']}>Estimasi Pengerjaan:</p>
-            <p className={CardStyle['detail-value']}>{estimation}</p>
+            <p className={CardStyle['detail-title']}>{estimation}</p>
           </div>
         </div>
         <div className={`${CardStyle['full-width-button']}`}>
