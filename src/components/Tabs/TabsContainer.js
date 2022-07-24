@@ -31,7 +31,7 @@ export default function TabsContainer({ handleTabChange, activeTab }) {
   return (
     <div className={TabsStyle['tabs-container']}>
       <div className={TabsStyle['tabs-content']}>
-        {Object.keys(tabObj).map((key, index) => (
+        {Object.keys(tabObj).map((key) => (
           <Tab
             key={`${tabObj[key].code}-tab`}
             label={tabObj[key].name}

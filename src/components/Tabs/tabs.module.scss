@@ -3,7 +3,7 @@
 .tabs-container {
   border-radius: 50px;
   width: 50vw;
-  height: 8vh;
+  height: 7vh;
   margin: 5%;
 
   box-shadow: 0px 0px 12px #00000029;
@@ -12,22 +12,20 @@
 
   @include response-to-size(phone-small) {
     width: 90vw;
-    height: 10vh;
+    height: 5vh;
   }
 
   @include response-to-size(phone) {
     width: 90vw;
-    height: 10vh;
+    height: 5vh;
   }
 
   @include response-to-size(tablet-potrait) {
     width: 60vw;
-    height: 10vh;
   }
 
   @include response-to-size(tablet-landscape) {
     width: 60vw;
-    height: 10vh;
   }
 }
 
@@ -59,11 +57,19 @@
   }
 
   @include response-to-size(phone-small) {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   @include response-to-size(phone) {
-    font-size: 0.9em;
+    font-size: 0.8em;
+  }
+  
+  @include response-to-size(tablet-potrait) {
+    font-size: 0.8em;
+  }
+
+  @include response-to-size(tablet-landscape) {
+    font-size: 0.8em;
   }
 }
 
