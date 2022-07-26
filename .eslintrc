@@ -10,6 +10,10 @@
         "prettier",
         "prettier/react"
     ],
+    "plugins": [
+        "eslint-plugin-no-inline-styles",
+        "prettier"
+    ],
     "env": {
         "browser": true,
         "es2021": true,
@@ -42,11 +46,6 @@
         "react/prop-types": "off",
         "comma-dangle": "off",
         "no-tabs": 0,
-        "indent": [
-            2,
-            "tab",
-            { "SwitchCase": 1, "VariableDeclarator": 1 }
-        ],
         "no-underscore-dangle": "off",
         "sort-imports": [
             "warn",
@@ -65,6 +64,7 @@
             }
         ],
         "no-unused-expressions": 0,
+        "no-unused-vars": "warn",
         "no-inline-styles/no-inline-styles": [
             "warn"
         ],
