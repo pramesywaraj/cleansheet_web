@@ -36,7 +36,7 @@ function HeaderLinksMenu({ isMenuOpen }) {
   );
 }
 
-function HeaderUserMenu({ isLoggedIn, openDropDownMenuHandler }) {
+function HeaderUserMenu({ isLoggedIn, itemCountInsideCart, openDropDownMenuHandler }) {
   return (
     <div className={HeaderStyle['user-menu']}>
       {isLoggedIn ? (
@@ -44,6 +44,11 @@ function HeaderUserMenu({ isLoggedIn, openDropDownMenuHandler }) {
           <li>
             <NavLink className={HeaderStyle['header-icon-nav']} to="/keranjang">
               <FaShoppingBasket fontSize="1.5em" />
+              {!!itemCountInsideCart && (
+                <div className={HeaderStyle['header-cart-float-counter']}>
+                  <p>{itemCountInsideCart}</p>
+                </div>
+              )}
             </NavLink>
           </li>
           <li>
@@ -79,7 +84,7 @@ function HeaderUserMenu({ isLoggedIn, openDropDownMenuHandler }) {
 
 export default function Header() {
   const { state, dispatch } = useStore();
-  const { user, isLoggedIn } = state;
+  const { user, isLoggedIn, cart } = state;
 
   const [openSnackbar] = useSnackbar();
   const [loading, showLoading, hideLoading] = useLoading();
@@ -117,7 +122,11 @@ export default function Header() {
         <FaBars onClick={openCloseMenu} fontSize="1.5em" />
       </div>
       <HeaderLinksMenu isMenuOpen={isMenuOpen} />
-      <HeaderUserMenu isLoggedIn={isLoggedIn} openDropDownMenuHandler={openDropDownMenuHandler} />
+      <HeaderUserMenu
+        isLoggedIn={isLoggedIn}
+        itemCountInsideCart={(cart?.products || []).length}
+        openDropDownMenuHandler={openDropDownMenuHandler}
+      />
 
       <div className={`${HeaderStyle['dropdown-menu']} ${isUserMenuOpen ? HeaderStyle.open : ''}`}>
         <div>

@@ -130,6 +130,28 @@
     .header-icon-nav {
       width: auto;
       height: auto;
+
+      position: relative;
+    }
+    
+    .header-cart-float-counter {
+      position: absolute;
+      top: -16px;
+      right: -14px;
+
+      height: 18px;
+      width: 18px;
+
+      text-align: center;
+      
+      background-color: $primary_color;
+      padding: 4px;
+      border-radius: 50px;
+      
+      p {
+        color: white;
+        font-size: 10px;
+      }
     }
 
     @include response-to-size(phone-small) {
