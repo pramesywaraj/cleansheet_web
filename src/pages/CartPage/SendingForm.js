@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CartCard from '../../components/Cards/CartCard';
-import TextInput from '../../components/Input/TextInput';
-import TextArea from '../../components/Input/TextArea';
-import FullSubmitButton from '../../components/Buttons/FullSubmitButton';
+import CartCard from 'components/Cards/CartCard';
+import TextInput from 'components/Input/TextInput';
+import TextArea from 'components/Input/TextArea';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
 
 export default function SendingForm({
   handleSubmit,

@@ -1,19 +1,18 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import useLoading from '../../hooks/useLoading';
-import useSnackbar from '../../hooks/useSnackbar';
-import { useStore } from '../../context/store';
-import AuthStyle from './auth.module.scss';
-import LogoCleansheet from '../../assets/logo_cs.png';
-import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
+import useLoading from 'hooks/useLoading';
+import useSnackbar from 'hooks/useSnackbar';
+import { useStore } from 'context/store';
 
-import Loading from '../../components/Loading/Loading';
-import LoginCard from '../../components/Cards/LoginCard';
-import RegisterCard from '../../components/Cards/RegisterCard';
+import LogoCleansheet from 'assets/logo_cs.png';
+import LandingPageMainImage from 'assets/landingpage_main_image.svg';
 
-// const LoginCard = React.lazy(() => import('../../components/Cards/LoginCard'));
-// const RegisterCard = React.lazy(() => import('../../components/Cards/RegisterCard'));
+import Loading from 'components/Loading/Loading';
+import LoginCard from 'components/Cards/LoginCard';
+import RegisterCard from 'components/Cards/RegisterCard';
+
+import AuthStyle from 'pages/Auth/auth.module.scss';
 
 export default function AuthPage() {
   const [isRegister, setIsRegister] = useState(false);

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductStyle from './product.module.scss';
+import ProductCard from 'components/Cards/ProductCard';
+import Loading from 'components/Loading/Loading';
+import PaginationButton from 'components/Navigation/PaginationButton';
 
-import ProductCard from '../../components/Cards/ProductCard';
-import Loading from '../../components/Loading/Loading';
-import PaginationButton from '../../components/Navigation/PaginationButton';
+import ProductStyle from 'pages/Products/product.module.scss';
 
 export default function ProductsList({ products, loading, error, pagination, addProduct }) {
   if (loading) {

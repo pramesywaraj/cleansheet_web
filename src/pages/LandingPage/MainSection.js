@@ -1,9 +1,11 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import LogoCleansheet from '../../assets/logo_cs.png';
-import LandingPageStyle from './landingPage.module.scss';
-import LandingPageMainImage from '../../assets/landingpage_main_image.svg';
-import FullSubmitButton from '../../components/Buttons/FullSubmitButton';
+import LogoCleansheet from 'assets/logo_cs.png';
+import LandingPageMainImage from 'assets/landingpage_main_image.svg';
+
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
+
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function MainSection({ goToProductPage }) {
   return (

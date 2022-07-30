@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ServiceStyle from './servicesPage.module.scss';
+import ServiceCard from 'components/Cards/ServiceCard';
+import Loading from 'components/Loading/Loading';
+import PaginationButton from 'components/Navigation/PaginationButton';
 
-import ServiceCard from '../../components/Cards/ServiceCard';
-import Loading from '../../components/Loading/Loading';
-import PaginationButton from '../../components/Navigation/PaginationButton';
+import ServiceStyle from 'pages/Services/servicesPage.module.scss';
 
 export default function ServiceList({ services, loading, error, pagination, openServiceModal }) {
   if (loading) {

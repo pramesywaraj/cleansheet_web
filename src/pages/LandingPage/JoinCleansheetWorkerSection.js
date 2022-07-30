@@ -1,10 +1,11 @@
 import React from 'react';
-import useModal from '../../hooks/useModal';
+import useModal from 'hooks/useModal';
 
-import LandingPageStyle from './landingPage.module.scss';
-import CleansheetOwner from '../../assets/cleansheet-owner.png';
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
-import JoinCleansheetModal from '../../components/Modals/JoinCleansheetModal';
+import CleansheetOwner from 'assets/cleansheet-owner.png';
+import PrimaryButton from 'components/Buttons/PrimaryButton';
+import JoinCleansheetModal from 'components/Modals/JoinCleansheetModal';
+
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function JoinCleansheetWorkerSection() {
   const [showModal, openModalHandler, closeModalHandler] = useModal();

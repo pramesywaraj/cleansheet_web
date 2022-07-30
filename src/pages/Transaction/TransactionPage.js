@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-import useTabs, { TRANSACTIONTAB } from '../../hooks/useTabs';
-import useModal from '../../hooks/useModal';
-import useFetchUserTransactions from '../../hooks/useFetchUserTransactions';
+import useTabs, { TRANSACTIONTAB } from 'hooks/useTabs';
+import useModal from 'hooks/useModal';
+import useFetchUserTransactions from 'hooks/useFetchUserTransactions';
 
-import { setCommaToMoney, parseStatus } from '../../misc/otherFunctionality';
+import { setCommaToMoney, parseStatus } from 'misc/otherFunctionality';
 
-import TransactionStyle from './transaction.module.scss';
+import TabsContainer from 'components/Tabs/TabsContainer';
+import PaymentAccountModal from 'components/Modals/PaymentAccount/PaymentAccountModal';
+import TransactionDetailModal from 'components/Modals/Transaction/TransactionDetailModal';
+import Table from 'components/Table/Table';
+import TextButton from 'components/Buttons/TextButton';
 
-import TabsContainer from '../../components/Tabs/TabsContainer';
-import PaymentAccountModal from '../../components/Modals/PaymentAccount/PaymentAccountModal';
-import TransactionDetailModal from '../../components/Modals/Transaction/TransactionDetailModal';
-import Table from '../../components/Table/Table';
-import TextButton from '../../components/Buttons/TextButton';
+import TransactionStyle from 'pages/Transaction/transaction.module.scss';
 
 export default function TransactionPage() {
   const [activeTab, onChangeTab] = useTabs(TRANSACTIONTAB.product.code);

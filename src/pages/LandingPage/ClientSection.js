@@ -1,8 +1,8 @@
 import React from 'react';
 
-import LandingPageStyle from './landingPage.module.scss';
+import ClientImages from 'misc/clientImages';
 
-import ClientImages from '../../misc/clientImages';
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function ClientSection() {
   return (

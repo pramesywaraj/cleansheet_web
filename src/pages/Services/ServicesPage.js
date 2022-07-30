@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import useModal from '../../hooks/useModal';
-import useTabs, { TABTYPE } from '../../hooks/useTabs';
-import useFetchData from '../../hooks/useFetchData';
-import useInput from '../../hooks/useInput';
-import usePostData from '../../hooks/usePostData';
+import useModal from 'hooks/useModal';
+import useTabs, { TABTYPE } from 'hooks/useTabs';
+import useFetchData from 'hooks/useFetchData';
+import useInput from 'hooks/useInput';
+import usePostData from 'hooks/usePostData';
 
-import ServicesPageStyle from './servicesPage.module.scss';
-import TabsContainer from '../../components/Tabs/TabsContainer';
-import ServiceList from './ServiceList';
-import OrderServiceModal from '../../components/Modals/OrderServiceModal';
+import TabsContainer from 'components/Tabs/TabsContainer';
+import OrderServiceModal from 'components/Modals/OrderServiceModal';
+import ServiceList from 'pages/Services/ServiceList';
+
+import ServicesPageStyle from 'pages/Services/servicesPage.module.scss';
 
 export default function ServicesPage() {
   const [activeTab, onChangeTab] = useTabs(TABTYPE.sanitation.code);

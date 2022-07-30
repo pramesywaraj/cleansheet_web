@@ -1,11 +1,12 @@
 import React from 'react';
-import LandingPageStyle from './landingPage.module.scss';
 
-import CleaningServicesImage from '../../assets/cleaning_services.svg';
-import LaundryServicesImage from '../../assets/laundry_washing.svg';
-import EnvironmentCleaningImage from '../../assets/env_cleaning.svg';
+import CleaningServicesImage from 'assets/cleaning_services.svg';
+import LaundryServicesImage from 'assets/laundry_washing.svg';
+import EnvironmentCleaningImage from 'assets/env_cleaning.svg';
 
-import OutlinedButton from '../../components/Buttons/OutlinedButton';
+import OutlinedButton from 'components/Buttons/OutlinedButton';
+
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function ServiceSection({ goToServicePage }) {
   return (

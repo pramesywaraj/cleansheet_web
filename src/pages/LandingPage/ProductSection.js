@@ -1,10 +1,10 @@
 import React from 'react';
 
-import LandingPageStyle from './landingPage.module.scss';
+import ProductCard from 'components/Cards/ProductCard';
+import OutlinedButton from 'components/Buttons/OutlinedButton';
+import Loading from 'components/Loading/Loading';
 
-import ProductCard from '../../components/Cards/ProductCard';
-import OutlinedButton from '../../components/Buttons/OutlinedButton';
-import Loading from '../../components/Loading/Loading';
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function ProductSection({ goToProductPage, products, loading }) {
   const renderProducts = () => {

@@ -1,11 +1,12 @@
 import React from 'react';
-import { setCommaToMoney } from '../../misc/otherFunctionality';
-import CartStyle from './cartPage.module.scss';
-import CartCard from '../../components/Cards/CartCard';
+import { setCommaToMoney } from 'misc/otherFunctionality';
+import useAddMinCart from 'hooks/useAddMinCart';
 
-import Loading from '../../components/Loading/Loading';
-import CartItem from '../../components/Cart/CartItem';
-import useAddMinCart from '../../hooks/useAddMinCart';
+import CartCard from 'components/Cards/CartCard';
+import Loading from 'components/Loading/Loading';
+import CartItem from 'components/Cart/CartItem';
+
+import CartStyle from 'pages/CartPage/cartPage.module.scss';
 
 function CartItemList({ totalPrice, products, deleteItem, addItem, minItem }) {
   const renderItem = (item, index) => (

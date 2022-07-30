@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useStore } from '../../context/store';
-import useFetchData from '../../hooks/useFetchData';
-import usePostData from '../../hooks/usePostData';
-import useModal from '../../hooks/useModal';
-import useSnackbar from '../../hooks/useSnackbar';
+import { useStore } from 'context/store';
+import useFetchData from 'hooks/useFetchData';
+import usePostData from 'hooks/usePostData';
+import useModal from 'hooks/useModal';
+import useSnackbar from 'hooks/useSnackbar';
 
-import ProductStyle from './product.module.scss';
-import ProductsList from './ProductsList';
+import AddProductToCartModal from 'components/Modals/AddProductToCartModal';
 
-import AddProductToCartModal from '../../components/Modals/AddProductToCartModal';
+import ProductStyle from 'pages/Products/product.module.scss';
+import ProductsList from 'pages/Products/ProductsList';
 
 export default function ProductPage() {
   const { state } = useStore();

@@ -1,10 +1,10 @@
 import React from 'react';
-import useModal from '../../hooks/useModal';
+import useModal from 'hooks/useModal';
 
-import LandingPageStyle from './landingPage.module.scss';
+import JoinPartnerModal from 'components/Modals/JoinPartnerModal';
+import PrimaryButton from 'components/Buttons/PrimaryButton';
 
-import JoinPartnerModal from '../../components/Modals/JoinPartnerModal';
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import LandingPageStyle from 'pages/LandingPage/landingPage.module.scss';
 
 export default function JoinCleansheetPartner() {
   const [showModal, openModalHandler, closeModalHandler] = useModal();

@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import axios from 'axios';
-import { useStore } from '../../context/store';
-import useInput from '../../hooks/useInput';
-import useSnackbar from '../../hooks/useSnackbar';
-import useFetchData from '../../hooks/useFetchData';
-import usePostData from '../../hooks/usePostData';
-import useConfirmationDialog from '../../hooks/useConfirmationDialog';
-import useModal from '../../hooks/useModal';
+import { useStore } from 'context/store';
+import useInput from 'hooks/useInput';
+import useSnackbar from 'hooks/useSnackbar';
+import useFetchData from 'hooks/useFetchData';
+import usePostData from 'hooks/usePostData';
+import useConfirmationDialog from 'hooks/useConfirmationDialog';
+import useModal from 'hooks/useModal';
 
-import CartStyle from './cartPage.module.scss';
+import CartStyle from 'pages/CartPage/cartPage.module.scss';
 
-import SendingForm from './SendingForm';
-import CartSection from './CartSection';
+import SendingForm from 'pages/CartPage//SendingForm';
+import CartSection from 'pages/CartPage//CartSection';
 
-import PaymentAccountModal from '../../components/Modals/PaymentAccount/PaymentAccountModal';
+import PaymentAccountModal from 'components/Modals/PaymentAccount/PaymentAccountModal';
 
 export default function CartPage() {
   const { state, dispatch } = useStore();
