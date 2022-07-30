@@ -3,12 +3,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CardBase from './CardBase';
-import FullSubmitButton from '../Buttons/FullSubmitButton';
-import TextInput from '../Input/TextInput';
-import useInput from '../../hooks/useInput';
+import CardBase from 'components/Cards/CardBase';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
+import TextInput from 'components/Input/TextInput';
+import useInput from 'hooks/useInput';
 
-import CardStyle from './card.module.scss';
+import CardStyle from 'components/Cards/card.module.scss';
 
 export default function RegisterCard({ onRegister, isLoading }) {
   const [registerObj, changeValue, resetValue, handleSubmit, errors] = useInput(

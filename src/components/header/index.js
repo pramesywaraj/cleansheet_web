@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaShoppingBasket, FaExchangeAlt, FaBars, FaEllipsisV } from 'react-icons/fa';
-import { useStore } from '../../context/store';
-import useSnackbar from '../../hooks/useSnackbar';
-import useLoading from '../../hooks/useLoading';
-import HeaderStyle from './header.module.scss';
+import { useStore } from 'context/store';
+import useSnackbar from 'hooks/useSnackbar';
+import useLoading from 'hooks/useLoading';
+import HeaderStyle from 'components/Header/header.module.scss';
 
-import PrimaryButton from '../Buttons/PrimaryButton';
-import FullSubmitButton from '../Buttons/FullSubmitButton';
-import IconButton from '../Buttons/IconButton';
+import PrimaryButton from 'components/Buttons/PrimaryButton';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
+import IconButton from 'components/Buttons/IconButton';
 
-import ButtonLoading from '../Loading/ButtonLoading';
+import ButtonLoading from 'components/Loading/ButtonLoading';
 
 function HeaderLinksMenu({ isMenuOpen }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import InputStyle from './input.module.scss';
+import InputStyle from 'components/Input/input.module.scss';
 
 export default function TextArea({ label, placeholder, name, value, error, onChange }) {
   return (

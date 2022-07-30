@@ -1,9 +1,9 @@
 import React from 'react';
-import CardBase from './CardBase';
-import CardStyle from './card.module.scss';
-import SmallButton from '../Buttons/SmallButton';
-import Image from '../Image/Image';
-import { setCommaToMoney } from '../../misc/otherFunctionality';
+import CardBase from 'components/Cards/CardBase';
+import CardStyle from 'components/Cards/card.module.scss';
+import SmallButton from 'components/Buttons/SmallButton';
+import Image from 'components/Image/Image';
+import { setCommaToMoney } from 'misc/otherFunctionality';
 
 export default function ServiceCard({ imgSrc, productName, price, unit, onClick, estimation }) {
   return (

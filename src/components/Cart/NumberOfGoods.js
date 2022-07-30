@@ -1,7 +1,7 @@
 import React from 'react';
-import CartNumberButton from '../Buttons/CartNumberButton';
+import CartNumberButton from 'components/Buttons/CartNumberButton';
 
-import CartStyle from './cart.module.scss';
+import CartStyle from 'components/Cart/cart.module.scss';
 
 export default function NumberOfGoods({ goodsTotal, add, min }) {
   return (

@@ -1,8 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import ButtonStyle from './button.module.scss';
 
-import { ReactComponent as WhatsappIcon } from '../../assets/whatsapp.svg';
+import { ReactComponent as WhatsappIcon } from 'assets/whatsapp.svg';
+
+import ButtonStyle from 'components/Buttons/button.module.scss';
 
 export default function WhatsappButton() {
   return (

@@ -1,13 +1,13 @@
 import React from 'react';
-import useInput from '../../hooks/useInput';
-import usePostData from '../../hooks/usePostData';
+import useInput from 'hooks/useInput';
+import usePostData from 'hooks/usePostData';
 
-import ModalBase from './ModalBase';
-import ModalStyle from './modal.module.scss';
-import TextInput from '../Input/TextInput';
-import TextArea from '../Input/TextArea';
-import BidikmisiRadioInput from '../Input/BidikmisiRadioInput';
-import FullSubmitButton from '../Buttons/FullSubmitButton';
+import ModalBase from 'components/Modals/ModalBase';
+import ModalStyle from 'components/Modals/modal.module.scss';
+import TextInput from 'components/Input/TextInput';
+import TextArea from 'components/Input/TextArea';
+import BidikmisiRadioInput from 'components/Input/BidikmisiRadioInput';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
 
 export default function JoinCleansheetModal({ show, close }) {
   const [joinObject, changeValue, resetValue, handleSubmit, errors] = useInput(

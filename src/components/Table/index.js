@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TableStyle from './table.module.scss';
-import Loading from '../Loading/Loading';
+import TableStyle from 'components/Table/table.module.scss';
+import Loading from 'components/Loading/Loading';
 
 export default function Table({ loading, headers, children }) {
   function renderHeader() {

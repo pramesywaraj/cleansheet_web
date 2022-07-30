@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { useStore } from '../context/store';
+import { useStore } from 'context/store';
 
 export default function Interceptors() {
   const [errorInterceptor, setErrorInterceptor] = useState(undefined);

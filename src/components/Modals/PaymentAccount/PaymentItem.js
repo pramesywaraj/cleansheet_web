@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { FaAngleRight } from 'react-icons/fa';
-import PaymentItemStyle from './paymentModal.module.scss';
-import Image from '../../Image/Image';
+import PaymentItemStyle from 'components/Modals/PaymentAccount/paymentModal.module.scss';
+import Image from 'components/Image/Image';
 
 export default function PaymentItem({ image, name, description, onSelect }) {
   return (

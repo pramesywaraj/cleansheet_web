@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
-import ModalStyle from './modal.module.scss';
+import ModalStyle from 'components/Modals/modal.module.scss';
 
 export default function OrderServiceModal({ children, show, close, title }) {
   return (

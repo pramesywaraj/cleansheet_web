@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaInfoCircle, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 
-import SnackbarStyle from './snackbar.module.scss';
+import SnackbarStyle from 'components/Snackbars/snackbar.module.scss';
 
 export default function Snackbar({ message, type, isShow }) {
   let colorType;

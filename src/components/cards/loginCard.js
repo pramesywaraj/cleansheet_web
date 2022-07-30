@@ -3,11 +3,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CardBase from './CardBase';
-import FullSubmitButton from '../Buttons/FullSubmitButton';
-import TextInput from '../Input/TextInput';
-import useInput from '../../hooks/useInput';
-import CardStyle from './card.module.scss';
+import CardBase from 'components/Cards/CardBase';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
+import TextInput from 'components/Input/TextInput';
+import useInput from 'hooks/useInput';
+import CardStyle from 'components/Cards/card.module.scss';
 
 export default function LoginCard({ onLogin, isLoading }) {
   const [loginObj, changeValue, resetValue, handleSubmit, errors] = useInput(

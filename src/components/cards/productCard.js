@@ -1,10 +1,10 @@
 import React from 'react';
-import CardBase from './CardBase';
-import SmallButton from '../Buttons/SmallButton';
-import CardStyle from './card.module.scss';
-import Image from '../Image/Image';
+import CardBase from 'components/Cards/CardBase';
+import SmallButton from 'components/Buttons/SmallButton';
+import CardStyle from 'components/Cards/card.module.scss';
+import Image from 'components/Image/Image';
 
-import { setCommaToMoney } from '../../misc/otherFunctionality';
+import { setCommaToMoney } from 'misc/otherFunctionality';
 
 export default function ProductCard({ imgSrc, productName, price, addProduct }) {
   return (

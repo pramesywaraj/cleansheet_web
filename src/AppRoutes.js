@@ -16,7 +16,7 @@ import Loading from 'components/Loading/Loading';
 import Interceptors from './components/Interceptors';
 
 import useSnackbar from 'hooks/useSnackbar';
-import Snackbar from 'components/Snackbars/Snackbar';
+import Snackbar from 'components/Snackbars';
 import ConfirmationDialog from 'components/Dialog/ConfirmationDialog';
 
 function PrivateRoutes({ children }) {

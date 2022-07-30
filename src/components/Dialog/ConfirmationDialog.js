@@ -1,9 +1,9 @@
 import React from 'react';
 
-import DialogStyle from './dialog.module.scss';
-import ModalBase from '../Modals/ModalBase';
+import DialogStyle from 'components/Dialog/dialog.module.scss';
+import ModalBase from 'components/Modals/ModalBase';
 
-import FullSubmitButton from '../Buttons/FullSubmitButton';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
 
 function ConfirmationDialog({ show, title, caption, onConfirm, isLoading, closeDialog }) {
   return (

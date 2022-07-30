@@ -9,7 +9,7 @@ import { setCommaToMoney, parseStatus } from 'misc/otherFunctionality';
 import TabsContainer from 'components/Tabs/TabsContainer';
 import PaymentAccountModal from 'components/Modals/PaymentAccount/PaymentAccountModal';
 import TransactionDetailModal from 'components/Modals/Transaction/TransactionDetailModal';
-import Table from 'components/Table/Table';
+import Table from 'components/Table';
 import TextButton from 'components/Buttons/TextButton';
 
 import TransactionStyle from 'pages/Transaction/transaction.module.scss';

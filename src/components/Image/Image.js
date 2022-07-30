@@ -1,9 +1,9 @@
 import React from 'react';
 
-import useImage, { STATUS } from '../../hooks/useImage';
-import ImageDefault from '../../assets/image_default.svg';
+import useImage, { STATUS } from 'hooks/useImage';
+import ImageDefault from 'assets/image_default.svg';
 
-import SmallLoading from '../Loading/SmallLoading';
+import SmallLoading from 'components/Loading/SmallLoading';
 
 export default function Image({ src, style, alt }) {
   const [status, image] = useImage(src);

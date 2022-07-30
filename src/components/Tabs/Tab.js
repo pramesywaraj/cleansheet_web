@@ -1,5 +1,5 @@
 import React from 'react';
-import TabsStyle from './tabs.module.scss';
+import TabsStyle from 'components/Tabs/tabs.module.scss';
 
 export default function Tab({ label, selected, selectedId, onSelect }) {
   return (

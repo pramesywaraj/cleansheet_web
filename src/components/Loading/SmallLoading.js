@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingStyle from './loading.module.scss';
+import LoadingStyle from 'components/Loading/loading.module.scss';
 
 export default function SmallLoading() {
   return (

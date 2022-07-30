@@ -1,9 +1,9 @@
 /* eslint-disable camelcase  */
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { parseStatus, setCommaToMoney } from '../../../misc/otherFunctionality';
-import TransactionModalStyle from './transactionModal.module.scss';
-import ModalBase from '../ModalBase';
+import { parseStatus, setCommaToMoney } from 'misc/otherFunctionality';
+import TransactionModalStyle from 'components/Modals/Transaction/transactionModal.module.scss';
+import ModalBase from 'components/Modals/ModalBase';
 
 export default function TransactionDetailModal({ data, show, close, selectedTab }) {
   const { order_ref, order_date, status, detail } = data;

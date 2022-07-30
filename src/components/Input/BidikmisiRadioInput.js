@@ -1,7 +1,7 @@
 import React from 'react';
-import RadioInput from './RadioInput';
+import RadioInput from 'components/Input/RadioInput';
 
-import InputStyle from './input.module.scss';
+import InputStyle from 'components/Input/input.module.scss';
 
 export default function BidikmisiRadioInput({ name, onChange, error }) {
   return (

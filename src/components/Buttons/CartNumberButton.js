@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import ButtonStyle from './button.module.scss';
+
+import ButtonStyle from 'components/Buttons/button.module.scss';
 
 export default function CartNumberButton({ clickAction, type }) {
   return (

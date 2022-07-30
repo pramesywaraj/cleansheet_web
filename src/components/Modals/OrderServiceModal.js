@@ -1,11 +1,11 @@
 import React from 'react';
-import ModalBase from './ModalBase';
-import ModalStyle from './modal.module.scss';
+import ModalBase from 'components/Modals/ModalBase';
+import ModalStyle from 'components/Modals/modal.module.scss';
 
-import Loading from '../Loading/Loading';
-import TextInput from '../Input/TextInput';
-import DatePicker from '../Input/DatePicker';
-import FullSubmitButton from '../Buttons/FullSubmitButton';
+import Loading from 'components/Loading/Loading';
+import TextInput from 'components/Input/TextInput';
+import DatePicker from 'components/Input/DatePicker';
+import FullSubmitButton from 'components/Buttons/FullSubmitButton';
 
 export default function OrderServiceModal({ loading, showModal, closeModal, formHandle }) {
   const { serviceObj, changeValue, handleSubmit, errors } = formHandle;

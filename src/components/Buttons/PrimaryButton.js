@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ButtonStyle from './button.module.scss';
+import ButtonStyle from 'components/Buttons/button.module.scss';
 
 export default function PrimaryButton({ clickAction, label, type }) {
   const buttonColor =

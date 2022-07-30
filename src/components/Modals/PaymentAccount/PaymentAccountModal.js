@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useFetchData from '../../../hooks/useFetchData';
+import useFetchData from 'hooks/useFetchData';
 
-import PaymentModalStyle from './paymentModal.module.scss';
+import PaymentModalStyle from 'components/Modals/PaymentAccount/paymentModal.module.scss';
 
-import ModalBase from '../ModalBase';
-import Image from '../../Image/Image';
-import PaymentItem from './PaymentItem';
-import Loading from '../../Loading/Loading';
+import ModalBase from 'components/Modals/ModalBase';
+import Image from 'components/Image/Image';
+import PaymentItem from 'components/Modals/PaymentAccount/PaymentItem';
+import Loading from 'components/Loading/Loading';
 
 function AvailAccountSelect({ availAccounts, loading, selectAnAccount }) {
   if (loading) {

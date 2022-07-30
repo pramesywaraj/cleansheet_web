@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
-import NavStyle from './nav.module.scss';
+import NavStyle from 'components/Navigation/nav.module.scss';
 
-import IconButton from '../Buttons/IconButton';
+import IconButton from 'components/Buttons/IconButton';
 
 export default function PaginationButton({ next, prev, nextHandler, prevHandler }) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardStyle from './card.module.scss';
+import CardStyle from 'components/Cards/card.module.scss';
 
 export default function CartCard({ label, children }) {
   return (

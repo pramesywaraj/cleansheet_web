@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ModalBase from './ModalBase';
-import ModalStyle from './modal.module.scss';
-import Loading from '../Loading/Loading';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import ModalBase from 'components/Modals/ModalBase';
+import ModalStyle from 'components/Modals/modal.module.scss';
+import Loading from 'components/Loading/Loading';
+import PrimaryButton from 'components/Buttons/PrimaryButton';
 
-import Cart from '../../assets/cart.svg';
-import Image from '../Image/Image';
+import Cart from 'assets/cart.svg';
+import Image from 'components/Image/Image';
 
 export default function AddProductToCartModal({ loading, show, close, toCartAction, isError }) {
   return (

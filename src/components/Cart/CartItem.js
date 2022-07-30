@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa';
-import CartStyle from './cart.module.scss';
+import CartStyle from 'components/Cart/cart.module.scss';
 
-import NumberOfGoods from './NumberOfGoods';
-import IconButton from '../Buttons/IconButton';
-import Image from '../Image/Image';
+import NumberOfGoods from 'components/Cart/NumberOfGoods';
+import IconButton from 'components/Buttons/IconButton';
+import Image from 'components/Image/Image';
 
-import { setCommaToMoney } from '../../misc/otherFunctionality';
+import { setCommaToMoney } from 'misc/otherFunctionality';
 
 export default function CartItem({ amount, name, price, image, deleteItem, addItem, minItem }) {
   return (

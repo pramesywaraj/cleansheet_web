@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
-import TabsStyle from './tabs.module.scss';
-import Tab from './Tab';
+import TabsStyle from 'components/Tabs/tabs.module.scss';
+import Tab from 'components/Tabs/Tab';
 
 import { TABTYPE, TRANSACTIONTAB } from '../../hooks/useTabs';
 
