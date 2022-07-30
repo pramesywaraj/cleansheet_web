@@ -10,6 +10,13 @@
         "prettier",
         "prettier/react"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    },
     "plugins": [
         "eslint-plugin-no-inline-styles",
         "prettier"
@@ -50,8 +57,8 @@
         "sort-imports": [
             "warn",
             {
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": false
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false
             },
         ],
         "sort-keys": [
