@@ -2,7 +2,7 @@ import React from 'react';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-export default function Layout({ children }) {
+function Layout({ children }) {
   return (
     <main role="main">
       <Header />
@@ -11,3 +11,5 @@ export default function Layout({ children }) {
     </main>
   );
 }
+
+export default Layout;
