@@ -1,23 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import { useStore } from './context/store';
+import { useStore } from 'context/store';
 
 // The pages
-import LandingPage from './pages/LandingPage/LandingPage';
-import ServicesPage from './pages/Services/ServicesPage';
-import ProductPage from './pages/Products/ProductPage';
-import AuthPage from './pages/Auth/AuthPage';
-import CartPage from './pages/CartPage/CartPage';
-import TransactionPage from './pages/Transaction/TransactionPage';
+import LandingPage from 'pages/LandingPage/LandingPage';
+import ServicesPage from 'pages/Services/ServicesPage';
+import ProductPage from 'pages/Products/ProductPage';
+import AuthPage from 'pages/Auth/AuthPage';
+import CartPage from 'pages/CartPage/CartPage';
+import TransactionPage from 'pages/Transaction/TransactionPage';
 
-import Layout from './components/layout/layout';
-import Loading from './components/Loading/Loading';
+import Layout from 'components/layout/layout';
+import Loading from 'components/Loading/Loading';
 import Interceptors from './components/Interceptors';
 
-import useSnackbar from './hooks/useSnackbar';
-import Snackbar from './components/Snackbars/Snackbar';
-import ConfirmationDialog from './components/Dialog/ConfirmationDialog';
+import useSnackbar from 'hooks/useSnackbar';
+import Snackbar from 'components/Snackbars/Snackbar';
+import ConfirmationDialog from 'components/Dialog/ConfirmationDialog';
 
 function PrivateRoutes({ children }) {
   const { state } = useStore();

@@ -1,8 +1,8 @@
 import React from 'react';
-import './global.scss';
-import AppRoutes from './AppRoutes';
+import 'src/global.scss';
+import AppRoutes from 'src/AppRoutes';
 
-import { StoreProvider } from './context/store';
+import { StoreProvider } from 'context/store';
 
 function App() {
   return (
