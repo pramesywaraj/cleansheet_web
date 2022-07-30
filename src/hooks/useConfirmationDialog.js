@@ -1,4 +1,4 @@
-import { useStore } from '../context/store';
+import { useStore } from 'context/store';
 
 export default function useConfirmationDialog() {
   const { dispatch, state } = useStore();

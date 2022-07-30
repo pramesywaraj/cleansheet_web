@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import loadImage from '../components/Image/loadImage';
+import loadImage from 'components/Image/loadImage';
 
 const cache = new Map();
 

@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import axios from 'axios';
-import { useStore } from '../context/store';
-import useDebounce from './useDebounce';
-import useSnackbar from './useSnackbar';
+import { useStore } from 'context/store';
+import useDebounce from 'hooks/useDebounce';
+import useSnackbar from 'hooks/useSnackbar';
 
 function AddMinCart(productId, adders, token) {
   const config = {

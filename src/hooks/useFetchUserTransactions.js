@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { useStore } from '../context/store';
+import { useStore } from 'context/store';
 
-import useSnackbar from './useSnackbar';
+import useSnackbar from 'hooks/useSnackbar';
 
 export default function useFetchUserTransactions(initialCode) {
   const { state } = useStore();

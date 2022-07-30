@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react';
-import { useStore } from '../context/store';
+import { useStore } from 'context/store';
 
 const AUTO_DISMISS = 3200;
 

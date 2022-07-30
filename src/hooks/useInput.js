@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import inputValidation from './inputValidation';
+import inputValidation from 'hooks/inputValidation';
 
 export default function useInput(initialValue, callback) {
   const [inputState, setInputState] = useState(initialValue);

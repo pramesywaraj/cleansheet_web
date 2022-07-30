@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-import { useStore } from '../context/store';
-import useSnackbar from './useSnackbar';
+import { useStore } from 'context/store';
+import useSnackbar from 'hooks/useSnackbar';
 
 export default function usePostData(endpoint) {
   const [onPostLoading, setPostLoading] = useState(false);
