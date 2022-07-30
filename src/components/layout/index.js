@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from '../header/header';
-import Footer from '../footer/footer';
-
-import LayoutStyle from './layout.module.scss';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 export default function Layout({ children }) {
   return (

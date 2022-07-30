@@ -1,10 +1,10 @@
 import React from 'react';
-
-import FooterStyle from './footer.module.scss';
-import WhatsappButton from '../Buttons/WhatsappButton';
 import { FaInstagram, FaLine, FaYoutube } from 'react-icons/fa';
 
-import LogoCleansheet from '../../assets/logo_cs.png';
+import FooterStyle from 'components/Footer/footer.module.scss';
+import WhatsappButton from 'components/Buttons/WhatsappButton';
+
+import LogoCleansheet from 'assets/logo_cs.png';
 
 export default function Footer() {
   return (
